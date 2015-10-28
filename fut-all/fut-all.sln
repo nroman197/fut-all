@@ -5,10 +5,6 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fut-all", "fut-all\fut-all.csproj", "{D0F85CFD-04BB-4262-A142-B4223987B9F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iMatch", "..\..\imatch\iMatch\iMatch\iMatch.csproj", "{46F89E0E-8181-4EDC-B42E-DB488EE752FC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationTable", "..\..\..\..\Desktop\Test\WebApplicationTable\WebApplicationTable\WebApplicationTable.csproj", "{F2A1C4A8-E116-4FA1-AD62-1BB43AA1CE66}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{D0F85CFD-04BB-4262-A142-B4223987B9F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0F85CFD-04BB-4262-A142-B4223987B9F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0F85CFD-04BB-4262-A142-B4223987B9F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46F89E0E-8181-4EDC-B42E-DB488EE752FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46F89E0E-8181-4EDC-B42E-DB488EE752FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46F89E0E-8181-4EDC-B42E-DB488EE752FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46F89E0E-8181-4EDC-B42E-DB488EE752FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F2A1C4A8-E116-4FA1-AD62-1BB43AA1CE66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F2A1C4A8-E116-4FA1-AD62-1BB43AA1CE66}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F2A1C4A8-E116-4FA1-AD62-1BB43AA1CE66}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F2A1C4A8-E116-4FA1-AD62-1BB43AA1CE66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
