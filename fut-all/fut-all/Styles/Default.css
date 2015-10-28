@@ -1,0 +1,42 @@
+﻿body {
+    background-image:url(/Images/background2.png) ;
+ 
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+}
+
+.roundedChart{
+border-radius: 12px 12px 12px 12px;
+-moz-border-radius: 16px 16px 16px 16px;
+-webkit-border-radius: 16px 16px 16px 16px;
+border: 0px solid #000000;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+.lblFont{
+    font-family:'Myriad Pro';
+    color:#21A499;
+}
+
+.txbClass{
+    font-size:16px; 
+    border-style:solid; 
+    padding:6px; 
+    border-radius:10px; 
+    border-width:2px; 
+    border-color:#21a499; 
+    color:#878787;  }
+ 
+.txbClass:focus { 
+    outline:none
+}
+
+.btnClass{
+
+}

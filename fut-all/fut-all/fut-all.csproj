@@ -65,7 +65,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Styles\StyleSheet1.css" />
+    <Content Include="Images\background.png" />
+    <Content Include="Images\background2.png" />
+    <Content Include="Styles\Default.css" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
   </ItemGroup>
@@ -79,6 +81,7 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
