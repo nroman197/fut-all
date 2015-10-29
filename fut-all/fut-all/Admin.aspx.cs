@@ -11,7 +11,11 @@ namespace fut_all
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                ddlContinents.Items.Add("-Select Continent-");
+            }
+            
         }
     }
 }

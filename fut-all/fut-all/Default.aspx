@@ -11,11 +11,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
 
-        <br />
-        <br />
-        <br />
+    <div>
         <br />
         <br />
         <asp:Table runat="server" BorderStyle="None" BackColor="White" Height="500px" Width="450px" HorizontalAlign="Center" CssClass="roundedChart">
@@ -31,13 +28,13 @@
                         <asp:Label runat="server" ID="lblEmail" Text="Email" CssClass="lblFont" ></asp:Label>
                         <asp:Label runat="server" ID="Label2" Text="" Width="170px" ></asp:Label>                                              
                         <br />
-                        <asp:TextBox runat="server" ID ="txbEmail" CssClass="txbClass"></asp:TextBox >
+                        <asp:TextBox runat="server" ID ="txbEmail" CssClass="txbClass" TextMode="Email" required="true"></asp:TextBox >
                         <br />
                         <br />                        
                         <asp:Label runat="server" ID="lblPassword" Text="Password" CssClass="lblFont" ></asp:Label>
                         <asp:Label runat="server" ID="Label3" Text="" Width="140px" ></asp:Label>
                         <br />
-                        <asp:TextBox runat="server" ID ="txbPassword" CssClass="txbClass"></asp:TextBox >
+                        <asp:TextBox runat="server" ID ="txbPassword" CssClass="txbClass" TextMode="Password" required="true"></asp:TextBox >
                         <div >
                             <br />
                             <br />

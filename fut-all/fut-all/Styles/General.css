@@ -2,13 +2,27 @@
   -webkit-border-radius: 8;
   -moz-border-radius: 8;
   border-radius: 8px;
-  font-family:'Myriad Pro';
+  font-family:'Century Gothic';
   color: #21A499;
   font-size: 16px;
   background: #ffffff;
   padding: 8px 16px 8px 16px;
   border: solid #21A499 2px;
   text-decoration: none;
+}
+
+.ddl {
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family:'Century Gothic';
+  color: #21A499;
+  font-size: 14px;
+  background: #ffffff;
+  border-width: 2px;
+  border-color: #21A499;
+  width: 217px;
+  height: 40px;
 }
 
 .btn:hover {
@@ -34,24 +48,27 @@
 }
 
 .lblFont{
-    font-family:'Myriad Pro';
+    font-family: 'Century Gothic';
     color:#21A499;
 }
 
 .lblFont2{
-    font-family:'Myriad Pro';
+    font-family:'Century Gothic';
     color:#92C573;
 }
 
 .txbClass{
-    font-size:16px; 
+    font-size:14px; 
     border-style:solid;
-    height:20px; 
+    height:20px;
+    width: 200px; 
     padding:8px; 
     border-radius:8px; 
-    border-width:2px; 
+    border-width:2px;
     border-color:#21a499; 
-    color:#878787;  }
+    color:#878787;
+    font-family:'Century Gothic';
+}
  
 .txbClass:focus { 
     outline:none
