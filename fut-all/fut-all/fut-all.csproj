@@ -65,11 +65,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\background.png" />
     <Content Include="Images\background2.png" />
+    <Content Include="Images\background3.png" />
+    <Content Include="Images\background4.png" />
+    <Content Include="Styles\AdminStyles.css" />
     <Content Include="Styles\Default.css" />
+    <Content Include="Styles\General.css" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
+    <Content Include="Admin.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +83,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
