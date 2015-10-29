@@ -5,6 +5,5 @@
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
-    filter: blur(200px);
+    -o-background-size: cover;    
 }

@@ -1,0 +1,58 @@
+﻿.btn {
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family:'Myriad Pro';
+  color: #21A499;
+  font-size: 16px;
+  background: #ffffff;
+  padding: 8px 16px 8px 16px;
+  border: solid #21A499 2px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #f5f5f5;
+  text-decoration: none;
+}
+
+.roundedChart{
+    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+    border: 0px solid #000000;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+.roundedChart2{
+    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+    border: 0px solid #000000;
+}
+
+.lblFont{
+    font-family:'Myriad Pro';
+    color:#21A499;
+}
+
+.lblFont2{
+    font-family:'Myriad Pro';
+    color:#92C573;
+}
+
+.txbClass{
+    font-size:16px; 
+    border-style:solid;
+    height:20px; 
+    padding:8px; 
+    border-radius:8px; 
+    border-width:2px; 
+    border-color:#21a499; 
+    color:#878787;  }
+ 
+.txbClass:focus { 
+    outline:none
+}
