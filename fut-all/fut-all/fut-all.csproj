@@ -68,11 +68,14 @@
     <Content Include="Images\background2.png" />
     <Content Include="Images\background3.png" />
     <Content Include="Images\background4.png" />
+    <Content Include="Images\background6.jpg" />
+    <Content Include="Images\logo0.png" />
     <Content Include="Images\logo1.png" />
-    <Content Include="Styles\AdminStyles.css" />
+    <Content Include="Images\logo2.png" />
     <Content Include="Styles\Default.css" />
     <Content Include="Styles\General.css" />
     <Content Include="Styles\navbar.css" />
+    <Content Include="Styles\navbar2.css" />
     <Content Include="Styles\verticalmenu.css" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />

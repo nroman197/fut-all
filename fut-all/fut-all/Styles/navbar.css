@@ -6,9 +6,10 @@
   margin: 0;
   padding: 0;
   border: 0;
-    
   list-style: none;
   line-height: 1;
+
+  border-radius: 8px;
   display: block;
   position: relative;
   -webkit-box-sizing: border-box;
@@ -29,6 +30,7 @@
   border-bottom: 3px solid #47c9af;
   font-family:'Century Gothic';
   line-height: 1;
+  width: 100%;
 }
 .navbar ul {
   background: #ffffff;
@@ -54,10 +56,10 @@
 .navbar > ul > li > a {
   z-index: 2;
   padding: 18px 25px 12px 25px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   text-decoration: none;
-  color: #444444;
+  color: #878787;
   -webkit-transition: all .2s ease;
   -moz-transition: all .2s ease;
   -ms-transition: all .2s ease;

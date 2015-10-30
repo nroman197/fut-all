@@ -15,11 +15,12 @@
     <div>
         <br />
         <br />
-        <asp:Table runat="server" BorderStyle="None" BackColor="White" Height="500px" Width="450px" HorizontalAlign="Center" CssClass="roundedChart">
+        <asp:Table runat="server" BorderStyle="None" BackColor="White" Height="580px" Width="450px" HorizontalAlign="Center" CssClass="roundedChart">
             <asp:TableRow runat="server" Height="100px">
-                <%-- logo here --%>
-                <asp:TableCell>
-
+                <%-- logo here --%>           
+                <asp:TableCell HorizontalAlign="Center">
+                    <br /><br /><br />                    
+                    <asp:Image runat="server" src="Images/logo2.png"  ImageAlign="Middle"/>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow runat="server">
@@ -38,7 +39,7 @@
                         <div >
                             <br />
                             <br />
-                            <asp:Button runat="server" ID="btnSignIn" Text="Sign In" CssClass="btn" />
+                            <asp:Button runat="server" ID="btnSignIn" Text="Sign In" CssClass="btn" OnClick="btnSignIn_Click" OnClientClick="return confirm('Are you sure to create user?');" />
                             <asp:Label runat="server" ID="Label1" Text="" Width="48px" ></asp:Label>
                             <asp:Button runat="server" ID="btnLogIn" Text="Log In"  CssClass="btn" />
                         </div>

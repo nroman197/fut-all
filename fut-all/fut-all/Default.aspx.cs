@@ -13,5 +13,14 @@ namespace fut_all
         {
 
         }
+
+        protected void btnSignIn_Click(object sender, EventArgs e)
+        {
+            //Response.Write("<script type=\"text/javascript\">alert('Eli');</script>");
+
+            string Etienne = string.Empty;
+            //string display = "Message Pop-up!";
+            //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + display + "');", true);
+        }
     }
 }

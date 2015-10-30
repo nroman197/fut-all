@@ -1,0 +1,66 @@
+.admenu,
+.admenu ul,
+.admenu ul li,
+.admenu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  border-radius: 8px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.admenu {
+  border-bottom: 3px solid #21A499;
+  padding: 0 5px;
+  width: auto;
+  font-family:'Century Gothic';
+  background: #ffffff;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.admenu:after,
+.admenu ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.admenu ul li {
+  display: inline-block;
+}
+.admenu.align-right ul li {
+  float: right;
+}
+.admenu.align-center ul {
+  text-align: right;
+}
+.admenu ul li a {
+  font-size: 14px;
+  padding: 15px;
+  text-decoration: none;
+  color: #21A499;
+}
+.admenu ul li:hover a,
+.admenu ul li a:hover,
+.admenu ul li.active a {
+  color: #333333;
+}
+@media all and (max-width: 640px) {
+  .admenu {
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+  }
+  .admenu ul li,
+  .admenu.align-center,
+  .admenu.align-right {
+    display: block;
+  }
+}

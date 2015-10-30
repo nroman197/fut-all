@@ -16,7 +16,7 @@
   -moz-border-radius: 8;
   border-radius: 8px;
   font-family:'Century Gothic';
-  color: #21A499;
+  color: #878787;
   font-size: 14px;
   background: #ffffff;
   border-width: 2px;
@@ -55,6 +55,11 @@
 .lblFont2{
     font-family:'Century Gothic';
     color:#92C573;
+}
+
+.lblFont3{
+    font-family:'Century Gothic';
+    color:#878787;
 }
 
 .txbClass{

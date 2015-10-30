@@ -14,8 +14,51 @@ namespace fut_all
             if (!IsPostBack)
             {
                 ddlContinents.Items.Add("-Select Continent-");
+                ddlConfederations.Items.Add("-Select Confederation-");
+                ddlPosition.Items.Add("-Select Position-");
             }
             
         }
+
+        protected void btnAddcontinent_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlContinents_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAddConfederation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlConfederations_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAddCountry_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAddStadium_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAddPlayer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlPosition_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
