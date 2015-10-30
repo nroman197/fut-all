@@ -65,6 +65,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin_Events.aspx" />
+    <Content Include="Admin_Updates.aspx" />
+    <Content Include="Groups.aspx" />
+    <Content Include="Home.aspx" />
     <Content Include="Images\background2.png" />
     <Content Include="Images\background3.png" />
     <Content Include="Images\background4.png" />
@@ -73,17 +77,72 @@
     <Content Include="Images\logo0.png" />
     <Content Include="Images\logo1.png" />
     <Content Include="Images\logo2.png" />
+    <Content Include="Local_Tourn.aspx" />
+    <Content Include="Matches.aspx" />
+    <Content Include="Match_Stats.aspx" />
+    <Content Include="Qualifications.aspx" />
+    <Content Include="Qual_Tourn.aspx" />
     <Content Include="Styles\Default.css" />
     <Content Include="Styles\General.css" />
     <Content Include="Styles\navbar.css" />
     <Content Include="Styles\navbar2.css" />
     <Content Include="Styles\verticalmenu.css" />
+    <Content Include="Tourn_Cups.aspx" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
-    <Content Include="Admin.aspx" />
+    <Content Include="Admin_Inserts.aspx" />
     <Content Include="ws.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_Events.aspx.cs">
+      <DependentUpon>Admin_Events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Events.aspx.designer.cs">
+      <DependentUpon>Admin_Events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Updates.aspx.cs">
+      <DependentUpon>Admin_Updates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Updates.aspx.designer.cs">
+      <DependentUpon>Admin_Updates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Groups.aspx.cs">
+      <DependentUpon>Groups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Groups.aspx.designer.cs">
+      <DependentUpon>Groups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Local_Tourn.aspx.cs">
+      <DependentUpon>Local_Tourn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Local_Tourn.aspx.designer.cs">
+      <DependentUpon>Local_Tourn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Matches.aspx.cs">
+      <DependentUpon>Matches.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Matches.aspx.designer.cs">
+      <DependentUpon>Matches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Match_Stats.aspx.cs">
+      <DependentUpon>Match_Stats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Match_Stats.aspx.designer.cs">
+      <DependentUpon>Match_Stats.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -92,12 +151,33 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin.aspx.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
+    <Compile Include="Admin_Inserts.aspx.cs">
+      <DependentUpon>Admin_Inserts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin.aspx.designer.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
+    <Compile Include="Admin_Inserts.aspx.designer.cs">
+      <DependentUpon>Admin_Inserts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Qualifications.aspx.cs">
+      <DependentUpon>Qualifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Qualifications.aspx.designer.cs">
+      <DependentUpon>Qualifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Qual_Tourn.aspx.cs">
+      <DependentUpon>Qual_Tourn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Qual_Tourn.aspx.designer.cs">
+      <DependentUpon>Qual_Tourn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tourn_Cups.aspx.cs">
+      <DependentUpon>Tourn_Cups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tourn_Cups.aspx.designer.cs">
+      <DependentUpon>Tourn_Cups.aspx</DependentUpon>
     </Compile>
     <Compile Include="ws.asmx.cs">
       <DependentUpon>ws.asmx</DependentUpon>
