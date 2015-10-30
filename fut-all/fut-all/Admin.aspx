@@ -20,7 +20,7 @@
                     <li ><a href="#">Local Tournaments</a></li>
                     <li ><a href="#">Tournament Cups</a></li>
                     <li ><a runat="server" id="refadmin">
-                    <asp:Label runat="server" ID="lbladmin"></asp:Label>    
+                    <asp:Label runat="server" ID="lbladmin" Text="Admin"></asp:Label>    
                     </a></li>
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     <asp:ImageButton runat="server" ID="imgLogoHome" src="Images/logo0.png" />
@@ -32,13 +32,13 @@
                 <ul id="menu_adm" >
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     <li ><a runat="server" id="refsection1">
-                        <asp:Label runat="server" ID="lblSection1"></asp:Label>
+                        <asp:Label runat="server" ID="lblSection1" Text="Insert Info"></asp:Label>
                          </a></li>
                     <li ><a runat="server" id="refsection2">
-                        <asp:Label runat="server" ID="lblSection2"></asp:Label>
+                        <asp:Label runat="server" ID="lblSection2" Text="Update Info"></asp:Label>
                          </a></li>
                     <li ><a runat="server" id="refsection3">
-                        <asp:Label runat="server" ID="lblsection3"></asp:Label>
+                        <asp:Label runat="server" ID="lblsection3" Text="Events"></asp:Label>
                          </a></li>
                </ul>
             </nav>          

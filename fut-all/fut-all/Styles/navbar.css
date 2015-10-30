@@ -40,14 +40,14 @@
 }
 .navbar.align-center > ul {
   font-size: 0;
-  text-align: right;
+  text-align: center;
 }
 .navbar.align-center > ul > li {
   display: inline-block;
   float: none;
 }
 .navbar.align-right > ul > li {
-  float: right;
+  float: center;
 }
 .navbar.align-right > ul > li > a {
   margin-right: 0;
