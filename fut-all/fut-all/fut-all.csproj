@@ -80,6 +80,7 @@
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
     <Content Include="Admin.aspx" />
+    <Content Include="ws.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,6 +97,10 @@
     </Compile>
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ws.asmx.cs">
+      <DependentUpon>ws.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup />
