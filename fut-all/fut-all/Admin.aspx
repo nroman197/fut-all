@@ -23,7 +23,7 @@
                     <asp:Label runat="server" ID="lbladmin" Text="Admin"></asp:Label>    
                     </a></li>
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <asp:ImageButton runat="server" ID="imgLogoHome" src="Images/logo0.png" />
+                    <asp:ImageButton href="#" runat="server" ID="imgLogoHome" src="Images/logo0.png" />
                </ul>
             </nav>          
         </div>
@@ -194,7 +194,6 @@
             </asp:TableRow>
         </asp:Table>
     </div>
-
     </form>
 </body>
 </html>
