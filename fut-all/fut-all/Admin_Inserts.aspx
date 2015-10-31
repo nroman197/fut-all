@@ -248,7 +248,62 @@
                           </asp:TableRow>
                           <asp:TableRow runat="server">                              
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">        
-                                
+                                   <div>
+<asp:GridView ID="grvStudentDetails" runat="server" 
+                ShowFooter="True" AutoGenerateColumns="False"
+                CellPadding="4" ForeColor="#333333" 
+                GridLines="None">
+    <Columns>
+        <asp:BoundField DataField="RowNumber" HeaderText="SNo" />
+        <asp:TemplateField HeaderText="Student Name">
+            <ItemTemplate>
+                <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Student Age">
+            <ItemTemplate>
+                <asp:TextBox ID="txtAge" runat="server"></asp:TextBox>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Student Address">
+            <ItemTemplate>
+                <asp:TextBox ID="txtAddress" runat="server" 
+                   Height="55px" TextMode="MultiLine"></asp:TextBox>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Gender">
+            <ItemTemplate>
+                <asp:RadioButtonList ID="RBLGender" 
+                           runat="server" RepeatDirection="Horizontal">
+                    <asp:ListItem Value="M">Male</asp:ListItem>
+                    <asp:ListItem Value="F">Female</asp:ListItem>
+                </asp:RadioButtonList>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Qualification">
+            <ItemTemplate>
+                <asp:DropDownList ID="drpQualification" runat="server">
+                    <asp:ListItem Value="G">Graduate</asp:ListItem>
+                    <asp:ListItem Value="P">Post Graduate</asp:ListItem>
+                </asp:DropDownList>
+            </ItemTemplate>
+            <FooterStyle HorizontalAlign="Right" />
+            <FooterTemplate>
+                <asp:Button ID="ButtonAdd" runat="server" 
+                        Text="Add New Row"/>
+            </FooterTemplate>
+        </asp:TemplateField>
+        <asp:CommandField ShowDeleteButton="True" />
+    </Columns>
+    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+    <RowStyle BackColor="#EFF3FB" />
+    <EditRowStyle BackColor="#2461BF" />
+    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+    <AlternatingRowStyle BackColor="White" />
+</asp:GridView>
+                                    </div>
                               </asp:TableCell>                              
                           </asp:TableRow>
                       </asp:Table>
