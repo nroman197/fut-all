@@ -16,8 +16,18 @@ namespace fut_all
                 ddlContinents.Items.Add("-Select Continent-");
                 ddlConfederations.Items.Add("-Select Confederation-");
                 ddlPosition.Items.Add("-Select Position-");
+
             }
-            
+
+            // how to retrieve selected values
+            //int hola = 0;
+            //for (int i = 0; i < cbxTeamsPlayers.Items.Count; i++)
+            //{
+            //    if (cbxTeamsPlayers.Items[i].Selected)
+            //    {
+            //        hola++;
+            //    }
+            //}
         }
 
         protected void btnAddcontinent_Click(object sender, EventArgs e)
@@ -63,6 +73,26 @@ namespace fut_all
         protected void imgLogoHome_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("Home.aspx");
+        }
+
+        protected void ddlCathegory_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlType_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlTeamCountry_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlTeamStadium_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
