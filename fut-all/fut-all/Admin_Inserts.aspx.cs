@@ -20,6 +20,9 @@ namespace fut_all
                 LoadPositions();
                 LoadGenres();
                 LoadCountries();
+                LoadCathegories();
+                LoadTeamTypes();
+                LoadStadiums();
                 System.Data.DataTable tb = new System.Data.DataTable();  
               
                 // manage gridview
@@ -233,12 +236,47 @@ namespace fut_all
             ddlPlayerCountry.Items.Clear();
             ddlPlayerCountry.Items.Add("-Select Country-");
 
+            ddlTeamCountry.Items.Clear();
+            ddlTeamCountry.Items.Add("-Select Country-");
+
             List<string> theList = ws.Countries_Get();
 
             foreach (string g in theList)
             {
                 ddlPlayerCountry.Items.Add(g);
+                ddlTeamCountry.Items.Add(g);
             }
+        }
+
+        private void LoadCathegories()
+        {
+
+            ddlTeamCathegory.Items.Clear();
+            ddlTeamCathegory.Items.Add("-Select Cathegory-");
+            ddlTeamCathegory.Items.Add("Male");  // id 0
+            ddlTeamCathegory.Items.Add("Female"); // id 1
+        }
+
+        private void LoadTeamTypes()
+        {
+
+            ddlTeamType.Items.Clear();
+            ddlTeamType.Items.Add("-Select Type-");
+            ddlTeamType.Items.Add("National Team");  // id 0
+            ddlTeamType.Items.Add("Club"); // id 1
+        }
+
+        private void LoadStadiums()
+        {
+            ddlTeamStadium.Items.Clear();
+            ddlTeamStadium.Items.Add("-Select Stadium-");
+
+            //List<string> theList = ws.Stadiums_Get();
+
+            //foreach (string g in theList)
+            //{
+            //    ddlTeamStadium.Items.Add(g);
+            //}
         }
 
         //protected void eli_Click(object sender, EventArgs e)
