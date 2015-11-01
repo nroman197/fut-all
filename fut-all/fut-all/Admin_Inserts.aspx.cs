@@ -56,6 +56,7 @@ namespace fut_all
                     int theId = ws.Continent_Id_Get(ddlContinents.SelectedItem.Text);
                     ws.Confederation_Ins(txbConfederation.Text, theId);
                     txbConfederation.Text = "";
+                    LoadConfederations();
                 }
             }
         }
@@ -74,6 +75,7 @@ namespace fut_all
                     int theId = ws.Confederation_Id_Get(ddlConfederations.SelectedItem.Text);
                     ws.Country_Ins(txbCountry.Text, theId);
                     txbCountry.Text = "";
+                    LoadCountries();
                 }
             }
         }
@@ -85,11 +87,6 @@ namespace fut_all
                 ws.Stadium_Ins(txbStadium.Text);
                 txbStadium.Text = "";
             }
-        }
-
-        protected void btnAddPlayer_Click(object sender, EventArgs e)
-        {
-
         }
 
         protected void ddlPosition_TextChanged(object sender, EventArgs e)
@@ -157,9 +154,9 @@ namespace fut_all
                     || fuPicture.PostedFile.ContentType == "image/bmp" || fuPicture.PostedFile.ContentType == "image/jpg")
                 {
                     string filename = Path.GetFileName(fuPicture.FileName);
-                    fuPicture.SaveAs(@"C:\fut-all\players_pics" + filename);
+                    fuPicture.SaveAs(@"C:\fut-all\players_pics\" + filename);
 
-                    string  pphoto =  @"C:\fut-all\players_pics" + filename;
+                    string  pphoto =  @"C:\fut-all\players_pics\" + filename;
                     int cou_id = ws.Country_Id_Get(ddlPlayerCountry.SelectedItem.Text);
                     int pos_id = ws.Position_Id_Get(ddlPosition.SelectedItem.Text);
                     int gen_id = 0;
@@ -167,6 +164,14 @@ namespace fut_all
                         gen_id = 1;
                     }                
                     ws.Player_Ins(txbPName.Text, txbPLastName.Text, Convert.ToInt32(txbPPassport.Text), Convert.ToInt32(txbShirtNumber.Text), Convert.ToInt32(cou_id), pphoto, Convert.ToInt32(pos_id), Convert.ToInt32(gen_id));
+                    txbPName.Text = "";
+                    txbPLastName.Text = "";
+                    txbPPassport.Text = "";
+                    txbShirtNumber.Text = "";
+                    ddlPosition.SelectedIndex = 0;
+                    ddlGenrePlayer.SelectedIndex = 0;
+                    ddlPlayerCountry.SelectedIndex = 0;
+                    
                 }
             }
         }
