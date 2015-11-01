@@ -274,15 +274,6 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.Label Label9;
         
         /// <summary>
-        /// Control Label10.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label10;
-        
-        /// <summary>
         /// Control txbPName.
         /// </summary>
         /// <remarks>
@@ -301,13 +292,13 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.TextBox txbPLastName;
         
         /// <summary>
-        /// Control txbPPassport.
+        /// Control Label10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbPPassport;
+        protected global::System.Web.UI.WebControls.Label Label10;
         
         /// <summary>
         /// Control Label11.
@@ -319,22 +310,13 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.Label Label11;
         
         /// <summary>
-        /// Control Label12.
+        /// Control txbPPassport.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label12;
-        
-        /// <summary>
-        /// Control Label13.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label13;
+        protected global::System.Web.UI.WebControls.TextBox txbPPassport;
         
         /// <summary>
         /// Control txbShirtNumber.
@@ -346,6 +328,24 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.TextBox txbShirtNumber;
         
         /// <summary>
+        /// Control Label13.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label13;
+        
+        /// <summary>
+        /// Control Label12.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label12;
+        
+        /// <summary>
         /// Control ddlPosition.
         /// </summary>
         /// <remarks>
@@ -353,6 +353,24 @@ namespace fut_all {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPosition;
+        
+        /// <summary>
+        /// Control ddlGenrePlayer.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlGenrePlayer;
+        
+        /// <summary>
+        /// Control Label14.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label14;
         
         /// <summary>
         /// Control fuPicture.
@@ -364,13 +382,13 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.FileUpload fuPicture;
         
         /// <summary>
-        /// Control Label14.
+        /// Control btnAddPlayer.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label14;
+        protected global::System.Web.UI.WebControls.Button btnAddPlayer;
         
         /// <summary>
         /// Control Label15.
@@ -409,22 +427,13 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.TextBox txbFullName;
         
         /// <summary>
-        /// Control txbShortName.
+        /// Control txtShortName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txbShortName;
-        
-        /// <summary>
-        /// Control ddlCathegory.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCathegory;
+        protected global::System.Web.UI.WebControls.TextBox txtShortName;
         
         /// <summary>
         /// Control Label18.
@@ -445,6 +454,24 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.Label Label19;
         
         /// <summary>
+        /// Control ddlTeamCathegory.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTeamCathegory;
+        
+        /// <summary>
+        /// Control ddlTeamType.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTeamType;
+        
+        /// <summary>
         /// Control Label20.
         /// </summary>
         /// <remarks>
@@ -454,13 +481,13 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.Label Label20;
         
         /// <summary>
-        /// Control ddlType.
+        /// Control Label21.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlType;
+        protected global::System.Web.UI.WebControls.Label Label21;
         
         /// <summary>
         /// Control ddlTeamCountry.
@@ -481,21 +508,30 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.DropDownList ddlTeamStadium;
         
         /// <summary>
-        /// Control Label21.
+        /// Control Label23.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label21;
+        protected global::System.Web.UI.WebControls.Label Label23;
         
         /// <summary>
-        /// Control grvStudentDetails.
+        /// Control grvPlayers.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grvStudentDetails;
+        protected global::System.Web.UI.WebControls.GridView grvPlayers;
+        
+        /// <summary>
+        /// Control btnAddTeam.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddTeam;
     }
 }

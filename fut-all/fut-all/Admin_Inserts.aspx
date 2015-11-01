@@ -45,7 +45,7 @@
         </div>
         <div>        
         <br />
-        <asp:Table runat="server" BorderStyle="None" BackColor="White" Height="100%" Width="60%" HorizontalAlign="Center" CssClass="roundedChart">
+        <asp:Table runat="server" BorderStyle="None" BackColor="White" Height="100%" Width="50%" HorizontalAlign="Center" CssClass="roundedChart">
             <asp:TableRow runat ="server">
               <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
                   &nbsp&nbsp<asp:Label runat="server" ID="Label1" Text="Geography" Font-Size="Larger" CssClass="lblFont3" ></asp:Label><br /><br />
@@ -138,180 +138,194 @@
                   </asp:Panel>                  
               </asp:TableCell>               
             </asp:TableRow>
-            <asp:TableRow runat ="server">
-              <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
-                  &nbsp&nbsp<asp:Label runat="server" ID="Label7" Text="Players" Font-Size="Larger" CssClass="lblFont3" ></asp:Label><br /><br />
-                  <asp:Panel runat="server" CssClass="roundedChart2" BackColor="WhiteSmoke" Width="100%">
-                      <asp:Table runat="server">
-                          <asp:TableRow runat="server">                                                            
+
+            <asp:TableRow runat="server">
+                <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
+                    &nbsp&nbsp<asp:Label runat="server" ID="Label7" Text="Players" Font-Size="Larger" CssClass="lblFont3" ></asp:Label><br /><br />
+                    <asp:Panel runat="server" CssClass="roundedChart2" BackColor="WhiteSmoke" >
+                        <asp:Table runat="server">
+                           <asp:TableRow runat="server">                                                            
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
                                   <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label8" Text="Name" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
                               </asp:TableCell>
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
                                   <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label9" Text="Last Name" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
                               </asp:TableCell>
-                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
-                                  <br />&nbsp&nbsp&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label10" Text="Passport" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
-                              </asp:TableCell>
-                          </asp:TableRow>
-                          <asp:TableRow runat="server">                              
+                           </asp:TableRow>                          
+                           <asp:TableRow runat="server">                              
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
                                   &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txbPName" CssClass="txbClass" Text="" ></asp:TextBox>                                  
                               </asp:TableCell>
-                              <asp:TableCell runat="server" HorizontalAlign="Center" VerticalAlign="Bottom">
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
                                   &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txbPLastName" CssClass="txbClass" Text="" ></asp:TextBox>
-                              </asp:TableCell>
-                              <asp:TableCell runat="server" HorizontalAlign="Center" VerticalAlign="Bottom">
-                                  <asp:TextBox runat="server" ID="txbPPassport" CssClass="txbClass" Text="" ></asp:TextBox>
-                              </asp:TableCell>                              
-                          </asp:TableRow>
-                          <asp:TableRow runat="server">                                                            
+                              </asp:TableCell>                                               
+                           </asp:TableRow>
+                           <asp:TableRow>
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label10" Text="Passport" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
+                              </asp:TableCell>
+                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
                                   <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label11" Text="Shirt Number" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
+                              </asp:TableCell>                              
+                           </asp:TableRow>
+                           <asp:TableRow>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                  &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txbPPassport" CssClass="txbClass" Text="" ></asp:TextBox>
                               </asp:TableCell>
-                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
-                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label12" Text="Position" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
-                              </asp:TableCell>
-                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
-                                  <br />&nbsp&nbsp&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label13" Text="Photo" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
-                              </asp:TableCell>   
-                          </asp:TableRow>
-                          <asp:TableRow runat="server">                              
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
                                   &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txbShirtNumber" CssClass="txbClass" Text=""  TextMode="Number"></asp:TextBox>                                  
+                              </asp:TableCell>                             
+                           </asp:TableRow>
+                           <asp:TableRow>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label13" Text="Position" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
                               </asp:TableCell>
+                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label12" Text="Genre" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
+                              </asp:TableCell>
+                           </asp:TableRow>
+                           <asp:TableRow>                                                               
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
                                   &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlPosition" CssClass="ddl" OnTextChanged="ddlPosition_TextChanged"></asp:DropDownList>                                  
                               </asp:TableCell>
-                             <asp:TableCell runat="server" HorizontalAlign="Right" VerticalAlign="Bottom">
-                                 &nbsp&nbsp&nbsp&nbsp&nbsp<asp:FileUpload ID="fuPicture" runat="server" AllowMultiple="false" accept="image/*" />                                  
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlGenrePlayer" CssClass="ddl" OnTextChanged="ddlGenrePlayer_TextChanged"></asp:DropDownList>                                  
+                              </asp:TableCell>                                                           
+                           </asp:TableRow>
+                            <asp:TableRow>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label14" Text="Photo" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
                               </asp:TableCell>
-                          </asp:TableRow>
-                      </asp:Table>
-                      <br />                    
-                  </asp:Panel>                  
-              </asp:TableCell>               
+                            </asp:TableRow>
+                            <asp:TableRow>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                 &nbsp&nbsp&nbsp<asp:FileUpload ID="fuPicture" runat="server" AllowMultiple="false" accept="image/*"  Width="200px"/>                                  
+                              </asp:TableCell>
+                              <asp:TableCell>
+                                 &nbsp&nbsp&nbsp<asp:Button runat="server" ID="btnAddPlayer" CssClass="btn" Width="218px" Text="Create Player" OnClick="btnAddPlayer_Click1"/>
+                              </asp:TableCell>
+                            </asp:TableRow>
+                            <asp:TableRow>
+                                <asp:TableCell>
+                                    <br />
+                                </asp:TableCell>
+                            </asp:TableRow>                                                      
+                        </asp:Table>
+                    </asp:Panel>
+                </asp:TableCell>
             </asp:TableRow>
-            <asp:TableRow runat ="server">
-              <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
-                  &nbsp&nbsp<asp:Label runat="server" ID="Label14" Text="Teams" Font-Size="Larger" CssClass="lblFont3" ></asp:Label><br /><br />
-                  <asp:Panel runat="server" CssClass="roundedChart2" BackColor="WhiteSmoke" Width="100%">
-                      <asp:Table runat="server">
-                          <asp:TableRow runat="server">                                                            
+            <asp:TableRow runat="server">
+                <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
+                    &nbsp&nbsp<asp:Label runat="server" ID="Label15" Text="Teams" Font-Size="Larger" CssClass="lblFont3" ></asp:Label><br /><br />
+                    <asp:Panel runat="server" CssClass="roundedChart2" BackColor="WhiteSmoke" >
+                        <asp:Table runat="server">
+                           <asp:TableRow runat="server">                                                            
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
-                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label15" Text="Full Name" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label16" Text="Full Name" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
                               </asp:TableCell>
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
-                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label16" Text="Short Name" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label17" Text="Short Name" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
                               </asp:TableCell>
-                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
-                                  <br />&nbsp&nbsp&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label17" Text="Cathegory" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
-                              </asp:TableCell>
-                          </asp:TableRow>
-                          <asp:TableRow runat="server">                              
+                           </asp:TableRow>                          
+                           <asp:TableRow runat="server">                              
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
                                   &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txbFullName" CssClass="txbClass" Text="" ></asp:TextBox>                                  
                               </asp:TableCell>
-                              <asp:TableCell runat="server" HorizontalAlign="Center" VerticalAlign="Bottom">
-                                  &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txbShortName" CssClass="txbClass" Text="" ></asp:TextBox>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                  &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txtShortName" CssClass="txbClass" Text="" ></asp:TextBox>
+                              </asp:TableCell>                                               
+                           </asp:TableRow>
+                           <asp:TableRow>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label18" Text="Cathegory" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
                               </asp:TableCell>
-                              <asp:TableCell runat="server" HorizontalAlign="Center" VerticalAlign="Bottom">
-                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlCathegory" CssClass="ddl" OnTextChanged="ddlCathegory_TextChanged"></asp:DropDownList>                                                                    
+                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label19" Text="Type" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
                               </asp:TableCell>                              
-                          </asp:TableRow>
+                           </asp:TableRow>
+                           <asp:TableRow>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamCathegory" CssClass="ddl" OnTextChanged="ddlTeamCathegory_TextChanged"></asp:DropDownList>                                  
+                              </asp:TableCell>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                 &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamType" CssClass="ddl" OnTextChanged="ddlTeamType_TextChanged"></asp:DropDownList>                                  
+                              </asp:TableCell>                             
+                           </asp:TableRow>
+                           <asp:TableRow>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label20" Text="Country" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
+                              </asp:TableCell>
+                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label21" Text="Stadium" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
+                              </asp:TableCell>
+                           </asp:TableRow>
+                           <asp:TableRow>                                                               
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamCountry" CssClass="ddl" OnTextChanged="ddlTeamCountry_TextChanged1"></asp:DropDownList>                                  
+                              </asp:TableCell>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamStadium" CssClass="ddl" OnTextChanged="ddlTeamStadium_TextChanged1"></asp:DropDownList>                                  
+                              </asp:TableCell>                                                           
+                           </asp:TableRow>
+                            <asp:TableRow>
+                                <asp:TableCell>
+                                    <br />
+                                </asp:TableCell>
+                            </asp:TableRow>                                                      
+                        </asp:Table>
+                    </asp:Panel>
+                </asp:TableCell>
+            </asp:TableRow>            
+        </asp:Table>
+        <br />
+
+
+        <asp:Table runat="server" BorderStyle="None" BackColor="White" Height="100%" Width="50%" HorizontalAlign="Center" CssClass="roundedChart">
+           <asp:TableRow runat ="server">
+              <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">                  
+                  <asp:Panel runat="server" CssClass="roundedChart2" BackColor="WhiteSmoke" Width="100%" HorizontalAlign="Center">
+                      <asp:Table runat="server">
                           <asp:TableRow runat="server">                                                            
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
-                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label18" Text="Type" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
-                              </asp:TableCell>
-                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
-                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label19" Text="Country" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
-                              </asp:TableCell>
-                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
-                                  <br />&nbsp&nbsp&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label20" Text="Stadium" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
-                              </asp:TableCell>   
-                          </asp:TableRow>
-                          <asp:TableRow runat="server">                              
-                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
-                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlType" CssClass="ddl" OnTextChanged="ddlType_TextChanged"></asp:DropDownList>                                  
-                              </asp:TableCell>
-                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
-                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamCountry" CssClass="ddl" OnTextChanged="ddlTeamCountry_TextChanged"></asp:DropDownList>                                  
-                              </asp:TableCell>
-                             <asp:TableCell runat="server" HorizontalAlign="Right" VerticalAlign="Bottom">
-                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamStadium" CssClass="ddl" OnTextChanged="ddlTeamStadium_TextChanged"></asp:DropDownList>                                                                   
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label23" Text="Team's Players" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
                               </asp:TableCell>
                           </asp:TableRow>
                           <asp:TableRow runat="server">                              
-                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
-                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label21" Text="Team's Players" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
-                              </asp:TableCell>                              
-                          </asp:TableRow>
-                          <asp:TableRow runat="server">                              
-                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">        
-                                   <div>
-<asp:GridView ID="grvStudentDetails" runat="server" 
-                ShowFooter="True" AutoGenerateColumns="False"
-                CellPadding="4" ForeColor="#333333" 
-                GridLines="None">
-    <Columns>
-        <asp:BoundField DataField="RowNumber" HeaderText="SNo" />
-        <asp:TemplateField HeaderText="Student Name">
-            <ItemTemplate>
-                <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
-            </ItemTemplate>
-        </asp:TemplateField>
-        <asp:TemplateField HeaderText="Student Age">
-            <ItemTemplate>
-                <asp:TextBox ID="txtAge" runat="server"></asp:TextBox>
-            </ItemTemplate>
-        </asp:TemplateField>
-        <asp:TemplateField HeaderText="Student Address">
-            <ItemTemplate>
-                <asp:TextBox ID="txtAddress" runat="server" 
-                   Height="55px" TextMode="MultiLine"></asp:TextBox>
-            </ItemTemplate>
-        </asp:TemplateField>
-        <asp:TemplateField HeaderText="Gender">
-            <ItemTemplate>
-                <asp:RadioButtonList ID="RBLGender" 
-                           runat="server" RepeatDirection="Horizontal">
-                    <asp:ListItem Value="M">Male</asp:ListItem>
-                    <asp:ListItem Value="F">Female</asp:ListItem>
-                </asp:RadioButtonList>
-            </ItemTemplate>
-        </asp:TemplateField>
-        <asp:TemplateField HeaderText="Qualification">
-            <ItemTemplate>
-                <asp:DropDownList ID="drpQualification" runat="server">
-                    <asp:ListItem Value="G">Graduate</asp:ListItem>
-                    <asp:ListItem Value="P">Post Graduate</asp:ListItem>
-                </asp:DropDownList>
-            </ItemTemplate>
-            <FooterStyle HorizontalAlign="Right" />
-            <FooterTemplate>
-                <asp:Button ID="ButtonAdd" runat="server" 
-                        Text="Add New Row"/>
-            </FooterTemplate>
-        </asp:TemplateField>
-        <asp:CommandField ShowDeleteButton="True" />
-    </Columns>
-    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-    <RowStyle BackColor="#EFF3FB" />
-    <EditRowStyle BackColor="#2461BF" />
-    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-    <AlternatingRowStyle BackColor="White" />
-</asp:GridView>
-                                    </div>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">                                  
+                                  <asp:Table runat="server" HorizontalAlign="Center">
+                                      <asp:TableRow>
+                                          <asp:TableCell runat="server" Width="7px"></asp:TableCell>
+                                          <asp:TableCell>
+                                              <div  style="width: 170%; height: 300px; overflow: scroll">
+                                                  <asp:GridView ID="grvPlayers" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddl" HorizontalAlign="Center" Width="100%" >
+                                                   <Columns>
+                                                       <asp:TemplateField >
+                                                           <ItemTemplate>
+                                                               <asp:CheckBox runat="server" ID="chk" />
+                                                           </ItemTemplate>                                             
+                                                       </asp:TemplateField>
+                                                   </Columns>
+                                               </asp:GridView>  
+                                              </div>                                                                                                                         
+                                          </asp:TableCell>
+                                      </asp:TableRow>
+                                  </asp:Table> 
                               </asp:TableCell>                              
                           </asp:TableRow>
                       </asp:Table>
+                      <asp:Table runat="server" HorizontalAlign="Right">
+                          <asp:TableRow HorizontalAlign="Right" runat="server">
+                              <asp:TableCell HorizontalAlign="Right">
+                                  <asp:Button runat="server" ID="btnAddTeam" CssClass="btn" Width="218px" Text="Create Team"/>&nbsp&nbsp&nbsp&nbsp
+                              </asp:TableCell>                              
+                          </asp:TableRow>
+                      </asp:Table>
+                      <br />
+                      <br />
                       <br />                    
                   </asp:Panel>                  
               </asp:TableCell>               
             </asp:TableRow>
-
         </asp:Table>
     </div>
     </form>
