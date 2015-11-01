@@ -338,16 +338,24 @@
                               </asp:TableCell>                              
                           </asp:TableRow>
                       </asp:Table>
-                      <asp:Table runat="server" HorizontalAlign="Right">
-                          <asp:TableRow HorizontalAlign="Right" runat="server">
+                       <asp:Table runat="server" HorizontalAlign="Right">
+                          <asp:TableRow>
+                              <asp:TableCell>
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label24" Text="Flag or Logo" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
+                              </asp:TableCell>
+                          </asp:TableRow>
+                          <asp:TableRow HorizontalAlign="Left" runat="server">
+                              <asp:TableCell>
+                                  &nbsp&nbsp&nbsp<asp:FileUpload ID="fuFlag" runat="server" AllowMultiple="false" accept="image/*"  Width="200px"/>                                  
+                              </asp:TableCell>
                               <asp:TableCell HorizontalAlign="Right">
-                                  <asp:Button runat="server" ID="btnAddTeam" CssClass="btn" Width="218px" Text="Update Team" OnClick="btnAddTeam_Click"/>&nbsp&nbsp&nbsp&nbsp
+                                  <asp:Button runat="server" ID="btnAddTeam" CssClass="btn" Width="218px" Text="Create Team" OnClick="btnAddTeam_Click"/>&nbsp&nbsp&nbsp&nbsp
                               </asp:TableCell>                              
                           </asp:TableRow>
                       </asp:Table>
-                      <br />
-                      <br />
-                      <br />                    
+                      <br /><br />
+                      <br /><br /><br />
+                      <br />                     
                   </asp:Panel>                  
               </asp:TableCell>               
             </asp:TableRow>
