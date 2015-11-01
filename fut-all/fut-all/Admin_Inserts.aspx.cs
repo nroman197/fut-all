@@ -22,18 +22,7 @@ namespace fut_all
                 LoadCountries();
                 LoadCathegories();
                 LoadTeamTypes();
-                LoadStadiums();
-                System.Data.DataTable tb = new System.Data.DataTable();  
-              
-                // manage gridview
-                tb.Columns.Add("Name");
-                tb.Columns.Add("Last Name");                
-                tb.Columns.Add("Position");
-                tb.Columns.Add("Country");
-                tb.Columns.Add("#");
-                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
-                grvPlayers.DataSource = tb;
-                grvPlayers.DataBind();
+                LoadStadiums();                
             }
         }
 
@@ -102,11 +91,6 @@ namespace fut_all
             Response.Redirect("Home.aspx");
         }
 
-        protected void ddlCathegory_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void ddlType_TextChanged(object sender, EventArgs e)
         {
 
@@ -144,6 +128,14 @@ namespace fut_all
 
         protected void ddlTeamCathegory_TextChanged(object sender, EventArgs e)
         {
+            if (ddlTeamCathegory.SelectedIndex == 1)
+            {
+                LoadPlayers(0);
+            }
+            else if (ddlTeamCathegory.SelectedIndex == 2)
+            {
+                LoadPlayers(1);
+            }
 
         }
 
@@ -181,7 +173,34 @@ namespace fut_all
 
         protected void btnAddTeam_Click(object sender, EventArgs e)
         {
+            if(txbFullName.Text.Length > 0 && txtShortName.Text.Length > 0 && ddlTeamCathegory.SelectedIndex > 0
+                && ddlTeamType.Text.Length > 0 && ddlTeamCountry.Text.Length > 0 && ddlTeamStadium.SelectedIndex > 0 && fuFlag.HasFile)
+            {
 
+                if (fuFlag.PostedFile.ContentType == "image/jpeg" || fuFlag.PostedFile.ContentType == "image/png"
+                    || fuFlag.PostedFile.ContentType == "image/bmp" || fuFlag.PostedFile.ContentType == "image/jpg")
+                {
+                    string filename = Path.GetFileName(fuFlag.FileName);
+                    fuFlag.SaveAs(@"C:\fut-all\teams_flags\" + filename);
+
+                    string pphoto = @"C:\fut-all\teams_flags\" + filename;
+
+                    int counId = ws.Country_Id_Get(ddlTeamCountry.SelectedItem.Text);
+                    int staId = ws.Stadium_Id_Get(ddlTeamStadium.SelectedItem.Text);
+                    int cat = 0;
+                    int type = 0;
+
+                    if(ddlTeamCathegory.SelectedIndex == 2){
+                        cat = 1;
+                    }
+                    if(ddlTeamType.SelectedIndex == 2){
+                        type = 1;
+                    }
+
+                    ws.Team_Ins(txbFullName.Text.Trim(), txtShortName.Text.Trim(), cat, type, counId, staId, pphoto);
+                }
+                
+            }
         }
 
         private void LoadContinents()
@@ -271,12 +290,64 @@ namespace fut_all
             ddlTeamStadium.Items.Clear();
             ddlTeamStadium.Items.Add("-Select Stadium-");
 
-            //List<string> theList = ws.Stadiums_Get();
+            List<string> theList = ws.Stadiums_Get();
 
-            //foreach (string g in theList)
-            //{
-            //    ddlTeamStadium.Items.Add(g);
-            //}
+            foreach (string g in theList)
+            {
+                ddlTeamStadium.Items.Add(g);
+            }
+        }
+
+        private void LoadPlayers(int pgenre)
+        {
+            int counter = 0;
+            List<string> theList = ws.Players_Get(pgenre);
+            string nameplayer = string.Empty;
+            string lastnameplayer = string.Empty;
+            string tshirt = string.Empty;
+            string positionplayer = string.Empty;
+            string countryplayer = string.Empty;
+
+            System.Data.DataTable tb = new System.Data.DataTable();
+
+            // manage gridview
+            tb.Columns.Add("Name");
+            tb.Columns.Add("Last Name");
+            tb.Columns.Add("Position");
+            tb.Columns.Add("Country");
+            tb.Columns.Add("#");
+
+            foreach (string g in theList)
+            {
+                if(counter == 0)
+                {
+                    nameplayer = g;
+                }
+                else if(counter == 1)
+                {
+                    lastnameplayer = g;
+                }
+                else if(counter == 2)
+                {
+                    tshirt = g;
+                }
+                else if(counter == 4)
+                {
+                    countryplayer = g;
+                }
+                else if(counter == 6)
+                {
+                    positionplayer = g;
+                    tb.Rows.Add(nameplayer, lastnameplayer, positionplayer, countryplayer, tshirt);
+                    counter = -1;
+                }
+
+                counter++;
+            }
+
+            
+            grvPlayers.DataSource = tb;
+            grvPlayers.DataBind();
         }
 
         //protected void eli_Click(object sender, EventArgs e)

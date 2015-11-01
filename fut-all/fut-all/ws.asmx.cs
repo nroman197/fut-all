@@ -20,7 +20,7 @@ namespace fut_all
 
         private string ConnectionString()
         {
-            return "Data Source=KIM;Initial Catalog=FUTALL;User ID=adm;Password=adm";
+            return "Data Source=LAPTOP-3Q31SCMK;Initial Catalog=FUTALL;User ID=adm;Password=adm";
         }
 
         [WebMethod]
@@ -125,7 +125,6 @@ namespace fut_all
 
             return theId;
         }
-
 
         [WebMethod]
         public void Confederation_Ins(string pname, int pid)
@@ -277,7 +276,6 @@ namespace fut_all
 
             return theId;
         }
-
 
         [WebMethod]
         public void Continent_Upd(string pname, int pid)
@@ -478,8 +476,6 @@ namespace fut_all
             return theList;
         }
 
-
-
         [WebMethod]
         public int Stadium_Id_Get(string pname)
         {
@@ -537,6 +533,63 @@ namespace fut_all
 
             return theId;
         }
+
+        [WebMethod]
+        public List<string> Players_Get(int pgenre)
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "Players_Get " + Convert.ToString(pgenre);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0]));
+                theList.Add(Convert.ToString(reader[1]));
+                theList.Add(Convert.ToString(reader[2]));
+                theList.Add(Convert.ToString(reader[3]));
+                theList.Add(Convert.ToString(reader[4]));
+                theList.Add(Convert.ToString(reader[5]));
+                theList.Add(Convert.ToString(reader[6]));
+
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
+        }
+
+        [WebMethod]
+        public void Team_Ins(string pfullname, string pshortname, int pcat, int ptype, int pcountryId, int pstadiumId, string pphoto)
+        {
+            string queryString = "spTeam_Ins '" + pshortname + "' , '" + pfullname + "' , "+ Convert.ToString(ptype) 
+                +", " + Convert.ToString(pcat) + ", " + Convert.ToString(pstadiumId) + ", " + Convert.ToString(pcountryId) +
+                ", '" + pphoto + "'";
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                reader1.Close();
+                connection2.Close();
+            }
+
+        }
+
 
     }
 

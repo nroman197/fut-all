@@ -256,7 +256,7 @@
                            </asp:TableRow>
                            <asp:TableRow>
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
-                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamCathegory" CssClass="ddl" OnTextChanged="ddlTeamCathegory_TextChanged"></asp:DropDownList>                                  
+                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamCathegory" CssClass="ddl" OnTextChanged="ddlTeamCathegory_TextChanged" AutoPostBack="true"></asp:DropDownList>                                  
                               </asp:TableCell>
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamType" CssClass="ddl" OnTextChanged="ddlTeamType_TextChanged"></asp:DropDownList>                                  
@@ -307,7 +307,7 @@
                                       <asp:TableRow>
                                           <asp:TableCell runat="server" Width="7px"></asp:TableCell>
                                           <asp:TableCell>
-                                              <div  style="width: 170%; height: 300px; overflow: scroll">
+                                              <div  style="width: 150%; height: 300px; overflow: scroll">
                                                   <asp:GridView ID="grvPlayers" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddl" HorizontalAlign="Center" Width="100%" >
                                                    <Columns>
                                                        <asp:TemplateField >
