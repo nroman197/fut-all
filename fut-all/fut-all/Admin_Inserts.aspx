@@ -170,7 +170,7 @@
                            </asp:TableRow>
                            <asp:TableRow>
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
-                                  &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txbPPassport" CssClass="txbClass" Text="" ></asp:TextBox>
+                                  &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txbPPassport" CssClass="txbClass" Text="" TextMode="Number" ></asp:TextBox>
                               </asp:TableCell>
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
                                   &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txbShirtNumber" CssClass="txbClass" Text=""  TextMode="Number"></asp:TextBox>                                  
@@ -196,14 +196,25 @@
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
                                   <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label14" Text="Photo" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
                               </asp:TableCell>
+                                <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label22" Text="Country" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
+                              </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
                                  &nbsp&nbsp&nbsp<asp:FileUpload ID="fuPicture" runat="server" AllowMultiple="false" accept="image/*"  Width="200px"/>                                  
                               </asp:TableCell>
                               <asp:TableCell>
-                                 &nbsp&nbsp&nbsp<asp:Button runat="server" ID="btnAddPlayer" CssClass="btn" Width="218px" Text="Create Player" OnClick="btnAddPlayer_Click1"/>
+                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlPlayerCountry" CssClass="ddl" ></asp:DropDownList>
+                                  <br />                                                                   
                               </asp:TableCell>
+                            </asp:TableRow>
+                            <asp:TableRow>
+                                <asp:TableCell><br /></asp:TableCell>
+                                <asp:TableCell>
+                                <br />
+                                &nbsp&nbsp&nbsp<asp:Button runat="server" ID="btnAddPlayer" CssClass="btn" Width="218px" Text="Create Player" OnClick="btnAddPlayer_Click1"/>
+                                </asp:TableCell>
                             </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell>
@@ -316,7 +327,7 @@
                       <asp:Table runat="server" HorizontalAlign="Right">
                           <asp:TableRow HorizontalAlign="Right" runat="server">
                               <asp:TableCell HorizontalAlign="Right">
-                                  <asp:Button runat="server" ID="btnAddTeam" CssClass="btn" Width="218px" Text="Create Team"/>&nbsp&nbsp&nbsp&nbsp
+                                  <asp:Button runat="server" ID="btnAddTeam" CssClass="btn" Width="218px" Text="Create Team" OnClick="btnAddTeam_Click"/>&nbsp&nbsp&nbsp&nbsp
                               </asp:TableCell>                              
                           </asp:TableRow>
                       </asp:Table>
