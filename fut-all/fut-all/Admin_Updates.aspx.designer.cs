@@ -157,13 +157,13 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control ddlContinents.
+        /// Control ddlConfederations.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlContinents;
+        protected global::System.Web.UI.WebControls.DropDownList ddlConfederations;
         
         /// <summary>
         /// Control txbConfederation.
@@ -193,13 +193,13 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Control ddlConfederations.
+        /// Control ddlCountries.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlConfederations;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCountries;
         
         /// <summary>
         /// Control txbCountry.
@@ -400,6 +400,15 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.Label Label14;
         
         /// <summary>
+        /// Control Label22.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label22;
+        
+        /// <summary>
         /// Control fuPicture.
         /// </summary>
         /// <remarks>
@@ -407,6 +416,15 @@ namespace fut_all {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fuPicture;
+        
+        /// <summary>
+        /// Control ddlPlayerCountry.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlPlayerCountry;
         
         /// <summary>
         /// Control btnAddPlayer.
