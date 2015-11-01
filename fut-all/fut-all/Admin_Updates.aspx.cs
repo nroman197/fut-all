@@ -11,7 +11,58 @@ namespace fut_all
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                System.Data.DataTable tb = new System.Data.DataTable();
+                tb.Columns.Add("Name");
+                tb.Columns.Add("Last Name");
+                tb.Columns.Add("Position");
+                tb.Columns.Add("Country");
+                tb.Columns.Add("#");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "1");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "1");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "1");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "8");
+                tb.Rows.Add("Kimberly", "Cordero", "Middle Field", "Costa Rica", "1");
+                grvPlayers.DataSource = tb;
+                grvPlayers.DataBind();
+            }
         }
 
         protected void imgLogoHome_Click(object sender, ImageClickEventArgs e)
@@ -100,6 +151,41 @@ namespace fut_all
         }
 
         protected void addPlayer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlContinent_TextChanged1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlGenrePlayer_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAddPlayer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlTeamCathegory_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlTeamType_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlTeamCountry_TextChanged1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlTeamStadium_TextChanged1(object sender, EventArgs e)
         {
 
         }

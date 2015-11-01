@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Admin Inserts</title>
     <link href="Styles/General.css" rel="stylesheet" />
     <link href="Styles/navbar.css" rel="stylesheet" />
     <link href="Styles/navbar2.css" rel="stylesheet" />
