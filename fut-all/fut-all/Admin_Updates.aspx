@@ -104,7 +104,7 @@
                           </asp:TableRow>
                           <asp:TableRow runat="server">                              
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
-                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlCountries" CssClass="ddl" OnTextChanged="ddlCountry_TextChanged"></asp:DropDownList>
+                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlCountries" CssClass="ddl" OnTextChanged="ddlCountries_TextChanged"></asp:DropDownList>
                                   &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txbCountry" CssClass="txbClass" Text="" ></asp:TextBox>
                               </asp:TableCell>
                               <asp:TableCell runat="server" HorizontalAlign="Center" VerticalAlign="Bottom">
@@ -241,7 +241,7 @@
                         <asp:Table runat="server">
                             <asp:TableRow runat="server">
                                 <asp:TableCell runat="server">
-                                    &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamname" CssClass="ddl" OnTextChanged="ddlTeamName_TextChanged"></asp:DropDownList>
+                                    &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamname" CssClass="ddl" OnTextChanged="ddlTeamName_TextChanged" AutoPostBack="true"></asp:DropDownList>
                                 </asp:TableCell>
                             </asp:TableRow>
                            <asp:TableRow runat="server">                                                            
@@ -270,7 +270,7 @@
                            </asp:TableRow>
                            <asp:TableRow>
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
-                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamCathegory" CssClass="ddl" OnTextChanged="ddlTeamCathegory_TextChanged"></asp:DropDownList>                                  
+                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamCathegory" CssClass="ddl" OnTextChanged="ddlTeamCathegory_TextChanged" AutoPostBack="true"></asp:DropDownList>                                  
                               </asp:TableCell>
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamType" CssClass="ddl" OnTextChanged="ddlTeamType_TextChanged"></asp:DropDownList>                                  
@@ -286,10 +286,10 @@
                            </asp:TableRow>
                            <asp:TableRow>                                                               
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
-                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamCountry" CssClass="ddl" OnTextChanged="ddlTeamCountry_TextChanged1"></asp:DropDownList>                                  
+                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamCountry" CssClass="ddl" OnTextChanged="ddlTeamCountry_TextChanged"></asp:DropDownList>                                  
                               </asp:TableCell>
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
-                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamStadium" CssClass="ddl" OnTextChanged="ddlTeamStadium_TextChanged1"></asp:DropDownList>                                  
+                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamStadium" CssClass="ddl" OnTextChanged="ddlTeamStadium_TextChanged"></asp:DropDownList>                                  
                               </asp:TableCell>                                                           
                            </asp:TableRow>
                             <asp:TableRow>
@@ -349,7 +349,7 @@
                                   &nbsp&nbsp&nbsp<asp:FileUpload ID="fuFlag" runat="server" AllowMultiple="false" accept="image/*"  Width="200px"/>                                  
                               </asp:TableCell>
                               <asp:TableCell HorizontalAlign="Right">
-                                  <asp:Button runat="server" ID="btnAddTeam" CssClass="btn" Width="218px" Text="Create Team" OnClick="btnAddTeam_Click"/>&nbsp&nbsp&nbsp&nbsp
+                                  <asp:Button runat="server" ID="btnAddTeam" CssClass="btn" Width="218px" Text="Update Team" OnClick="btnAddTeam_Click"/>&nbsp&nbsp&nbsp&nbsp
                               </asp:TableCell>                              
                           </asp:TableRow>
                       </asp:Table>

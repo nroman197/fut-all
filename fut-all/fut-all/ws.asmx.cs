@@ -567,6 +567,39 @@ namespace fut_all
             return list_playerinfo;
         }
 
+
+        [WebMethod]
+        public List<string> TeamInfo_Get(int pteam_id)
+        {
+            List<string> list_pteaminfo = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+
+            string queryString = "fnGetTeamInfo" + " " + Convert.ToString(pteam_id);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                list_pteaminfo.Add(Convert.ToString(reader[0])); // full name
+                list_pteaminfo.Add(Convert.ToString(reader[1])); // short name
+                list_pteaminfo.Add(Convert.ToString(reader[2])); // cathegory(isWomen)
+                list_pteaminfo.Add(Convert.ToString(reader[3])); // type(isClub)
+                list_pteaminfo.Add(Convert.ToString(reader[4])); // countryname
+                list_pteaminfo.Add(Convert.ToString(reader[5])); // stadiumname
+                list_pteaminfo.Add(Convert.ToString(reader[6])); // flag
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return list_pteaminfo;
+        }
         [WebMethod]
         public int Stadium_Id_Get(string pname)
         {
@@ -624,6 +657,9 @@ namespace fut_all
 
             return theId;
         }
+
+
+       
 
         [WebMethod]
         public List<string> Players_Get(int pgenre)
@@ -705,6 +741,51 @@ namespace fut_all
 
 
         [WebMethod]
+        public int Team_Upd(int pteamid, string pfullname, string pshortname, int pcat, int ptype, int pcountryId, int pstadiumId, string pphoto)
+        {
+            string queryString = "spTeam_Upd " + pteamid + "," +  "'" + pshortname + "' , '" + pfullname + "' , " + Convert.ToString(ptype)
+                + ", " + Convert.ToString(pcat) + ", " + Convert.ToString(pstadiumId) + ", " + Convert.ToString(pcountryId) +
+                ", '" + pphoto + "'";
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                reader1.Close();
+                connection2.Close();
+            }
+
+            queryString = "select max(team_id) from team";
+            int teamid = 0;
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    teamid = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return teamid;
+        }
+
+        [WebMethod]
         public int Player_Id_Get(string pname, string plname)
         {
             int plaId = 0;
@@ -734,9 +815,58 @@ namespace fut_all
         }
 
         [WebMethod]
+        public int Team_Id_Get(string pname)
+        {
+            int plaId = 0;
+            string queryString = "select team_id from team where name = '" + pname + "'";
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    plaId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return plaId;
+        }
+
+        [WebMethod]
         public void PlayerxTeam_Ins(int idplayer, int idteam)
         {
             string queryString = "spPlayerxTeam_Ins " + Convert.ToString(idplayer) + ", " + Convert.ToString(idteam);
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                reader1.Close();
+                connection2.Close();
+            }
+        }
+
+        [WebMethod]
+        public void PlayerxTeam_Upd(int idplayer, int idteam)
+        {
+            string queryString = "spPlayerxTeam_Upd " + Convert.ToString(idplayer) + ", " + Convert.ToString(idteam);
 
             string connection1 = ConnectionString();
 
