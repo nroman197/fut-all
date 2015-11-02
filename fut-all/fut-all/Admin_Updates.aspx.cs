@@ -33,6 +33,7 @@ namespace fut_all
                 LoadStadiums();
                 LoadPlayers();
                 LoadTeams();
+                
 
 
             }
@@ -146,6 +147,14 @@ namespace fut_all
             }
         }
 
+        //Load the player genre
+        private void LoadPlayerGenre()
+        {
+            ddlGenrePlayer.Items.Clear();
+            ddlGenrePlayer.Items.Add("-Select Genre-");
+            ddlGenrePlayer.Items.Add("Male");  // id 0
+            ddlGenrePlayer.Items.Add("Female"); // id 1
+        }
         //LoadCategory
         private void LoadTeamCategory()
         {
@@ -301,18 +310,67 @@ namespace fut_all
 
         protected void ddlPlayername_TextChanged(object sender, EventArgs e)
         {
+            LoadPosition();
+            LoadPlayerCountry();
+            LoadPlayerGenre();
           int idPlayer = ws.Player_Id_Get(ddlPlayername.SelectedItem.Text);
           List<string> list_player = ws.PlayerInfo_Get(idPlayer); // returns list including 8 attributes (see in ws function)
+           string name = list_player[0];
+            string lastname = list_player[1];
+            string passport = list_player[2];
+            string shirtnumber = list_player[3];
+            string nameposition = list_player[4];
+            string genre = list_player[5];
+            string photo = list_player[6];
+            string namecountry = list_player[7];
            txbPName.Text = list_player[0]; //name
            txbPLastName.Text = list_player[1]; //last name
            txbPPassport.Text = list_player[2]; //passport
            txbShirtNumber.Text = list_player[3]; //shirt number
-           ddlPosition.SelectedIndex = Convert.ToInt32(list_player[4]); //position name
-           ddlGenrePlayer.SelectedIndex = Convert.ToInt32(list_player[5]);//genre
-           //fuPicture.Fi = Convert.ToString(list_player[6]);
-           ddlPlayerCountry.SelectedIndex = Convert.ToInt32(list_player[6]);//country name
 
-              
+           int country_id = ws.Country_Id_Get(namecountry);
+           int position_id = ws.Position_Id_Get(nameposition);
+
+           if (Convert.ToBoolean(genre) == false)
+           {
+               ddlGenrePlayer.SelectedIndex = 1;
+           }
+           else
+           {
+               ddlGenrePlayer.SelectedIndex = 2;
+           }
+
+           int minvalue = 0;
+           int maxvalue = ddlPlayerCountry.Items.Count;
+           int indexvalue = 0;
+
+           while (minvalue < maxvalue)
+           {
+               if (namecountry == ddlPlayerCountry.Items[minvalue].Text)
+               {
+                   indexvalue = minvalue;
+               }
+
+               minvalue++;
+           }
+
+           ddlPlayerCountry.SelectedIndex = indexvalue;
+
+           int minvalue1 = 0;
+           int maxvalue1 = ddlPosition.Items.Count;
+           int indexvalue1 = 0;
+
+           while (minvalue1 < maxvalue1)
+           {
+               if (nameposition == ddlPosition.Items[minvalue1].Text)
+               {
+                   indexvalue1 = minvalue1;
+               }
+
+               minvalue1++;
+           }
+
+           ddlPosition.SelectedIndex = indexvalue1;
               
            
          
@@ -340,7 +398,69 @@ namespace fut_all
 
         protected void ddlTeamName_TextChanged(object sender, EventArgs e)
         {
+            LoadPosition();
+            LoadPlayerCountry();
+            LoadPlayerGenre();
+            int idPlayer = ws.Player_Id_Get(ddlPlayername.SelectedItem.Text);
+            List<string> list_player = ws.PlayerInfo_Get(idPlayer); // returns list including 8 attributes (see in ws function)
+            string name = list_player[0];
+            string lastname = list_player[1];
+            string passport = list_player[2];
+            string shirtnumber = list_player[3];
+            string nameposition = list_player[4];
+            string genre = list_player[5];
+            string photo = list_player[6];
+            string namecountry = list_player[7];
+            txbPName.Text = list_player[0]; //name
+            txbPLastName.Text = list_player[1]; //last name
+            txbPPassport.Text = list_player[2]; //passport
+            txbShirtNumber.Text = list_player[3]; //shirt number
 
+            int country_id = ws.Country_Id_Get(namecountry);
+            int position_id = ws.Position_Id_Get(nameposition);
+
+            if (Convert.ToBoolean(genre) == false)
+            {
+                ddlGenrePlayer.SelectedIndex = 1;
+            }
+            else
+            {
+                ddlGenrePlayer.SelectedIndex = 2;
+            }
+
+            int minvalue = 0;
+            int maxvalue = ddlPlayerCountry.Items.Count;
+            int indexvalue = 0;
+
+            while (minvalue < maxvalue)
+            {
+                if (namecountry == ddlPlayerCountry.Items[minvalue].Text)
+                {
+                    indexvalue = minvalue;
+                }
+
+                minvalue++;
+            }
+
+            ddlPlayerCountry.SelectedIndex = indexvalue;
+
+            int minvalue1 = 0;
+            int maxvalue1 = ddlPosition.Items.Count;
+            int indexvalue1 = 0;
+
+            while (minvalue1 < maxvalue1)
+            {
+                if (nameposition == ddlPosition.Items[minvalue1].Text)
+                {
+                    indexvalue1 = minvalue1;
+                }
+
+                minvalue1++;
+            }
+
+            ddlPosition.SelectedIndex = indexvalue1;
+              
+           
         }
 
         protected void addPlayer_Click(object sender, EventArgs e)
@@ -366,7 +486,6 @@ namespace fut_all
             }
             else
             {
-              
                 if (txbPName.Text.Length > 0 && txbPLastName.Text.Length > 0 && txbPPassport.Text.Length > 0 && txbShirtNumber.Text.Length > 0
                     && ddlPosition.SelectedIndex > 0 && fuPicture.HasFile && ddlGenrePlayer.SelectedIndex > 0 &&
                     ddlPlayerCountry.SelectedIndex > 0)
@@ -380,13 +499,13 @@ namespace fut_all
                         string pphoto = @"C:\fut-all\players_pics\" + filename;
                         int playercountry_id = ws.Country_Id_Get(ddlPlayerCountry.SelectedItem.Text);
                         int position_id = ws.Position_Id_Get(ddlPosition.SelectedItem.Text);
-                       // int player_id = ws.Player_Id_Get(ddlPlayername.SelectedItem.Text);
+                        int player_id = ws.Player_Id_Get(ddlPlayername.SelectedItem.Text);
                         int gen_id = 0;
                         if (ddlGenrePlayer.SelectedIndex == 2)
                         {
                             gen_id = 1;
                         }
-                        // ws.Player_Upd(ConvertToInt32(player_id),txbPName.Text,txbPLastName.Text,Convert.ToInt32(txbPPassport.Text), Convert.ToInt32(txbShirtNumber.Text), ConvertToInt32(playercountry_id), pphoto , ConvertToInt32(position_id), ConvertToInt32(genreid));
+                        ws.Player_Upd(Convert.ToInt32(player_id),txbPName.Text,txbPLastName.Text,Convert.ToInt32(txbPPassport.Text), Convert.ToInt32(txbShirtNumber.Text), Convert.ToInt32(playercountry_id), pphoto , Convert.ToInt32(position_id), Convert.ToInt32(gen_id));
                         txbPName.Text = "";
                         txbPLastName.Text = "";
                         txbPPassport.Text = "";
@@ -394,6 +513,8 @@ namespace fut_all
                         ddlPosition.SelectedIndex = 0;
                         ddlGenrePlayer.SelectedIndex = 0;
                         ddlPlayername.SelectedIndex = 0;
+
+                        LoadPlayers();
                     }
                 }
             } 

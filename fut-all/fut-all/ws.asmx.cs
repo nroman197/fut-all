@@ -20,7 +20,7 @@ namespace fut_all
 
         private string ConnectionString()
         {
-            return "Data Source=LAPTOP-3Q31SCMK;Initial Catalog=FUTALL;User ID=adm;Password=adm";
+            return "Data Source=KIM;Initial Catalog=FUTALL;User ID=adm;Password=adm";
         }
 
         [WebMethod]
@@ -480,7 +480,10 @@ namespace fut_all
         public int Player_Id_Get(string pname)
         {
             int theId = 0;
-            string queryString = "select player_id from player where name = '" + pname + "lastname' ";
+            string[] text = pname.Split(' ');
+            string name = text[0];
+            string lastname = text[1];
+            string queryString = "select player_id from player where name = '" + name + "'and last_name = '" + lastname +"'";
 
             string connection1 = ConnectionString();
 
@@ -504,7 +507,30 @@ namespace fut_all
 
             return theId;
         }
-     
+
+        [WebMethod]
+        public void Player_Upd(int idplayer,string pname, string plastname, int ppassport, int pshirt, int pcountryId, string pphoto, int ppositionId, int pgenre)
+        {
+            string queryString = "spPlayer_Upd "+ idplayer + "," + "'" + pname + "' , '" + plastname + "' , " + Convert.ToString(pshirt) + " , "
+                + Convert.ToString(ppassport) + ", " + Convert.ToString(pcountryId) + ", '"
+                + pphoto + "' , " + Convert.ToString(ppositionId) + ", " + Convert.ToString(pgenre);
+
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                reader1.Close();
+                connection2.Close();
+            }
+
+        }
 
         [WebMethod]
         public List<string> PlayerInfo_Get(int pplayer_id)
@@ -513,7 +539,7 @@ namespace fut_all
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionString();
 
-            string queryString = "select * from table(fnGetPlayerInfo(" + Convert.ToString(pplayer_id);
+            string queryString = "fnGetPlayerInfo" + " " + Convert.ToString(pplayer_id);
 
             SqlCommand command = connection.CreateCommand();
             command.CommandTimeout = 3600;
