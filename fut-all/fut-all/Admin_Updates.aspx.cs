@@ -301,7 +301,21 @@ namespace fut_all
 
         protected void ddlPlayername_TextChanged(object sender, EventArgs e)
         {
+          int idPlayer = ws.Player_Id_Get(ddlPlayername.SelectedItem.Text);
+          List<string> list_player = ws.PlayerInfo_Get(idPlayer); // returns list including 8 attributes (see in ws function)
+           txbPName.Text = list_player[0]; //name
+           txbPLastName.Text = list_player[1]; //last name
+           txbPPassport.Text = list_player[2]; //passport
+           txbShirtNumber.Text = list_player[3]; //shirt number
+           ddlPosition.SelectedIndex = Convert.ToInt32(list_player[4]); //position name
+           ddlGenrePlayer.SelectedIndex = Convert.ToInt32(list_player[5]);//genre
+           //fuPicture.Fi = Convert.ToString(list_player[6]);
+           ddlPlayerCountry.SelectedIndex = Convert.ToInt32(list_player[6]);//country name
+
+              
+              
            
+         
         }
 
         protected void ddlTeamStadium_TextChanged(object sender, EventArgs e)
@@ -352,9 +366,7 @@ namespace fut_all
             }
             else
             {
-                LoadPosition();
-                LoadGenres();
-                LoadPlayerCountry();
+              
                 if (txbPName.Text.Length > 0 && txbPLastName.Text.Length > 0 && txbPPassport.Text.Length > 0 && txbShirtNumber.Text.Length > 0
                     && ddlPosition.SelectedIndex > 0 && fuPicture.HasFile && ddlGenrePlayer.SelectedIndex > 0 &&
                     ddlPlayerCountry.SelectedIndex > 0)

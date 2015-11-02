@@ -20,7 +20,7 @@ namespace fut_all
 
         private string ConnectionString()
         {
-            return "Data Source=LAPTOP-3Q31SCMK;Initial Catalog=FUTALL;User ID=adm;Password=adm";
+            return "Data Source=KIM;Initial Catalog=FUTALL;User ID=adm;Password=adm";
         }
 
         [WebMethod]
@@ -474,6 +474,71 @@ namespace fut_all
             connection.Close();
 
             return theList;
+        }
+
+        [WebMethod]
+        public int Player_Id_Get(string pname)
+        {
+            int theId = 0;
+            string queryString = "select player_id from player where name = '" + pname + "lastname' ";
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+     
+
+        [WebMethod]
+        public List<string> PlayerInfo_Get(int pplayer_id)
+        {
+            List<string> list_playerinfo = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+
+            string queryString = "select * from table(fnGetPlayerInfo(" + Convert.ToString(pplayer_id);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                list_playerinfo.Add(Convert.ToString(reader[0])); // name
+                list_playerinfo.Add(Convert.ToString(reader[1])); // last name
+                list_playerinfo.Add(Convert.ToString(reader[2])); // passport
+                list_playerinfo.Add(Convert.ToString(reader[3])); // shirtnumber
+                list_playerinfo.Add(Convert.ToString(reader[4])); // position
+                list_playerinfo.Add(Convert.ToString(reader[5])); // genre
+                list_playerinfo.Add(Convert.ToString(reader[6])); // photo
+                list_playerinfo.Add(Convert.ToString(reader[7])); // countryname
+                
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return list_playerinfo;
         }
 
         [WebMethod]
