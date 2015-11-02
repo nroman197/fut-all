@@ -136,7 +136,6 @@ namespace fut_all
             {
                 LoadPlayers(1);
             }
-
         }
 
         protected void btnAddPlayer_Click1(object sender, EventArgs e)
@@ -197,8 +196,33 @@ namespace fut_all
                         type = 1;
                     }
 
-                    ws.Team_Ins(txbFullName.Text.Trim(), txtShortName.Text.Trim(), cat, type, counId, staId, pphoto);
+                    int teamid = ws.Team_Ins(txbFullName.Text.Trim(), txtShortName.Text.Trim(), cat, type, counId, staId, pphoto);
+
+                    foreach(GridViewRow row in grvPlayers.Rows)
+                    {
+                        if(row.RowType == DataControlRowType.DataRow)
+                        {
+                            CheckBox chkRow = (row.Cells[0].FindControl("chkplayer") as CheckBox);
+
+                            if(chkRow.Checked)
+                            {
+                                string nameplayer = row.Cells[1].Text;
+                                string lastnameplayer = row.Cells[2].Text;
+                                int idplayer = ws.Player_Id_Get(nameplayer, lastnameplayer);
+                                ws.PlayerxTeam_Ins(idplayer, teamid);
+                            }
+                        }
+                    }
                 }
+
+                txbFullName.Text = "";
+                txtShortName.Text = "";
+                ddlTeamCathegory.SelectedIndex = 0;
+                ddlTeamCountry.SelectedIndex = 0;
+                ddlTeamStadium.SelectedIndex = 0;
+                ddlTeamType.SelectedIndex = 0;
+                grvPlayers.DataSource = null;
+                grvPlayers.DataBind();
                 
             }
         }
@@ -349,27 +373,5 @@ namespace fut_all
             grvPlayers.DataSource = tb;
             grvPlayers.DataBind();
         }
-
-        //protected void eli_Click(object sender, EventArgs e)
-        //{
-        //    string queseleccione = string.Empty;
-
-        //    foreach (GridViewRow row in grvPlayers.Rows)
-        //    {
-        //        if (row.RowType == DataControlRowType.DataRow)
-        //        {
-        //            CheckBox chkRow = (row.Cells[0].FindControl("chk") as CheckBox);
-        //            if (chkRow.Checked)
-        //            {
-        //                string name = row.Cells[1].Text;
-        //                queseleccione = queseleccione + name;
-        //            }
-        //        }
-        //    }
-
-        //    etienne.Text = queseleccione;
-        //}
-
-
     }
 }
