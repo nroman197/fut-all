@@ -340,7 +340,7 @@
                                                    <Columns>
                                                        <asp:TemplateField >
                                                            <ItemTemplate>
-                                                               <asp:CheckBox runat="server" ID="chk" />
+                                                               <asp:CheckBox runat="server" ID="chkplayer" />
                                                            </ItemTemplate>                                             
                                                        </asp:TemplateField>
                                                    </Columns>

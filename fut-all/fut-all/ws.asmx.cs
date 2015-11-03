@@ -930,6 +930,26 @@ namespace fut_all
         }
 
         [WebMethod]
+        public void PlayerxTeam_Del(int idplayer, int idteam)
+        {
+            string queryString = "spPlayerxTeam_Del " + Convert.ToString(idplayer) + ", " + Convert.ToString(idteam);
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                reader1.Close();
+                connection2.Close();
+            }
+        }
+
+        [WebMethod]
         public void PlayerxTeam_Upd(int idplayer, int idteam)
         {
             string queryString = "spPlayerxTeam_Upd " + Convert.ToString(idplayer) + ", " + Convert.ToString(idteam);

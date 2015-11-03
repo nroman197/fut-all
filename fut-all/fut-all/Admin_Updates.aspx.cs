@@ -569,44 +569,6 @@ namespace fut_all
             }
         }
 
-
-        protected void btnAddTeam_Click(object sender, EventArgs e)
-        {
-            int teamid = ws.Team_Id_Get(ddlTeamname.SelectedItem.Text);
-            foreach (GridViewRow row in grvPlayers.Rows)
-            {
-                if (row.RowType == DataControlRowType.DataRow)
-                {
-                    CheckBox chkRow = (row.Cells[0].FindControl("chkplayer") as CheckBox);//the check cell of the gridview
-
-                    //verificar si el jugador esta en el equipo.
-
-                    if (chkRow.Checked)
-                    {
-                        //hacemos update del jugador
-                        string nameplayergrid = row.Cells[1].Text;
-                        string lastnameplayergrid = row.Cells[2].Text;
-                        int idplayergrid = ws.Player_Id_Get(nameplayergrid, lastnameplayergrid);
-                        ws.PlayerxTeam_Upd(idplayergrid, teamid);
-                    }
-                    else
-                    {
-                        //sacar el jugador del equipo
-                        //string nameplayer = row.Cells[1].Text;
-                        //string lastnameplayer = row.Cells[2].Text;
-                        //int idplayer = ws.Player_Id_Get(nameplayer, lastnameplayer);
-                        //ws.PlayerxTeam_Upd(idplayer, teamid);
-                    }
-                }
-            }
-
-            grvPlayers.DataSource = null;
-            grvPlayers.DataBind();
-        }
-
-
-
-
         protected void ddlContinent_TextChanged(object sender, EventArgs e)
         {
 
@@ -702,19 +664,55 @@ namespace fut_all
             }
         }
 
-        protected void btnDeletePlayers_Click(object sender, EventArgs e)
-        {
-
-        }
 
         protected void btnInsertPlayer_Click(object sender, EventArgs e)
         {
+            int teamid = ws.Team_Id_Get(ddlTeamname.SelectedItem.Text);
+            foreach (GridViewRow row in grvPlayers.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    CheckBox chkRow = (row.Cells[0].FindControl("chkAll") as CheckBox);//the check cell of the gridview
 
+                    //if the checkbox is checked means that the player will be insert in the team
+                    if (chkRow.Checked)
+                    {
+                        //h
+                        string nameplayergrid = row.Cells[1].Text;
+                        string lastnameplayergrid = row.Cells[2].Text;
+                        int idplayergrid = ws.Player_Id_Get(nameplayergrid, lastnameplayergrid);
+                        ws.PlayerxTeam_Ins(idplayergrid, teamid);
+                    }
+                }
+            }
+
+            grvAllPlayers.DataSource = null;
+            grvAllPlayers.DataBind();
         }
 
         protected void btnDeletePlayer_Click(object sender, EventArgs e)
         {
+            int teamid = ws.Team_Id_Get(ddlTeamname.SelectedItem.Text);
+            foreach (GridViewRow row in grvPlayers.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    CheckBox chkRow = (row.Cells[0].FindControl("chkplayer") as CheckBox);//the check cell of the gridview
+                   
+                    //if the checkbox is checked means that the player will be delete from the team
+                    if (chkRow.Checked)
+                    {
+                        //h
+                        string nameplayergrid = row.Cells[1].Text;
+                        string lastnameplayergrid = row.Cells[2].Text;
+                        int idplayergrid = ws.Player_Id_Get(nameplayergrid, lastnameplayergrid);
+                        ws.PlayerxTeam_Del(idplayergrid, teamid);
+                    }
+                }
+            }
 
+            grvPlayers.DataSource = null;
+            grvPlayers.DataBind();
         }
     }
 }
