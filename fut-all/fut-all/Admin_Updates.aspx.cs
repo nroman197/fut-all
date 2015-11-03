@@ -438,11 +438,22 @@ namespace fut_all
 
         protected void ddlTeamName_TextChanged(object sender, EventArgs e)
         {
+            int idTeam = ws.Team_Id_Get(ddlTeamname.SelectedItem.Text);
             LoadCathegories();
             LoadTeamTypes();
             LoadTeamCountries();
             LoadTeamStadiums();
-            int idTeam = ws.Team_Id_Get(ddlTeamname.SelectedItem.Text);
+            //if (ddlTeamCathegory.SelectedIndex == 1)
+            //{
+            //    LoadAllPlayersGrid(idTeam, 0);
+            //    LoadTeamPlayersGrid(idTeam, 0);
+            //}
+            //else if (ddlTeamCathegory.SelectedIndex == 2)
+            //{
+            //    LoadAllPlayersGrid(idTeam, 1);
+            //    LoadTeamPlayersGrid(idTeam, 1);
+            //}
+            
             List<string> list_team = ws.TeamInfo_Get(idTeam); // returns list including 8 attributes (see in ws function)
             string shortname = list_team[0];
             string fullname = list_team[1];
