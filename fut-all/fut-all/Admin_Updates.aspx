@@ -292,6 +292,20 @@
                                   &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamStadium" CssClass="ddl" OnTextChanged="ddlTeamStadium_TextChanged"></asp:DropDownList>                                  
                               </asp:TableCell>                                                           
                            </asp:TableRow>
+                             <asp:TableRow>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="teamflag" Text="Team Flag" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
+                              </asp:TableCell>
+                           </asp:TableRow>
+                            
+                            <asp:TableRow >
+                                <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                     &nbsp&nbsp&nbsp<asp:FileUpload ID="fuFlag" runat="server" AllowMultiple="false" accept="image/*"  Width="200px"/>     
+                                </asp:TableCell>
+                                 <asp:TableCell HorizontalAlign="Right" VerticalAlign="Bottom">
+                                 &nbsp&nbsp&nbsp <asp:Button runat="server" ID="btnUpdateTeam" CssClass="btn" Width="218px" Text="Update Team" OnClick="btnUpdateTeam_Click"/>&nbsp&nbsp&nbsp&nbsp
+                              </asp:TableCell>
+                            </asp:TableRow>
                             <asp:TableRow>
                                 <asp:TableCell>
                                     <br />
@@ -312,7 +326,7 @@
                       <asp:Table runat="server">
                           <asp:TableRow runat="server">                                                            
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
-                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label23" Text="Team's Players" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label23" Text="Team Players" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
                               </asp:TableCell>
                           </asp:TableRow>
                           <asp:TableRow runat="server">                              
@@ -339,20 +353,51 @@
                           </asp:TableRow>
                       </asp:Table>
                        <asp:Table runat="server" HorizontalAlign="Right">
-                          <asp:TableRow>
-                              <asp:TableCell>
-                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label24" Text="Flag or Logo" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
-                              </asp:TableCell>
-                          </asp:TableRow>
                           <asp:TableRow HorizontalAlign="Left" runat="server">
-                              <asp:TableCell>
-                                  &nbsp&nbsp&nbsp<asp:FileUpload ID="fuFlag" runat="server" AllowMultiple="false" accept="image/*"  Width="200px"/>                                  
-                              </asp:TableCell>
                               <asp:TableCell HorizontalAlign="Right">
-                                  <asp:Button runat="server" ID="btnAddTeam" CssClass="btn" Width="218px" Text="Update Team" OnClick="btnAddTeam_Click"/>&nbsp&nbsp&nbsp&nbsp
+                                  <asp:Button runat="server" ID="btnDeletePlayer" CssClass="btn" Width="218px" Text="Delete Player" OnClick="btnDeletePlayer_Click"/>&nbsp&nbsp&nbsp&nbsp
                               </asp:TableCell>                              
                           </asp:TableRow>
                       </asp:Table>
+                      <br />
+                      <br />
+                      <asp:Table runat="server">
+                          <asp:TableRow runat="server">                                                            
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="avaibleplayers" Text="Available Players" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
+                              </asp:TableCell>
+                          </asp:TableRow>
+                          <asp:TableRow runat="server">                              
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">                                  
+                                  <asp:Table runat="server" HorizontalAlign="Center">
+                                      <asp:TableRow>
+                                          <asp:TableCell runat="server" Width="7px"></asp:TableCell>
+                                          <asp:TableCell>
+                                              <div  style="width: 170%; height: 300px; overflow: scroll">
+                                                  <asp:GridView ID="grvAllPlayers" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddl" HorizontalAlign="Center" Width="100%" >
+                                                   <Columns>
+                                                       <asp:TemplateField >
+                                                           <ItemTemplate>
+                                                               <asp:CheckBox runat="server" ID="chkAll" />
+                                                           </ItemTemplate>                                             
+                                                       </asp:TemplateField>
+                                                   </Columns>
+                                               </asp:GridView>  
+                                              </div>                                                                                                                         
+                                          </asp:TableCell>
+                                      </asp:TableRow>
+                                  </asp:Table> 
+                              </asp:TableCell>                              
+                          </asp:TableRow>
+                      </asp:Table>
+                       <asp:Table runat="server" HorizontalAlign="Right">
+                          <asp:TableRow HorizontalAlign="Left" runat="server">
+                              <asp:TableCell HorizontalAlign="Right">
+                                  <asp:Button runat="server" ID="btnInsertPlayer" CssClass="btn" Width="218px" Text="Insert Player" OnClick="btnInsertPlayer_Click"/>&nbsp&nbsp&nbsp&nbsp
+                              </asp:TableCell>                              
+                          </asp:TableRow>
+                      </asp:Table>
+                     
                       <br /><br />
                       <br /><br /><br />
                       <br />                     

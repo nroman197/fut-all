@@ -562,6 +562,33 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.DropDownList ddlTeamStadium;
         
         /// <summary>
+        /// Control teamflag.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label teamflag;
+        
+        /// <summary>
+        /// Control fuFlag.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fuFlag;
+        
+        /// <summary>
+        /// Control btnUpdateTeam.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUpdateTeam;
+        
+        /// <summary>
         /// Control Label23.
         /// </summary>
         /// <remarks>
@@ -580,30 +607,39 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.GridView grvPlayers;
         
         /// <summary>
-        /// Control Label24.
+        /// Control btnDeletePlayer.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label24;
+        protected global::System.Web.UI.WebControls.Button btnDeletePlayer;
         
         /// <summary>
-        /// Control fuFlag.
+        /// Control avaibleplayers.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuFlag;
+        protected global::System.Web.UI.WebControls.Label avaibleplayers;
         
         /// <summary>
-        /// Control btnAddTeam.
+        /// Control grvAllPlayers.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddTeam;
+        protected global::System.Web.UI.WebControls.GridView grvAllPlayers;
+        
+        /// <summary>
+        /// Control btnInsertPlayer.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnInsertPlayer;
     }
 }

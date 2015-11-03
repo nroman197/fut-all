@@ -658,6 +658,72 @@ namespace fut_all
             return theId;
         }
 
+        [WebMethod]
+        public List<string> TeamPlayers_Get(int idteam, int pgenre)
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "GetTeamPlayers " + Convert.ToString(idteam) + " ," + Convert.ToString(pgenre);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0]));
+                theList.Add(Convert.ToString(reader[1]));
+                theList.Add(Convert.ToString(reader[2]));
+                theList.Add(Convert.ToString(reader[3]));
+                theList.Add(Convert.ToString(reader[4]));
+                theList.Add(Convert.ToString(reader[5]));
+                theList.Add(Convert.ToString(reader[6]));
+
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
+        }
+
+        [WebMethod]
+        public List<string> AllPlayers_Get(int idteam, int pgenre)
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "GetAllPlayers " + Convert.ToString(idteam) + ", " + Convert.ToString(pgenre);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0]));
+                theList.Add(Convert.ToString(reader[1]));
+                theList.Add(Convert.ToString(reader[2]));
+                theList.Add(Convert.ToString(reader[3]));
+                theList.Add(Convert.ToString(reader[4]));
+                theList.Add(Convert.ToString(reader[5]));
+                theList.Add(Convert.ToString(reader[6]));
+
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
+        }
+
 
        
 
