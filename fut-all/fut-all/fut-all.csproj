@@ -91,6 +91,7 @@
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
     <Content Include="Admin_Inserts.aspx" />
+    <Content Include="Add_Tourn_Cup.aspx" />
     <Content Include="ws.asmx" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +180,13 @@
     </Compile>
     <Compile Include="Tourn_Cups.aspx.designer.cs">
       <DependentUpon>Tourn_Cups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Tourn_Cup.aspx.cs">
+      <DependentUpon>Add_Tourn_Cup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Add_Tourn_Cup.aspx.designer.cs">
+      <DependentUpon>Add_Tourn_Cup.aspx</DependentUpon>
     </Compile>
     <Compile Include="ws.asmx.cs">
       <DependentUpon>ws.asmx</DependentUpon>

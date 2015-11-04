@@ -20,7 +20,7 @@ namespace fut_all
 
         private string ConnectionString()
         {
-            return "Data Source=KIM;Initial Catalog=FUTALL;User ID=adm;Password=adm";
+            return "Data Source=LAPTOP-3Q31SCMK;Initial Catalog=FUTALL;User ID=adm;Password=adm";
         }
 
         [WebMethod]
@@ -723,7 +723,7 @@ namespace fut_all
 
             return theList;
         }
-        
+
         [WebMethod]
         public List<string> NotTeamPlayer_Get(int idteam, int pgenre, int pisnationalteam, int countryid)
         {
@@ -1052,7 +1052,7 @@ namespace fut_all
         public int LoginValidation_Get(string pemail, string ppassword)
         {
             int theId = 0;
-            string queryString = "select count(1) from [User] where user_email = '" + pemail + "' and password = '"+ ppassword +"'";
+            string queryString = "select count(1) from [User] where user_email = '" + pemail + "' and password = '" + ppassword + "'";
 
             string connection1 = ConnectionString();
 
