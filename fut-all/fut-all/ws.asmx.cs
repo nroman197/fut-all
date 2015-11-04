@@ -72,6 +72,33 @@ namespace fut_all
         }
 
         [WebMethod]
+        public List<string> Users_Get()
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "select user_email from [User] where user_role = 0";
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0]));
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
+        }
+
+
+        [WebMethod]
         public List<string> Players_Get()
         {
             List<string> theList = new List<string>();
