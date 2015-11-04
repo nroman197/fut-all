@@ -108,6 +108,7 @@
     <Compile Include="Admin_Updates.aspx.designer.cs">
       <DependentUpon>Admin_Updates.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Encrypt.cs" />
     <Compile Include="Groups.aspx.cs">
       <DependentUpon>Groups.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

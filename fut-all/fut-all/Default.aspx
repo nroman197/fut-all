@@ -41,7 +41,7 @@
                             <br />
                             <asp:Button runat="server" ID="btnSignIn" Text="Sign In" CssClass="btn" OnClick="btnSignIn_Click" OnClientClick="return confirm('Are you sure to create user?');" />
                             <asp:Label runat="server" ID="Label1" Text="" Width="48px" ></asp:Label>
-                            <asp:Button runat="server" ID="btnLogIn" Text="Log In"  CssClass="btn" />
+                            <asp:Button runat="server" ID="btnLogIn" Text="Log In"  CssClass="btn"  OnClick="btnLogIn_Click"/>
                         </div>
                     </div>                    
                 </asp:TableCell>
