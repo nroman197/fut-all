@@ -135,10 +135,63 @@ namespace fut_all
         }
 
         //load all the teams stored in the database
-        private void LoadAllPlayersGrid(int teamid, int pgenre)
+        //private void LoadAllPlayersGrid(int teamid, int pgenre, int isnationalteam, int countryid)
+        //{
+        //    int counter = 0;
+        //    List<string> theList = ws.AllPlayers_Get(teamid, pgenre,isnationalteam,countryid);
+        //    string nameplayer = string.Empty;
+        //    string lastnameplayer = string.Empty;
+        //    string tshirt = string.Empty;
+        //    string positionplayer = string.Empty;
+        //    string countryplayer = string.Empty;
+
+        //    System.Data.DataTable tb = new System.Data.DataTable();
+
+        //    // manage gridview
+        //    tb.Columns.Add("Name");
+        //    tb.Columns.Add("Last Name");
+        //    tb.Columns.Add("Position");
+        //    tb.Columns.Add("Country");
+        //    tb.Columns.Add("#");
+
+        //    foreach (string g in theList)
+        //    {
+        //        if (counter == 0)
+        //        {
+        //            nameplayer = g;
+        //        }
+        //        else if (counter == 1)
+        //        {
+        //            lastnameplayer = g;
+        //        }
+        //        else if (counter == 2)
+        //        {
+        //            tshirt = g;
+        //        }
+        //        else if (counter == 4)
+        //        {
+        //            countryplayer = g;
+        //        }
+        //        else if (counter == 6)
+        //        {
+        //            positionplayer = g;
+        //            tb.Rows.Add(nameplayer, lastnameplayer, positionplayer, countryplayer, tshirt);
+        //            counter = -1;
+        //        }
+
+        //        counter++;
+        //    }
+
+
+        //    grvAllPlayers.DataSource = tb;
+        //    grvAllPlayers.DataBind();
+        //}
+
+        private void LoadAllNotTeamPlayersGrid(int teamid, int pgenre, int isnationalteam, int countryid)
         {
             int counter = 0;
-            List<string> theList = ws.AllPlayers_Get(teamid, pgenre);
+            List<string> theList = ws.NotTeamPlayer_Get(teamid, pgenre, isnationalteam, countryid);
+            List<string> theList1 = ws.AllPlayers_Get(teamid, pgenre, isnationalteam, countryid);
             string nameplayer = string.Empty;
             string lastnameplayer = string.Empty;
             string tshirt = string.Empty;
@@ -182,15 +235,43 @@ namespace fut_all
                 counter++;
             }
 
+            foreach (string g in theList1)
+            {
+                if (counter == 0)
+                {
+                    nameplayer = g;
+                }
+                else if (counter == 1)
+                {
+                    lastnameplayer = g;
+                }
+                else if (counter == 2)
+                {
+                    tshirt = g;
+                }
+                else if (counter == 4)
+                {
+                    countryplayer = g;
+                }
+                else if (counter == 6)
+                {
+                    positionplayer = g;
+                    tb.Rows.Add(nameplayer, lastnameplayer, positionplayer, countryplayer, tshirt);
+                    counter = -1;
+                }
+
+                counter++;
+            }
+
 
             grvAllPlayers.DataSource = tb;
             grvAllPlayers.DataBind();
         }
         //load all the teams stored in the database
-        private void LoadTeamPlayersGrid(int idteam,int pgenre)
+        private void LoadTeamPlayersGrid(int idteam,int pgenre, int isnationalteam, int countryid)
         {
             int counter = 0;
-            List<string> theList = ws.TeamPlayers_Get(idteam, pgenre);
+            List<string> theList = ws.TeamPlayers_Get(idteam, pgenre,isnationalteam,countryid);
             string nameplayer = string.Empty;
             string lastnameplayer = string.Empty;
             string tshirt = string.Empty;
@@ -462,8 +543,8 @@ namespace fut_all
             string countryname = list_team[4];
             string stadiumname = list_team[5];
             string flag = list_team[6];
-            txbFullName.Text = list_team[1]; //fullname
-            txtShortName.Text = list_team[0]; //short
+            txbFullName.Text = list_team[0]; //fullname
+            txtShortName.Text = list_team[1]; //short
 
             int country_id = ws.Country_Id_Get(countryname);
             int stadium_id = ws.Stadium_Id_Get(stadiumname);
@@ -567,16 +648,32 @@ namespace fut_all
 
         protected void ddlTeamCathegory_TextChanged(object sender, EventArgs e)
         {
+            int countryid = ws.Country_Id_Get(ddlTeamCountry.SelectedItem.Text);
             int teamid = ws.Team_Id_Get(ddlTeamname.SelectedItem.Text);
-            if (ddlTeamCathegory.SelectedIndex == 1)
+            if (ddlTeamCathegory.SelectedIndex == 1 && ddlTeamType.SelectedIndex == 1)
             {
-                LoadAllPlayersGrid(teamid,0);
-                LoadTeamPlayersGrid(teamid,0);
+               // LoadAllPlayersGrid(teamid,0,0,countryid); //male and national team
+                LoadTeamPlayersGrid(teamid,0,1,countryid);
+                LoadAllNotTeamPlayersGrid(teamid,0,1,countryid);
             }
-            else if (ddlTeamCathegory.SelectedIndex == 2)
+            else if (ddlTeamCathegory.SelectedIndex == 1 && ddlTeamType.SelectedIndex == 2)
             {
-                LoadAllPlayersGrid(teamid,1);
-                LoadTeamPlayersGrid(teamid,1);
+               // LoadAllPlayersGrid(teamid, 0, 1, countryid); ////male and Club
+                LoadTeamPlayersGrid(teamid, 0, 0, countryid);
+                LoadAllNotTeamPlayersGrid(teamid, 0, 0, countryid);
+
+            }
+            else if (ddlTeamCathegory.SelectedIndex == 2 && ddlTeamType.SelectedIndex == 1)
+            {
+               // LoadAllPlayersGrid(teamid, 1, 0, countryid); //female and national team
+                LoadTeamPlayersGrid(teamid, 1, 1, countryid);
+                LoadAllNotTeamPlayersGrid(teamid, 1, 1, countryid);
+            }
+            else if (ddlTeamCathegory.SelectedIndex == 2 && ddlTeamType.SelectedIndex == 2)
+            {
+               // LoadAllPlayersGrid(teamid, 1, 1, countryid); //female and club
+                LoadTeamPlayersGrid(teamid, 1, 0, countryid);
+                LoadAllNotTeamPlayersGrid(teamid, 1, 0, countryid);
             }
         }
 
@@ -678,8 +775,9 @@ namespace fut_all
 
         protected void btnInsertPlayer_Click(object sender, EventArgs e)
         {
+            
             int teamid = ws.Team_Id_Get(ddlTeamname.SelectedItem.Text);
-            foreach (GridViewRow row in grvPlayers.Rows)
+            foreach (GridViewRow row in grvAllPlayers.Rows)
             {
                 if (row.RowType == DataControlRowType.DataRow)
                 {
@@ -724,6 +822,7 @@ namespace fut_all
 
             grvPlayers.DataSource = null;
             grvPlayers.DataBind();
+            LoadPlayers();
         }
     }
 }

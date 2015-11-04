@@ -20,7 +20,7 @@ namespace fut_all
 
         private string ConnectionString()
         {
-            return "Data Source=LAPTOP-3Q31SCMK;Initial Catalog=FUTALL;User ID=adm;Password=adm";
+            return "Data Source=KIM;Initial Catalog=FUTALL;User ID=adm;Password=adm";
         }
 
         [WebMethod]
@@ -659,12 +659,12 @@ namespace fut_all
         }
 
         [WebMethod]
-        public List<string> TeamPlayers_Get(int idteam, int pgenre)
+        public List<string> TeamPlayers_Get(int idteam, int pgenre, int isnationalteam, int countryid)
         {
             List<string> theList = new List<string>();
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionString();
-            string queryString = "GetTeamPlayers " + Convert.ToString(idteam) + " ," + Convert.ToString(pgenre);
+            string queryString = "GetTeamPlayers " + Convert.ToString(idteam) + " ," + Convert.ToString(pgenre) + "," + Convert.ToString(isnationalteam) + "," + Convert.ToString(countryid);
 
             SqlCommand command = connection.CreateCommand();
             command.CommandTimeout = 3600;
@@ -692,12 +692,12 @@ namespace fut_all
         }
 
         [WebMethod]
-        public List<string> AllPlayers_Get(int idteam, int pgenre)
+        public List<string> AllPlayers_Get(int idteam, int pgenre, int pisnationalteam, int countryid)
         {
             List<string> theList = new List<string>();
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionString();
-            string queryString = "GetAllPlayers " + Convert.ToString(idteam) + ", " + Convert.ToString(pgenre);
+            string queryString = "GetAllPlayers " + Convert.ToString(idteam) + ", " + Convert.ToString(pgenre) + "," + Convert.ToString(pisnationalteam) + "," + Convert.ToString(countryid);
 
             SqlCommand command = connection.CreateCommand();
             command.CommandTimeout = 3600;
@@ -723,6 +723,40 @@ namespace fut_all
 
             return theList;
         }
+        
+        [WebMethod]
+        public List<string> NotTeamPlayer_Get(int idteam, int pgenre, int pisnationalteam, int countryid)
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "GetNotTeamPlayer " + Convert.ToString(idteam) + ", " + Convert.ToString(pgenre) + "," + Convert.ToString(pisnationalteam) + "," + Convert.ToString(countryid);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0]));
+                theList.Add(Convert.ToString(reader[1]));
+                theList.Add(Convert.ToString(reader[2]));
+                theList.Add(Convert.ToString(reader[3]));
+                theList.Add(Convert.ToString(reader[4]));
+                theList.Add(Convert.ToString(reader[5]));
+                theList.Add(Convert.ToString(reader[6]));
+
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
+        }
+
 
         [WebMethod]
         public List<string> Players_Get(int pgenre)

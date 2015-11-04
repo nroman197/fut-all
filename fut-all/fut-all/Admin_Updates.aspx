@@ -262,7 +262,7 @@
                            </asp:TableRow>
                            <asp:TableRow>
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
-                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label18" Text="Cathegory" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label18" Text="Category" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
                               </asp:TableCell>
                                <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
                                   <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label19" Text="Type" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
