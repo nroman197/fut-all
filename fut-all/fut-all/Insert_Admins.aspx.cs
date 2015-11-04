@@ -42,13 +42,12 @@ namespace fut_all
 
         protected void btnAddAdmin_Click(object sender, EventArgs e)
         {
-            
-            int continentid = ws.Continent_Id_Get(ddlContinent.SelectedItem.Text);
-            if (newcontinent.Length != 0)
+
+            int userid = ws.User_Id_Get(ddlAdmin.SelectedItem.Text);
+            if (ddlAdmin.SelectedIndex > 0)
             {
-                ws.Continent_Upd(newcontinent, continentid);
-                txbContinent.Text = "";
-                LoadContinents();
+                ws.Create_Admin(userid);
+                LoadUsers();
             }
         }
     }

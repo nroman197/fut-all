@@ -20,7 +20,7 @@ namespace fut_all
 
         private string ConnectionString()
         {
-            return "Data Source=LAPTOP-3Q31SCMK;Initial Catalog=FUTALL;User ID=adm;Password=adm";
+            return "Data Source=KIM;Initial Catalog=FUTALL;User ID=adm;Password=adm";
         }
 
         [WebMethod]
@@ -129,6 +129,35 @@ namespace fut_all
         {
             int theId = 0;
             string queryString = "select continent_id from continent where name = '" + pname + "'";
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
+        public int User_Id_Get(string pemail)
+        {
+            int theId = 0;
+            string queryString = "select user_id from [User] where user_email = '" + pemail + "'";
 
             string connection1 = ConnectionString();
 
@@ -308,6 +337,24 @@ namespace fut_all
         public void Continent_Upd(string pname, int pid)
         {
             string queryString = "spContinent_Upd '" + pname + "' , " + Convert.ToString(pid);
+            string connection1 = ConnectionString();
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                reader1.Close();
+                connection2.Close();
+            }
+        }
+
+        [WebMethod]
+        public void Create_Admin(int pid)
+        {
+            string queryString = "spCreate_Admin " + Convert.ToString(pid);
             string connection1 = ConnectionString();
             using (SqlConnection connection2 = new SqlConnection(connection1))
             {

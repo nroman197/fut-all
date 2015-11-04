@@ -59,7 +59,7 @@
                                             &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlAdmin" CssClass="ddl" OnTextChanged="ddlAdmin_TextChanged"></asp:DropDownList>                           
                                         </asp:TableCell>
                                          <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">
-                                           &nbsp&nbsp&nbsp <asp:Button runat="server" ID="btnAddAdmin" CssClass="btn" Width="218px" Text="Update Team" OnClick="btnAddAdmin_Click"/>&nbsp&nbsp&nbsp&nbsp
+                                           &nbsp&nbsp&nbsp <asp:Button runat="server" ID="btnAddAdmin" CssClass="btn" Width="218px" Text="Create Admin" OnClick="btnAddAdmin_Click"/>&nbsp&nbsp&nbsp&nbsp
                                         </asp:TableCell>
                                     </asp:TableRow>
                                 </asp:Table>
