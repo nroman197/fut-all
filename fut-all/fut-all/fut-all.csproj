@@ -77,6 +77,7 @@
     <Content Include="Images\logo0.png" />
     <Content Include="Images\logo1.png" />
     <Content Include="Images\logo2.png" />
+    <Content Include="Insert_Admins.aspx" />
     <Content Include="Local_Tourn.aspx" />
     <Content Include="Matches.aspx" />
     <Content Include="Match_Stats.aspx" />
@@ -123,6 +124,13 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Insert_Admins.aspx.cs">
+      <DependentUpon>Insert_Admins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Insert_Admins.aspx.designer.cs">
+      <DependentUpon>Insert_Admins.aspx</DependentUpon>
     </Compile>
     <Compile Include="Local_Tourn.aspx.cs">
       <DependentUpon>Local_Tourn.aspx</DependentUpon>
