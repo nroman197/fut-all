@@ -32,7 +32,7 @@
                 <ul id="menu_adm" >
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     <li ><a runat="server" id="refsection1">
-                        <asp:Label runat="server" ID="lblSection1" Text="Events"></asp:Label>
+                        <asp:Label runat="server" ID="lblSection1" Text="Admins"></asp:Label>
                          </a></li>
                     <li ><a runat="server" id="refsection2">
                         <asp:Label runat="server" ID="lblSection2" Text="Insert Info"></asp:Label>
