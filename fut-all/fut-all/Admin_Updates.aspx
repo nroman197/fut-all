@@ -373,7 +373,7 @@
                                       <asp:TableRow>
                                           <asp:TableCell runat="server" Width="7px"></asp:TableCell>
                                           <asp:TableCell>
-                                              <div  style="width: 170%; height: 300px; overflow: scroll">
+                                              <div  style="width: 160%; height: 300px; overflow: scroll">
                                                   <asp:GridView ID="grvAllPlayers" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddl" HorizontalAlign="Center" Width="100%" >
                                                    <Columns>
                                                        <asp:TemplateField >
