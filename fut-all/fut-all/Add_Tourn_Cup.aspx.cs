@@ -120,7 +120,10 @@ namespace fut_all
         }
 
         protected void chkcountry_CheckedChanged(object sender, EventArgs e)
+        
         {
+            
+            List<string> theList = new List<string>();
             foreach (GridViewRow row in grvCountries.Rows)
             {
                 if (row.RowType == DataControlRowType.DataRow)
@@ -131,13 +134,25 @@ namespace fut_all
                     {
                         string namecountry = row.Cells[1].Text;
                         int idcou = ws.Country_Id_Get(namecountry);
-                        ws.StadiumxCountry_Get(idcou);
-                        grvCountries.DataSource = null;
-                        grvCountries.DataBind();
+                        List<string> couList = ws.StadiumxCountry_Get(idcou);
+                        foreach(string h in couList)
+                        {
+                            theList.Add(h);
+                        }
                     }
                 }
             }
-           
+
+            System.Data.DataTable tb = new System.Data.DataTable();
+            tb.Columns.Add("Name");
+
+            foreach (string g in theList)
+            {                
+                 tb.Rows.Add(g);           
+            }
+
+            grvStadiums.DataSource = tb;
+            grvStadiums.DataBind();
         }
 
     }
