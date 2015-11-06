@@ -259,7 +259,7 @@
                                   &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamCathegory" CssClass="ddl" OnTextChanged="ddlTeamCathegory_TextChanged" AutoPostBack="true"></asp:DropDownList>                                  
                               </asp:TableCell>
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
-                                 &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamType" CssClass="ddl" OnTextChanged="ddlTeamType_TextChanged"></asp:DropDownList>                                  
+                                 &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamType" CssClass="ddl" OnTextChanged="ddlTeamType_TextChanged" AutoPostBack="true"></asp:DropDownList>                                  
                               </asp:TableCell>                             
                            </asp:TableRow>
                            <asp:TableRow>
@@ -272,7 +272,7 @@
                            </asp:TableRow>
                            <asp:TableRow>                                                               
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
-                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamCountry" CssClass="ddl" OnTextChanged="ddlTeamCountry_TextChanged1"></asp:DropDownList>                                  
+                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamCountry" CssClass="ddl" OnTextChanged="ddlTeamCountry_TextChanged1" AutoPostBack="true"></asp:DropDownList>                                  
                               </asp:TableCell>
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
                                   &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamStadium" CssClass="ddl" OnTextChanged="ddlTeamStadium_TextChanged1"></asp:DropDownList>                                  

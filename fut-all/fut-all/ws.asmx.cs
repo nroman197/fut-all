@@ -20,7 +20,7 @@ namespace fut_all
 
         private string ConnectionString()
         {
-            return "Data Source=LAPTOP-3Q31SCMK;Initial Catalog=FUTALL;User ID=adm;Password=adm";
+            return "Data Source=KIM;Initial Catalog=FUTALL;User ID=adm;Password=adm";
         }
 
         [WebMethod]
@@ -833,12 +833,12 @@ namespace fut_all
 
 
         [WebMethod]
-        public List<string> Players_Get(int pgenre)
+        public List<string> Players_Get(int pgenre, int isnationalteam, int countryid)
         {
             List<string> theList = new List<string>();
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionString();
-            string queryString = "Players_Get " + Convert.ToString(pgenre);
+            string queryString = "Players_Get " + Convert.ToString(pgenre) + "," + Convert.ToString(isnationalteam) + "," + Convert.ToString(countryid);
 
             SqlCommand command = connection.CreateCommand();
             command.CommandTimeout = 3600;

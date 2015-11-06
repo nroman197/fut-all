@@ -359,16 +359,16 @@ namespace fut_all
                 ddlConfederations.SelectedIndex = 0;
                 LoadConfederations();
             }
+            else
+            {
+                string script = "alert(\"You need to select a continent first, please try again.!\");";
+                ScriptManager.RegisterStartupScript(this, GetType(),
+                                      "ServerControlScript", script, true);
+            }
         }
 
         protected void btnAddCountry_Click(object sender, EventArgs e)
         {
-            if (ddlConfederations.SelectedIndex == 0)
-            {
-
-            }
-            else
-            {
                 string newcountry = "";
                 newcountry = txbCountry.Text;
                 int confederationid = ws.Confederation_Id_Get(ddlConfederations.SelectedItem.Text);
@@ -381,8 +381,14 @@ namespace fut_all
                     ddlConfederations.SelectedIndex = 0;
                     LoadCountries();
                 }
+                else
+                {
+                    string script = "alert(\"You need to select a confederation first.!\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                }
             }
-        }
+        
 
         protected void btnAddStadium_Click(object sender, EventArgs e)
         {
@@ -613,6 +619,12 @@ namespace fut_all
                         LoadPlayers();
                     }
                 }
+                else
+                {
+                    string script = "alert(\"Please complete and select all the fields. Try again!\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
+                }
             }
         }
 
@@ -707,7 +719,7 @@ namespace fut_all
             else
             {
                 if (txbFullName.Text.Length > 0 && txtShortName.Text.Length > 0 && ddlTeamCathegory.SelectedIndex > 0
-                    && ddlTeamType.SelectedIndex > 0 && ddlTeamCountry.SelectedIndex > 0 && ddlTeamStadium.SelectedIndex > 0)
+                    && ddlTeamType.SelectedIndex > 0 && fuFlag.HasFile && ddlTeamCountry.SelectedIndex > 0 && ddlTeamStadium.SelectedIndex > 0)
                 {
 
                     if (fuFlag.PostedFile.ContentType == "image/jpeg" || fuFlag.PostedFile.ContentType == "image/png"
@@ -742,7 +754,13 @@ namespace fut_all
                         ddlTeamStadium.SelectedIndex = 0;
                         LoadTeams();
 
-                    }
+                    }  
+                }
+                else
+                {
+                    string script = "alert(\"Please complete and select all the fields. Try again!\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(),
+                                          "ServerControlScript", script, true);
                 }
             }
         }
