@@ -136,7 +136,7 @@
                                         <Columns>
                                             <asp:TemplateField >
                                                 <ItemTemplate>
-                                                    <asp:CheckBox runat="server" ID="chkcountry" />
+                                                    <asp:CheckBox runat="server" ID="chkcountry" OnCheckedChanged="chkcountry_CheckedChanged" AutoPostBack="true"/>
                                                 </ItemTemplate>                                             
                                             </asp:TemplateField>
                                         </Columns>

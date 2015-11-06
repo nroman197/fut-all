@@ -118,5 +118,27 @@ namespace fut_all
                 lblGroupsQuant.Text = Convert.ToString(groupsQ);
                 lblQualifQuant.Text = Convert.ToString(qualQ);            
         }
+
+        protected void chkcountry_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in grvCountries.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    CheckBox chkRow = (row.Cells[0].FindControl("chkcountry") as CheckBox);
+
+                    if (chkRow.Checked)
+                    {
+                        string namecountry = row.Cells[1].Text;
+                        int idcou = ws.Country_Id_Get(namecountry);
+                        ws.StadiumxCountry_Get(idcou);
+                        grvCountries.DataSource = null;
+                        grvCountries.DataBind();
+                    }
+                }
+            }
+           
+        }
+
     }
 }
