@@ -80,6 +80,7 @@ namespace fut_all
             }
         }
         //load team stadium
+
         private void LoadTeamStadiums()
         {
             ddlTeamStadium.Items.Clear();

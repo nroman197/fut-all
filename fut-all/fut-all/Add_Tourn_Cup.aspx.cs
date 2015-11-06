@@ -15,6 +15,10 @@ namespace fut_all
             if (!IsPostBack)
             {
                 LoadCountries();
+                LoadTeamTypes();
+                LoadTeamCategories();
+                LoadTeamsQuantity();
+                LoadTeams();
             }
         }
 
@@ -32,7 +36,7 @@ namespace fut_all
         {
 
         }
-
+        
         private void LoadCountries()
         {
 
@@ -55,14 +59,64 @@ namespace fut_all
             grvCountries.DataBind();
         }
 
-        protected void DropDownList1_TextChanged(object sender, EventArgs e)
+        private void LoadTeamTypes()
+        {
+            ddlTeamType.Items.Clear();
+            ddlTeamType.Items.Add("-Select Type-");
+            ddlTeamType.Items.Add("National Team");  // id 0
+            ddlTeamType.Items.Add("Club"); // id 1
+        }
+
+        private void LoadTeamCategories()
+        {
+            ddlTeamCathegory.Items.Clear();
+            ddlTeamCathegory.Items.Add("-Select Category-");
+            ddlTeamCathegory.Items.Add("Male");  // id 0
+            ddlTeamCathegory.Items.Add("Female"); // id 1
+        }
+
+        private void LoadTeamsQuantity()
+        {
+            ddlTeamsQuant.Items.Clear();
+            ddlTeamsQuant.Items.Add("-Select Quantity-");
+            ddlTeamsQuant.Items.Add("32");  // id 0
+            ddlTeamsQuant.Items.Add("16"); // id 1
+            ddlTeamsQuant.Items.Add("8"); // id 2
+        }
+
+        private void LoadTeams()
+        {
+
+            List<string> theList = ws.Teams_Get();
+
+            System.Data.DataTable tb = new System.Data.DataTable();
+
+            // manage gridview
+            tb.Columns.Add("Name");
+
+
+            foreach (string g in theList)
+            {
+
+                tb.Rows.Add(g);
+
+            }
+
+            grvParticipants.DataSource = tb;
+            grvParticipants.DataBind();
+        }
+ 
+        protected void btnAddTeam_Click(object sender, EventArgs e)
         {
 
         }
 
-        protected void btnAddTeam_Click(object sender, EventArgs e)
-        {
-
+        protected void ddlTeamsQuant_TextChanged(object sender, EventArgs e)
+        {                       
+                int groupsQ = (Convert.ToInt32(ddlTeamsQuant.Text))/4;
+                int qualQ = (Convert.ToInt32(groupsQ))*2;
+                lblGroupsQuant.Text = Convert.ToString(groupsQ);
+                lblQualifQuant.Text = Convert.ToString(qualQ);            
         }
     }
 }

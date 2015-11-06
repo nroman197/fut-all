@@ -78,6 +78,7 @@ namespace fut_all
             {
                 ws.Stadium_Ins(txbStadium.Text);
                 txbStadium.Text = "";
+                LoadStadiums();
             }
         }
 
@@ -165,7 +166,7 @@ namespace fut_all
                     ddlPosition.SelectedIndex = 0;
                     ddlGenrePlayer.SelectedIndex = 0;
                     ddlPlayerCountry.SelectedIndex = 0;
-                    
+                    LoadPlayers(ddlTeamCathegory.SelectedIndex);
                 }
             }
         }
@@ -295,7 +296,7 @@ namespace fut_all
         {
 
             ddlTeamCathegory.Items.Clear();
-            ddlTeamCathegory.Items.Add("-Select Cathegory-");
+            ddlTeamCathegory.Items.Add("-Select Category-");
             ddlTeamCathegory.Items.Add("Male");  // id 0
             ddlTeamCathegory.Items.Add("Female"); // id 1
         }

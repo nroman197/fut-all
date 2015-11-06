@@ -180,13 +180,13 @@
                           </asp:TableRow>
                           <asp:TableRow runat="server">                              
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
-                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamsQuant" CssClass="ddl" OnTextChanged="DropDownList1_TextChanged" AutoPostBack="true"></asp:DropDownList>                                  
+                                  &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddlTeamsQuant" CssClass="ddl" OnTextChanged="ddlTeamsQuant_TextChanged" AutoPostBack="true"></asp:DropDownList>                                  
                               </asp:TableCell> 
                               <asp:TableCell HorizontalAlign="Center">
-                                 &nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblGroupsQuant" Text="8" Font-Size="Medium" CssClass="lblFont3" ></asp:Label>
+                                 &nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblGroupsQuant" Text="" Font-Size="Medium" CssClass="lblFont3" ></asp:Label>
                               </asp:TableCell>
                               <asp:TableCell HorizontalAlign="Center">
-                                 &nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblQualifQuant" Text="16" Font-Size="Medium" CssClass="lblFont3" ></asp:Label>
+                                 &nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblQualifQuant" Text="" Font-Size="Medium" CssClass="lblFont3" ></asp:Label>
                               </asp:TableCell>                               
                           </asp:TableRow>                         
                       </asp:Table>

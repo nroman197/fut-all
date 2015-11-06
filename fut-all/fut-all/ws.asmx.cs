@@ -20,7 +20,7 @@ namespace fut_all
 
         private string ConnectionString()
         {
-            return "Data Source=KIM;Initial Catalog=FUTALL;User ID=adm;Password=adm";
+            return "Data Source=LAPTOP-3Q31SCMK;Initial Catalog=FUTALL;User ID=adm;Password=adm";
         }
 
         [WebMethod]
@@ -1207,6 +1207,32 @@ namespace fut_all
             }
 
             return role;
+        }
+
+        [WebMethod]
+        public List<string> TeamxTypexCategory_Get(int ptype, int pcat)
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "select * from fnTeamxTypexCategory_Get(" +ptype+ "," +pcat+")";
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0]));
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
         }
     }
 }
