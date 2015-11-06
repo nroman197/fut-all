@@ -15,6 +15,7 @@ namespace fut_all
             if (!IsPostBack)
             {
                 LoadCountries();
+                LoadStadiums();
             }
         }
 
@@ -53,6 +54,28 @@ namespace fut_all
 
             grvCountries.DataSource = tb;
             grvCountries.DataBind();
+        }
+
+        private void LoadStadiums()
+        {
+
+            List<string> theList = ws.Stadiums_Get();
+
+            System.Data.DataTable tb = new System.Data.DataTable();
+
+            // manage gridview
+            tb.Columns.Add("Name");
+
+
+            foreach (string g in theList)
+            {
+
+                tb.Rows.Add(g);
+
+            }
+
+            grvStadiums.DataSource = tb;
+            grvStadiums.DataBind();
         }
 
         protected void DropDownList1_TextChanged(object sender, EventArgs e)
