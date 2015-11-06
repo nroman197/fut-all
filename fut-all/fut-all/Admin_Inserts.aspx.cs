@@ -31,6 +31,7 @@ namespace fut_all
             if(txbContinent.Text.Length > 0){
                 ws.Continent_Ins(txbContinent.Text);
                 txbContinent.Text = "";
+                LoadContinents();
             } 
         }
 

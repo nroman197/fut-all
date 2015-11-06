@@ -135,58 +135,6 @@ namespace fut_all
             }
         }
 
-        //load all the teams stored in the database
-        //private void LoadAllPlayersGrid(int teamid, int pgenre, int isnationalteam, int countryid)
-        //{
-        //    int counter = 0;
-        //    List<string> theList = ws.AllPlayers_Get(teamid, pgenre,isnationalteam,countryid);
-        //    string nameplayer = string.Empty;
-        //    string lastnameplayer = string.Empty;
-        //    string tshirt = string.Empty;
-        //    string positionplayer = string.Empty;
-        //    string countryplayer = string.Empty;
-
-        //    System.Data.DataTable tb = new System.Data.DataTable();
-
-        //    // manage gridview
-        //    tb.Columns.Add("Name");
-        //    tb.Columns.Add("Last Name");
-        //    tb.Columns.Add("Position");
-        //    tb.Columns.Add("Country");
-        //    tb.Columns.Add("#");
-
-        //    foreach (string g in theList)
-        //    {
-        //        if (counter == 0)
-        //        {
-        //            nameplayer = g;
-        //        }
-        //        else if (counter == 1)
-        //        {
-        //            lastnameplayer = g;
-        //        }
-        //        else if (counter == 2)
-        //        {
-        //            tshirt = g;
-        //        }
-        //        else if (counter == 4)
-        //        {
-        //            countryplayer = g;
-        //        }
-        //        else if (counter == 6)
-        //        {
-        //            positionplayer = g;
-        //            tb.Rows.Add(nameplayer, lastnameplayer, positionplayer, countryplayer, tshirt);
-        //            counter = -1;
-        //        }
-
-        //        counter++;
-        //    }
-
-
-        //    grvAllPlayers.DataSource = tb;
-        //    grvAllPlayers.DataBind();
-        //}
 
         private void LoadAllNotTeamPlayersGrid(int teamid, int pgenre, int isnationalteam, int countryid)
         {
@@ -404,11 +352,12 @@ namespace fut_all
             newconfederation = txbConfederation.Text;
             int confederationtid = ws.Confederation_Id_Get(ddlConfederations.SelectedItem.Text);
             int continentid = ws.Continent_Id_Get(ddlContinent.SelectedItem.Text);
-            if (newconfederation.Length != 0)
+            if (newconfederation.Length != 0 && ddlConfederations.SelectedIndex > 0 && ddlContinent.SelectedIndex > 0)
             {
                 ws.Confederation_Upd(newconfederation, Convert.ToInt32(confederationtid), Convert.ToInt32(continentid));
                 txbConfederation.Text = "";
                 ddlConfederations.SelectedIndex = 0;
+                LoadConfederations();
             }
         }
 
@@ -424,12 +373,13 @@ namespace fut_all
                 newcountry = txbCountry.Text;
                 int confederationid = ws.Confederation_Id_Get(ddlConfederations.SelectedItem.Text);
                 int countryid = ws.Country_Id_Get(ddlCountries.SelectedItem.Text);
-                if (newcountry.Length != 0)
+                if (newcountry.Length != 0 && ddlConfederations.SelectedIndex > 0 && ddlCountries.SelectedIndex > 0)
                 {
                     ws.Country_Upd(newcountry, Convert.ToInt32(countryid), Convert.ToInt32(confederationid));
                     txbCountry.Text = "";
                     ddlCountries.SelectedIndex = 0;
                     ddlConfederations.SelectedIndex = 0;
+                    LoadCountries();
                 }
             }
         }
@@ -451,6 +401,8 @@ namespace fut_all
         protected void ddlPlayername_TextChanged(object sender, EventArgs e)
         {
             LoadPosition();
+            LoadCountries();
+            LoadTeamStadiums();
             LoadPlayerCountry();
             LoadPlayerGenre();
             int idPlayer = ws.Player_Id_Get(ddlPlayername.SelectedItem.Text);
@@ -513,7 +465,7 @@ namespace fut_all
             ddlPosition.SelectedIndex = indexvalue1;
 
 
-
+            
         }
 
 
@@ -521,6 +473,7 @@ namespace fut_all
         protected void ddlTeamName_TextChanged(object sender, EventArgs e)
         {
             int idTeam = ws.Team_Id_Get(ddlTeamname.SelectedItem.Text);
+            LoadCountries();
             LoadCathegories();
             LoadTeamTypes();
             LoadTeamCountries();
@@ -819,6 +772,7 @@ namespace fut_all
 
             grvAllPlayers.DataSource = null;
             grvAllPlayers.DataBind();
+            LoadPlayers();
         }
 
         protected void btnDeletePlayer_Click(object sender, EventArgs e)
