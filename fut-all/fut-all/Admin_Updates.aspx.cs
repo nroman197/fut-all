@@ -817,6 +817,32 @@ namespace fut_all
             grvPlayers.DataSource = null;
             grvPlayers.DataBind();
             LoadPlayers();
+            int countryid = ws.Country_Id_Get(ddlTeamCountry.SelectedItem.Text);
+            if (ddlTeamCathegory.SelectedIndex == 1 && ddlTeamType.SelectedIndex == 1)
+            {
+                // LoadAllPlayersGrid(teamid,0,0,countryid); //male and national team
+                LoadTeamPlayersGrid(teamid, 0, 1, countryid);
+                LoadAllNotTeamPlayersGrid(teamid, 0, 1, countryid);
+            }
+            else if (ddlTeamCathegory.SelectedIndex == 1 && ddlTeamType.SelectedIndex == 2)
+            {
+                // LoadAllPlayersGrid(teamid, 0, 1, countryid); ////male and Club
+                LoadTeamPlayersGrid(teamid, 0, 0, countryid);
+                LoadAllNotTeamPlayersGrid(teamid, 0, 0, countryid);
+
+            }
+            else if (ddlTeamCathegory.SelectedIndex == 2 && ddlTeamType.SelectedIndex == 1)
+            {
+                // LoadAllPlayersGrid(teamid, 1, 0, countryid); //female and national team
+                LoadTeamPlayersGrid(teamid, 1, 1, countryid);
+                LoadAllNotTeamPlayersGrid(teamid, 1, 1, countryid);
+            }
+            else if (ddlTeamCathegory.SelectedIndex == 2 && ddlTeamType.SelectedIndex == 2)
+            {
+                // LoadAllPlayersGrid(teamid, 1, 1, countryid); //female and club
+                LoadTeamPlayersGrid(teamid, 1, 0, countryid);
+                LoadAllNotTeamPlayersGrid(teamid, 1, 0, countryid);
+            }
         }
     }
 }
