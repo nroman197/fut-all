@@ -228,7 +228,7 @@
             </asp:TableRow>
             <asp:TableRow HorizontalAlign="Right" >
                 <asp:TableCell>
-                    <asp:Button runat="server" ID="btnAddEvent" CssClass="btn" Width="218px" Text="Create Event" OnClick="btnAddTeam_Click"/>&nbsp&nbsp&nbsp&nbsp
+                    <asp:Button runat="server" ID="btnAddEvent" CssClass="btn" Width="218px" Text="Create Event" OnClick="btnAddEvent_Click"/>&nbsp&nbsp&nbsp&nbsp
                     <br />
                     <br />
                 </asp:TableCell>                

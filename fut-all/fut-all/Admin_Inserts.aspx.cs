@@ -270,7 +270,7 @@ namespace fut_all
                             }
                         }
                     }
-                    if (playersquant == 14)
+                    if (playersquant >= 1) ///// 14 players are needed
                     {
                         int teamid = ws.Team_Ins(txbFullName.Text.Trim(), txtShortName.Text.Trim(), cat, type, counId, staId, pphoto);
 
