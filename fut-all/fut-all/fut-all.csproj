@@ -92,6 +92,9 @@
     <Content Include="Styles\tables.css" />
     <Content Include="Styles\verticalmenu.css" />
     <Content Include="Tourn_Cups.aspx" />
+    <Content Include="Tourn_Cup_Groups.aspx" />
+    <Content Include="Tourn_Cup_Group_Matches.aspx" />
+    <Content Include="Tourn_Cup_Match.aspx" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
     <Content Include="Admin_Inserts.aspx" />
@@ -205,6 +208,27 @@
     </Compile>
     <Compile Include="Add_Tourn_Cup.aspx.designer.cs">
       <DependentUpon>Add_Tourn_Cup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tourn_Cup_Groups.aspx.cs">
+      <DependentUpon>Tourn_Cup_Groups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tourn_Cup_Groups.aspx.designer.cs">
+      <DependentUpon>Tourn_Cup_Groups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tourn_Cup_Group_Matches.aspx.cs">
+      <DependentUpon>Tourn_Cup_Group_Matches.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tourn_Cup_Group_Matches.aspx.designer.cs">
+      <DependentUpon>Tourn_Cup_Group_Matches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tourn_Cup_Match.aspx.cs">
+      <DependentUpon>Tourn_Cup_Match.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tourn_Cup_Match.aspx.designer.cs">
+      <DependentUpon>Tourn_Cup_Match.aspx</DependentUpon>
     </Compile>
     <Compile Include="ws.asmx.cs">
       <DependentUpon>ws.asmx</DependentUpon>
