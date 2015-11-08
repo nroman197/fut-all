@@ -68,6 +68,7 @@
     <Content Include="Add_Local_Tourn.aspx" />
     <Content Include="Add_Qual_Tourn.aspx" />
     <Content Include="Admin_Updates.aspx" />
+    <Content Include="Styles\CircularImage.css" />
     <Content Include="Groups.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Images\background2.png" />
@@ -88,6 +89,7 @@
     <Content Include="Styles\General.css" />
     <Content Include="Styles\navbar.css" />
     <Content Include="Styles\navbar2.css" />
+    <Content Include="Styles\tables.css" />
     <Content Include="Styles\verticalmenu.css" />
     <Content Include="Tourn_Cups.aspx" />
     <Content Include="Web.config" />

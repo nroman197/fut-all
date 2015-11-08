@@ -8,6 +8,7 @@
     <title></title>
     <link href="Styles/Default.css" rel="stylesheet" />
     <link href="Styles/General.css" rel="stylesheet" />
+    <link href="Styles/CircularImage.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">

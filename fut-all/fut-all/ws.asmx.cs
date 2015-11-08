@@ -1580,5 +1580,34 @@ namespace fut_all
 
             return theList;
         }
+
+        [WebMethod]
+        public int Event_Id_Get(string name)
+        {
+            int theId = 0;
+            string queryString = "select event_id from [event] where [name] = '"+ name +"'";
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
     }
 }

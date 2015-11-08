@@ -48,7 +48,16 @@ namespace fut_all
                 TableRow tRow = new TableRow();
                 tbl.Rows.Add(tRow);
                 counter = 0;
-        
+                TableCell tc = new TableCell();
+                tRow.Cells.Add(tc);
+                Panel pn = new Panel();
+                pn.Attributes["class"] = "roundedChartTbl";
+                tc.Controls.Add(pn);
+                Table intbl = new Table();
+                intbl.Height = 80;
+                pn.Controls.Add(intbl);
+                TableRow tr = new TableRow();
+                intbl.Rows.Add(tr);
 
                 for (int k = cur; k < total; k++)
                 {
@@ -62,11 +71,12 @@ namespace fut_all
 
                         // Create a new cell and add it to the row.
                         TableCell tCell = new TableCell();
+                        tCell.Width = 80;
+                        tCell.VerticalAlign = VerticalAlign.Middle;
+                        tCell.HorizontalAlign = HorizontalAlign.Center;
 
-                        tCell.VerticalAlign = VerticalAlign.Top;
-
-                        imglogo.Attributes["class"] += "circular";
-                        tRow.Cells.Add(tCell);
+                        imglogo.Attributes["class"] = "circular";
+                        tr.Cells.Add(tCell);
 
                         tCell.Controls.Add(imglogo);
                     }
@@ -74,22 +84,57 @@ namespace fut_all
                     {
                         name = theList[k];
                         TableCell tCell = new TableCell();
-                        tRow.Cells.Add(tCell);
-                        tCell.Controls.Add(new LiteralControl(name));
+                        tCell.Width = 200;
+                        tCell.VerticalAlign = VerticalAlign.Middle;
+                        tCell.HorizontalAlign = HorizontalAlign.Center;
+                        tr.Cells.Add(tCell);
+
+                        int eventid = ws.Event_Id_Get(name);
+
+                        System.Web.UI.WebControls.HyperLink h = new HyperLink();
+                        h.Text = name;
+                        h.Attributes["class"] = "lblFontName";
+                        h.NavigateUrl = "Default.aspx?evId=" + Convert.ToString(eventid);
+                        tCell.Controls.Add(h);
                     }
                     else if (counter%6 == 2)
                     {
                         startdate = theList[k];
                         TableCell tCell = new TableCell();
-                        tRow.Cells.Add(tCell);
-                        tCell.Controls.Add(new LiteralControl(startdate));
+                        tCell.Width = 100;
+                        tCell.VerticalAlign = VerticalAlign.Middle;
+                        tCell.HorizontalAlign = HorizontalAlign.Center;
+                        tr.Cells.Add(tCell);
+                        Label lbl = new Label();
+                        lbl.Attributes["class"] = "lblFontText";
+                        string[] realsdate = startdate.Split(' ');
+                        lbl.Text = realsdate[0];
+                        tCell.Controls.Add(lbl);
                     }
+
                     else if (counter%6 == 3)
                     {
+                        TableCell tCell0 = new TableCell();
+                        tCell0.Width = 20;
+                        tCell0.VerticalAlign = VerticalAlign.Middle;
+                        tCell0.HorizontalAlign = HorizontalAlign.Center;
+                        Label lbl0 = new Label();
+                        lbl0.Attributes["class"] = "lblFontText";
+                        lbl0.Text = "-";
+                        tr.Cells.Add(tCell0);
+                        tCell0.Controls.Add(lbl0);
+
                         enddate = theList[k];
                         TableCell tCell = new TableCell();
-                        tRow.Cells.Add(tCell);
-                        tCell.Controls.Add(new LiteralControl(enddate));
+                        tCell.Width = 100;
+                        tCell.VerticalAlign = VerticalAlign.Middle;
+                        tCell.HorizontalAlign = HorizontalAlign.Center;
+                        tr.Cells.Add(tCell);
+                        Label lbl = new Label();
+                        lbl.Attributes["class"] = "lblFontText";
+                        string[] realedate = enddate.Split(' ');
+                        lbl.Text = realedate[0];
+                        tCell.Controls.Add(lbl);
                     }
                     else if (counter%6 == 4)
                     {
@@ -102,24 +147,35 @@ namespace fut_all
                             teamtype = "Clubs";
                         }
                         TableCell tCell = new TableCell();
-                        tRow.Cells.Add(tCell);
-                        tCell.Controls.Add(new LiteralControl(teamtype));
+                        tCell.Width = 100;
+                        tCell.VerticalAlign = VerticalAlign.Middle;
+                        tCell.HorizontalAlign = HorizontalAlign.Center;
+                        tr.Cells.Add(tCell);
+                        Label lbl = new Label();
+                        lbl.Attributes["class"] = "lblFontText";
+                        lbl.Text = teamtype;
+                        tCell.Controls.Add(lbl);
 
                     }
                     else if (counter%6 == 5)
                     {
                         if (Convert.ToBoolean(theList[k]) == false)
                         {
-                            teamcat = "Men";
+                            teamcat = "Men's";
                         }
                         else
                         {
-                            teamcat = "Women";
+                            teamcat = "Women's";
                         }
                         TableCell tCell = new TableCell();
-                        tRow.Cells.Add(tCell);
-                        tCell.Controls.Add(new LiteralControl(teamcat));
-                        
+                        tCell.Width = 80;
+                        tCell.VerticalAlign = VerticalAlign.Middle;
+                        tCell.HorizontalAlign = HorizontalAlign.Center;
+                        tr.Cells.Add(tCell);
+                        Label lbl = new Label();
+                        lbl.Attributes["class"] = "lblFontText";
+                        lbl.Text = teamcat;
+                        tCell.Controls.Add(lbl);
                         cur = cur + 6;
 
                     }

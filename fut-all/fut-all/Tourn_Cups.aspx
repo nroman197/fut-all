@@ -9,6 +9,8 @@
     <link href="Styles/General.css" rel="stylesheet" />
     <link href="Styles/navbar.css" rel="stylesheet" />
     <link href="Styles/navbar2.css" rel="stylesheet" />
+    <link href="Styles/CircularImage.css" rel="stylesheet" />
+    <link href="Styles/tables.css" rel="stylesheet" />
 </head>
 <body style="background-image:url('../Images/background6.jpg')">
     <form id="form1" runat="server">
@@ -45,16 +47,10 @@
         </nav>          
         </div>
         <br />
-        <asp:Table runat="server" BorderStyle="None" BackColor="White" Height="100%" Width="50%" HorizontalAlign="Center" CssClass="roundedChart">
+        <asp:Table runat="server"  ID="maintbl" BorderStyle="None" BackColor="White" Height="100%" Width="60%" HorizontalAlign="Center" CssClass="roundedChart">
             <asp:TableRow runat ="server">
                 <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
-                    <asp:Table runat="server" ID="center" Width="100%">
-                        <asp:TableRow runat="server" ID="row" Width="100%">
-                            <asp:TableCell runat="server" ID="cell" Width="100%" HorizontalAlign="Center">
-                            <asp:Table runat="server" ID="tbl" BackColor="WhiteSmoke" ></asp:Table>
-                            </asp:TableCell>
-                        </asp:TableRow>
-                    </asp:Table>
+                    <asp:Table  runat ="server" ID="tbl" Width="100%"></asp:Table>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
