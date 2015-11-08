@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -229,7 +230,7 @@ namespace fut_all
                             {
                                 string nameteam = row.Cells[1].Text;
 
-                                theListTeam.Add(nameteam);
+                                theListTeam.Add(nameteam); // all selected teams
 
                             }
                         }
@@ -238,7 +239,51 @@ namespace fut_all
                     if (theListCou.Count > 0 && theListSta.Count > 0 && theListTeam.Count == Convert.ToInt32(ddlTeamsQuant.Text))
                     {
                         // generate groups
-                       
+                        List<string> sortedTeamsList = Shuffle(theListTeam);
+                        
+                        int teamtype = 0;
+                        if(ddlTeamType.SelectedIndex == 2){
+                            teamtype = 1;
+                        }
+                        int iswom = 0;
+                        if(ddlTeamCathegory.SelectedIndex == 2){
+                            iswom = 1;
+                        }
+
+                        DateTime stdat = Convert.ToDateTime(txbStartDate.Text);
+                        string sdat = stdat.ToString("MM/dd/yyyy");
+
+                        DateTime endat = Convert.ToDateTime(txbEndDate.Text);
+                        string edat = endat.ToString("MM/dd/yyyy");
+
+                        int eventtype = ws.EventType_Id_Get("Tournament Cup");
+
+                        if (fuEventLogo.PostedFile.ContentType == "image/jpeg" || fuEventLogo.PostedFile.ContentType == "image/png"
+                            || fuEventLogo.PostedFile.ContentType == "image/bmp" || fuEventLogo.PostedFile.ContentType == "image/jpg")
+                        {
+                            string filename = Path.GetFileName(fuEventLogo.FileName);
+                            fuEventLogo.SaveAs(@"C:\fut-all\events_logos\" + filename);
+
+                            string pphoto = @"C:\fut-all\events_logos\" + filename;
+                            ws.Event_Ins(txbEventName.Text, teamtype, iswom, Convert.ToInt32(ddlTeamsQuant.Text),
+                            eventtype, sdat, edat, pphoto);                       
+                            int event_id = ws.LastEvent_Id_Get();
+                            CreatePhaseGroups(event_id, sortedTeamsList);                      
+                            CreatePhaseQualifications(event_id);   
+                        }
+                        //clear
+                        txbEventName.Text = "";
+                        txbEndDate.Text = "";
+                        txbStartDate.Text = "";
+                        ddlTeamCathegory.SelectedIndex = 0;
+                        ddlTeamType.SelectedIndex = 0;
+                        ddlTeamsQuant.SelectedIndex = 0;
+                        lblGroupsQuant.Text = "";
+                        lblQualifQuant.Text = "";
+                        grvStadiums.DataSource = null;
+                        grvStadiums.DataBind();
+                        grvParticipants.DataSource = null;
+                        grvParticipants.DataBind();                                                      
                     }
                     else if(theListCou.Count == 0)
                     {
@@ -269,6 +314,104 @@ namespace fut_all
                                       "ServerControlScript", script, true);
             }
         }
+
+        private static Random rng = new Random();
+
+        public static List<string> Shuffle(List<string> theList)
+        {
+            int n = theList.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                string value = theList[k];
+                theList[k] = theList[n];
+                theList[n] = value;
+            }
+
+            return theList;
+        }
+
+        protected void CreateMatches(List<string> sortedTeamsList, int pphaseid)
+        {
+            int counter = 3;
+            int i = 0;
+
+            // create matches
+            while (sortedTeamsList.Count() > 0)
+            {
+                for (int j = 0; j < counter; j++)
+                {
+                    ws.Match_Ins(ws.Team_Id_Get(sortedTeamsList[i]), ws.Team_Id_Get(sortedTeamsList[j + 1]), pphaseid);
+                }
+                counter--;
+                sortedTeamsList.Remove(sortedTeamsList[i]);
+                if (counter < 0)
+                {
+                    counter = 3;
+                }
+            } 
+        }
+
+        protected void CreatePhaseGroups(int pevent_id, List<string> sortedTeamsList)
+        {
+            int lastphaseid = 0;
+            string name = "Group ";
+            for (int i = 0; i < Convert.ToInt32(lblGroupsQuant.Text); i++)
+            {
+                name = name + (i+1);
+                ws.Phase_Ins(name, ws.PhaseType_Id_Get("Groups"), pevent_id);
+                lastphaseid = ws.LastPhase_Id_Get();
+
+                int counter = 3;
+                int k = 0;
+
+                // create matches
+                while (sortedTeamsList.Count() > 0)
+                {
+                    for (int j = 0; j < counter; j++)
+                    {
+                        ws.Match_Ins(ws.Team_Id_Get(sortedTeamsList[k]), ws.Team_Id_Get(sortedTeamsList[j + 1]), lastphaseid);
+                    }
+                    counter--;
+                    sortedTeamsList.Remove(sortedTeamsList[k]);
+                    if (counter < 0)
+                    {                                                
+                        break;
+                    }
+                }
+
+                name = "Group ";
+            }
+                
+        }
+
+        protected void CreatePhaseQualifications(int peventid)
+        {
+            string name = ws.PhaseType_Name_GetxQuant((Convert.ToInt32(lblQualifQuant.Text))/2);
+
+            int idtype = ws.PhaseType_Id_Get(name);
+            
+            int quant = Convert.ToInt32(lblQualifQuant.Text)/2;
+
+            int newphaseid = 0;
+
+            while (quant > 0)
+            {                
+                ws.Phase_Ins(name, idtype, peventid);
+                newphaseid = ws.LastPhase_Id_Get();
+                for (int i = 0; i < quant; i++)
+                {
+                    ws.NoTeam_Match_Ins(newphaseid);
+                }
+                quant = quant / 2;
+                name = ws.PhaseType_Name_GetxQuant(quant);
+                idtype = ws.PhaseType_Id_Get(name);
+                
+            }
+
+        }
+       
 
     }
 }

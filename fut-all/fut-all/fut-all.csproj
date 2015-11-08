@@ -67,7 +67,6 @@
   <ItemGroup>
     <Content Include="Add_Local_Tourn.aspx" />
     <Content Include="Add_Qual_Tourn.aspx" />
-    <Content Include="Admin_Events.aspx" />
     <Content Include="Admin_Updates.aspx" />
     <Content Include="Groups.aspx" />
     <Content Include="Home.aspx" />
@@ -111,13 +110,6 @@
     </Compile>
     <Compile Include="Add_Qual_Tourn.aspx.designer.cs">
       <DependentUpon>Add_Qual_Tourn.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin_Events.aspx.cs">
-      <DependentUpon>Admin_Events.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin_Events.aspx.designer.cs">
-      <DependentUpon>Admin_Events.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin_Updates.aspx.cs">
       <DependentUpon>Admin_Updates.aspx</DependentUpon>

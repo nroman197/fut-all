@@ -13,5 +13,10 @@ namespace fut_all
         {
 
         }
+
+        protected void imgLogoHome_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
     }
 }

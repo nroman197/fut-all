@@ -31,13 +31,13 @@
             <nav class="admenu">                
                 <ul id="menu_adm" >
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <li ><a runat="server" id="refsection1">
-                        <asp:Label runat="server" ID="lblSection1" Text="Events"></asp:Label>
+                    <li ><a runat="server" id="refsection1" href="Insert_Admins.aspx">
+                        <asp:Label runat="server" ID="lblSection1" Text="Admins" ></asp:Label>
                          </a></li>
-                    <li ><a runat="server" id="refsection2">
+                    <li ><a runat="server" id="refsection2" href="Admin_Inserts.aspx">
                         <asp:Label runat="server" ID="lblSection2" Text="Insert Info"></asp:Label>
                          </a></li>
-                    <li ><a runat="server" id="refsection3">
+                    <li ><a runat="server" id="refsection3" href="Admin_Updates.aspx">
                         <asp:Label runat="server" ID="lblsection3" Text="Update Info"></asp:Label>
                          </a></li>
                </ul>

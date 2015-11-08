@@ -1241,7 +1241,8 @@ namespace fut_all
             List<string> theList = new List<string>();
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionString();
-            string queryString = "select * from fnTeamxTypexCategory_Get(" + ptype + "," + pcat + ")";
+            string queryString = "select [name] from team where isClub = "+ Convert.ToString(ptype) +
+                " and isWomenTeam = " +Convert.ToString(pcat)+ " order by [name] asc";
 
             SqlCommand command = connection.CreateCommand();
             command.CommandTimeout = 3600;
@@ -1259,6 +1260,264 @@ namespace fut_all
             connection.Close();
 
             return theList;
+        }
+
+        [WebMethod]
+        public void Match_Ins(int team1_id, int team2_id, int pphaseid)
+        {
+            string queryString = "spMatch_Ins " + Convert.ToString(team1_id) + " , " + Convert.ToString(team2_id) 
+                + ", "+Convert.ToString(pphaseid);
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                reader1.Close();
+                connection2.Close();
+            }
+        }
+
+        [WebMethod]
+        public void Phase_Ins(string pha_name, int pha_id, int pevent_id)
+        {
+            string queryString = "spPhase_Ins '" + pha_name + "' , " + Convert.ToString(pha_id) + ","+Convert.ToString(pevent_id);
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                reader1.Close();
+                connection2.Close();
+            }
+        }
+
+        [WebMethod]
+        public int PhaseType_Id_Get(string pname)
+        {
+            int theId = 0;
+            string queryString = "select phase_type_id from phase_type where name = '" + pname + "'";
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
+        public int PhaseType_Id_GetxQuant(int pquant)
+        {
+            int theId = 0;
+            string queryString = "select phase_type_id from phase_type where matches_quant = " + pquant ;
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
+        public string PhaseType_Name_GetxQuant(int pquant)
+        {
+            string theId = "";
+            string queryString = "select name from phase_type where matches_quant = " + pquant;
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToString(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
+        public void NoTeam_Match_Ins(int pphase)
+        {
+            string queryString = "spNoTeam_Match_Ins " + Convert.ToString(pphase) ;
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                reader1.Close();
+                connection2.Close();
+            }
+        }
+
+        [WebMethod]
+        public int LastPhase_Id_Get()
+        {
+            int theId = 0;
+            string queryString = "select max(phase_id) from phase";
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
+        public void Event_Ins(string pname,int pteam_type, int pisWomen, int team_quant,
+            int pevent_type_id, string pstart_date, string pend_date, string logo)
+        {
+            string queryString = "spEvent_Ins '" + pname + "', " + Convert.ToString(pteam_type) + ","
+                + Convert.ToString(pisWomen) + "," + Convert.ToString(team_quant) + ","
+                + Convert.ToString(pevent_type_id) + ",'" + pstart_date + "', '" + pend_date + "', '"+logo+"'";
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                reader1.Close();
+                connection2.Close();
+            }
+        }
+
+        [WebMethod]
+        public int LastEvent_Id_Get()
+        {
+            int theId = 0;
+            string queryString = "select max(event_id) from [event]";
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
+        public int EventType_Id_Get(string pname)
+        {
+            int theId = 0;
+            string queryString = "select event_type_id from Event_Type where [name] = '" +pname+ "'";
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
         }
     }
 }
