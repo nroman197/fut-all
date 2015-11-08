@@ -74,7 +74,7 @@ namespace fut_all
 
         protected void imgLogoHome_Click(object sender, ImageClickEventArgs e)
         {
-
+            Response.Redirect("Home.aspx");
         }
 
         private void LoadTeamTypes()

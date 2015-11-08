@@ -31,7 +31,7 @@
             <nav class="admenu">                
                 <ul id="menu_adm" >
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <li ><a runat="server" id="refsection1">
+                    <li ><a runat="server" id="refsection1" href="Insert_Admins.aspx">
                         <asp:Label runat="server" ID="lblSection1" Text="Admins"></asp:Label>
                          </a></li>
                     <li ><a runat="server" id="refsection2" href="Admin_Inserts.aspx">
