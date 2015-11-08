@@ -10,7 +10,7 @@
     <link href="Styles/navbar.css" rel="stylesheet" />
     <link href="Styles/navbar2.css" rel="stylesheet" />
 </head>
-<body>
+<body style="background-image:url('../Images/background6.jpg')">
     <form id="form1" runat="server">
     <div>
     <div>
@@ -39,11 +39,25 @@
                     <asp:Label runat="server" ID="lblSection2" Text="Insert Info"></asp:Label>
                         </a></li>
                 <li ><a runat="server" id="refsection3" href="Admin_Updates.aspx">
-                    <asp:Label runat="server" ID="lblsection3" Text="Update Info"></asp:Label>
+                    <asp:Label runat="server" ID="lblsection3" Text="Update Info" ></asp:Label>
                         </a></li>
             </ul>
         </nav>          
         </div>
+        <br />
+        <asp:Table runat="server" BorderStyle="None" BackColor="White" Height="100%" Width="50%" HorizontalAlign="Center" CssClass="roundedChart">
+            <asp:TableRow runat ="server">
+                <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
+                    <asp:Table runat="server" ID="center" Width="100%">
+                        <asp:TableRow runat="server" ID="row" Width="100%">
+                            <asp:TableCell runat="server" ID="cell" Width="100%" HorizontalAlign="Center">
+                            <asp:Table runat="server" ID="tbl" BackColor="WhiteSmoke" ></asp:Table>
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
     </div>
     </form>
 </body>

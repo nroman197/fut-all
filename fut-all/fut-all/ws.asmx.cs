@@ -1519,5 +1519,66 @@ namespace fut_all
 
             return theId;
         }
+
+        [WebMethod]
+        public int Events_Count()
+        {
+            int theId = 0;
+            string queryString = "select count(1) from [event]";
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
+        public List<string> Events_Get()
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "Events_Get" ;
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0])); // logo
+                theList.Add(Convert.ToString(reader[1])); // name
+                theList.Add(Convert.ToString(reader[2])); // start date
+                theList.Add(Convert.ToString(reader[3])); // end date
+                theList.Add(Convert.ToString(reader[4])); // team type 0 national team, 1 club
+                theList.Add(Convert.ToString(reader[5])); // is women  0 men, 1 women
+
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
+        }
     }
 }
