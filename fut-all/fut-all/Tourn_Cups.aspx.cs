@@ -94,7 +94,7 @@ namespace fut_all
                         System.Web.UI.WebControls.HyperLink h = new HyperLink();
                         h.Text = name;
                         h.Attributes["class"] = "lblFontName";
-                        h.NavigateUrl = "Default.aspx?evId=" + Convert.ToString(eventid);
+                        h.NavigateUrl = "Tourn_Cup_Phases.aspx?evId=" + Convert.ToString(eventid);
                         tCell.Controls.Add(h);
                     }
                     else if (counter%6 == 2)

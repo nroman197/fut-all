@@ -1,20 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Tourn_Cup_Groups.aspx.cs" Inherits="fut_all.Tourn_Cup_Groups" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Tourn_Cup_Phase_Matches.aspx.cs" Inherits="fut_all.Tourn_Cup_Group_Matches" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="Styles/CircularImage.css" rel="stylesheet" />
     <link href="Styles/General.css" rel="stylesheet" />
     <link href="Styles/navbar.css" rel="stylesheet" />
     <link href="Styles/navbar2.css" rel="stylesheet" />
     <link href="Styles/tables.css" rel="stylesheet" />
-    <link href="Styles/CircularImage.css" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Tournament Cup Groups</title>
+    <title>Tournament Cup Group Matches</title>
 </head>
 <body style="background-image:url('../Images/background6.jpg')">
     <form id="form1" runat="server">
-        <div>
+     <div>
     <div>
         <nav class="navbar">                
             <ul id="menu_wrap">

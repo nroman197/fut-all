@@ -20,7 +20,7 @@ namespace fut_all
 
         private string ConnectionString()
         {
-            return "Data Source=KIM;Initial Catalog=FUTALL;User ID=adm;Password=adm";
+            return "Data Source=LAPTOP-3Q31SCMK;Initial Catalog=FUTALL;User ID=adm;Password=adm";
         }
 
         [WebMethod]
@@ -1586,6 +1586,91 @@ namespace fut_all
         {
             int theId = 0;
             string queryString = "select event_id from [event] where [name] = '"+ name +"'";
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
+        public List<string> Phases_Get(int eventid)
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "Phases_Get " + Convert.ToString(eventid);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0])); // phase name
+                theList.Add(Convert.ToString(reader[1])); // country name
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
+        }
+
+        [WebMethod]
+        public string Team_Flag_Get(string name)
+        {
+            string theflag = "";
+            string queryString = "select flag from team where name = '" + name + "'";
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theflag = Convert.ToString(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theflag;
+        }
+
+        [WebMethod]
+        public int Phases_Count(int eventid)
+        {
+            int theId = 0;
+            string queryString = "select count(1) from phase where event_id = " +Convert.ToString(eventid);
 
             string connection1 = ConnectionString();
 

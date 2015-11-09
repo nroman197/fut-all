@@ -92,8 +92,8 @@
     <Content Include="Styles\tables.css" />
     <Content Include="Styles\verticalmenu.css" />
     <Content Include="Tourn_Cups.aspx" />
-    <Content Include="Tourn_Cup_Groups.aspx" />
-    <Content Include="Tourn_Cup_Group_Matches.aspx" />
+    <Content Include="Tourn_Cup_Phases.aspx" />
+    <Content Include="Tourn_Cup_Phase_Matches.aspx" />
     <Content Include="Tourn_Cup_Match.aspx" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
@@ -209,19 +209,19 @@
     <Compile Include="Add_Tourn_Cup.aspx.designer.cs">
       <DependentUpon>Add_Tourn_Cup.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Tourn_Cup_Groups.aspx.cs">
-      <DependentUpon>Tourn_Cup_Groups.aspx</DependentUpon>
+    <Compile Include="Tourn_Cup_Phases.aspx.cs">
+      <DependentUpon>Tourn_Cup_Phases.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Tourn_Cup_Groups.aspx.designer.cs">
-      <DependentUpon>Tourn_Cup_Groups.aspx</DependentUpon>
+    <Compile Include="Tourn_Cup_Phases.aspx.designer.cs">
+      <DependentUpon>Tourn_Cup_Phases.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Tourn_Cup_Group_Matches.aspx.cs">
-      <DependentUpon>Tourn_Cup_Group_Matches.aspx</DependentUpon>
+    <Compile Include="Tourn_Cup_Phase_Matches.aspx.cs">
+      <DependentUpon>Tourn_Cup_Phase_Matches.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Tourn_Cup_Group_Matches.aspx.designer.cs">
-      <DependentUpon>Tourn_Cup_Group_Matches.aspx</DependentUpon>
+    <Compile Include="Tourn_Cup_Phase_Matches.aspx.designer.cs">
+      <DependentUpon>Tourn_Cup_Phase_Matches.aspx</DependentUpon>
     </Compile>
     <Compile Include="Tourn_Cup_Match.aspx.cs">
       <DependentUpon>Tourn_Cup_Match.aspx</DependentUpon>
