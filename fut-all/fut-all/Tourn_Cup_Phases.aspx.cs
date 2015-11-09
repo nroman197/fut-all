@@ -72,7 +72,7 @@ namespace fut_all
                             // Create a new cell and add it to the row.
                             TableCell tCellFlag = new TableCell();
                             tr.Cells.Add(tCellFlag);
-                            tCellFlag.Width = 80;
+                            tCellFlag.Width = 110;
                             tCellFlag.VerticalAlign = VerticalAlign.Middle;
                             tCellFlag.HorizontalAlign = HorizontalAlign.Center;
 
