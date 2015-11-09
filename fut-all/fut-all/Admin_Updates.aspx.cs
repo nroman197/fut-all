@@ -726,9 +726,9 @@ namespace fut_all
                     || fuFlag.PostedFile.ContentType == "image/bmp" || fuFlag.PostedFile.ContentType == "image/jpg")
                     {
                         string filename = Path.GetFileName(fuFlag.FileName);
-                        fuFlag.SaveAs(@"C:\fut-all\players_pics\" + filename);
+                        fuFlag.SaveAs(@"C:\fut-all\teams_flags\" + filename);
 
-                        string pflag = @"C:\fut-all\players_pics\" + filename;
+                        string pflag = @"C:\fut-all\teams_flags\" + filename;
                         int teamcountry_id = ws.Country_Id_Get(ddlTeamCountry.SelectedItem.Text);
                         int teamstadium_id = ws.Stadium_Id_Get(ddlTeamStadium.SelectedItem.Text);
                         int teamid = ws.Team_Id_Get(ddlTeamname.SelectedItem.Text);

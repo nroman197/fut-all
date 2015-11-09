@@ -9,6 +9,7 @@
     <link href="Styles/navbar2.css" rel="stylesheet" />
     <link href="Styles/tables.css" rel="stylesheet" />
     <link href="Styles/CircularImage.css" rel="stylesheet" />
+    <link href="Styles/FlagImage.css" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Tournament Cup Groups</title>
 </head>

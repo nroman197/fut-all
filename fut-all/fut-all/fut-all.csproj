@@ -86,6 +86,7 @@
     <Content Include="Qualifications.aspx" />
     <Content Include="Qual_Tourn.aspx" />
     <Content Include="Styles\Default.css" />
+    <Content Include="Styles\FlagImage.css" />
     <Content Include="Styles\General.css" />
     <Content Include="Styles\navbar.css" />
     <Content Include="Styles\navbar2.css" />
