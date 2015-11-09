@@ -265,11 +265,27 @@ namespace fut_all
                             fuEventLogo.SaveAs(@"C:\fut-all\events_logos\" + filename);
 
                             string pphoto = @"C:\fut-all\events_logos\" + filename;
+                            
                             ws.Event_Ins(txbEventName.Text, teamtype, iswom, Convert.ToInt32(ddlTeamsQuant.Text),
                             eventtype, sdat, edat, pphoto);                       
+                            
                             int event_id = ws.LastEvent_Id_Get();
+                            
                             CreatePhaseGroups(event_id, sortedTeamsList);                      
-                            CreatePhaseQualifications(event_id);   
+                            CreatePhaseQualifications(event_id);
+                            
+                            // insert countries x event
+                            for (int c = 0; c < theListCou.Count(); c++)
+                            {
+                                int couid = ws.Country_Id_Get(theListCou[c]);
+                                ws.CountryxEvent_Ins(couid, event_id);
+                            }
+
+                            for (int b = 0; b < theListSta.Count(); b++)
+                            {
+                                int staid = ws.Stadium_Id_Get(theListSta[b]);
+                                ws.StadiumxEvent_Ins(event_id, staid);
+                            }
                         }
                         //clear
                         txbEventName.Text = "";

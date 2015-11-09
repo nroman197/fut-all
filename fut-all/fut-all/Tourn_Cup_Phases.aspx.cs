@@ -31,7 +31,7 @@ namespace fut_all
             // Total number of rows.
             int rowCnt = ws.Phases_Count(eventid);
             List<string> theList = ws.Phases_Get(eventid);
-
+            
             for(int i = 0; i < rowCnt; i++)
             {
                 int counter = theList.Where(s => s == theList[0]).Count();
@@ -54,7 +54,18 @@ namespace fut_all
                 tr.Cells.Add(tCellGroup);                
                 Label lblGroup = new Label();
                 lblGroup.Text = theList[0];
-                tCellGroup.Controls.Add(lblGroup);
+                tCellGroup.Width = 150;
+                tCellGroup.VerticalAlign = VerticalAlign.Middle;
+                tCellGroup.HorizontalAlign = HorizontalAlign.Center;
+
+                int phaseid = ws.Phase_Id_Get(eventid, theList[0]);
+                
+                System.Web.UI.WebControls.HyperLink h = new HyperLink();
+                h.Text = lblGroup.Text;
+                h.Attributes["class"] = "lblFontName";
+                h.NavigateUrl = "Tourn_Cup_Phase_Matches.aspx?evId=" + Convert.ToString(eventid)+"&phaId="+Convert.ToString(phaseid);
+                tCellGroup.Controls.Add(h);
+
 
                 for(int j = 0; j < counter; j++)
                 {
@@ -72,7 +83,7 @@ namespace fut_all
                             // Create a new cell and add it to the row.
                             TableCell tCellFlag = new TableCell();
                             tr.Cells.Add(tCellFlag);
-                            tCellFlag.Width = 110;
+                            tCellFlag.Width = 50;
                             tCellFlag.VerticalAlign = VerticalAlign.Middle;
                             tCellFlag.HorizontalAlign = HorizontalAlign.Center;
 
@@ -84,8 +95,12 @@ namespace fut_all
                         //
                         TableCell tCell = new TableCell();
                         tr.Cells.Add(tCell);
+                        tCell.Width = 100;
+                        tCell.VerticalAlign = VerticalAlign.Middle;
+                        tCell.HorizontalAlign = HorizontalAlign.Left;
                         Label lbl = new Label();
                         lbl.Text = theList[j];
+                        lbl.Attributes["class"] = "lblFontText";
                         tCell.Controls.Add(lbl);
                     } 
                 }
@@ -94,6 +109,17 @@ namespace fut_all
                 {
                     theList.RemoveAt(0);
                 }
+
+                TableCell tCell2 = new TableCell();
+                tr.Cells.Add(tCell2);
+                tCell2.Width = 100;
+                tCell2.VerticalAlign = VerticalAlign.Middle;
+                tCell2.HorizontalAlign = HorizontalAlign.Left;
+                System.Web.UI.WebControls.HyperLink h2 = new HyperLink();
+                h2.Text = "Stats";
+                h2.Attributes["class"] = "lblFontText";
+                h2.NavigateUrl = "Phase_Stats.aspx";
+                tCell2.Controls.Add(h2);
             }                
         }
     }

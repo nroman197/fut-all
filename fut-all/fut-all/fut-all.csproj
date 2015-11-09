@@ -68,6 +68,7 @@
     <Content Include="Add_Local_Tourn.aspx" />
     <Content Include="Add_Qual_Tourn.aspx" />
     <Content Include="Admin_Updates.aspx" />
+    <Content Include="Phase_Stats.aspx" />
     <Content Include="Styles\CircularImage.css" />
     <Content Include="Groups.aspx" />
     <Content Include="Home.aspx" />
@@ -91,6 +92,7 @@
     <Content Include="Styles\navbar.css" />
     <Content Include="Styles\navbar2.css" />
     <Content Include="Styles\tables.css" />
+    <Content Include="Styles\tbxPhases.css" />
     <Content Include="Styles\verticalmenu.css" />
     <Content Include="Tourn_Cups.aspx" />
     <Content Include="Tourn_Cup_Phases.aspx" />
@@ -131,6 +133,13 @@
     </Compile>
     <Compile Include="Groups.aspx.designer.cs">
       <DependentUpon>Groups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Phase_Stats.aspx.cs">
+      <DependentUpon>Phase_Stats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Phase_Stats.aspx.designer.cs">
+      <DependentUpon>Phase_Stats.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

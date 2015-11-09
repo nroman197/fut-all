@@ -1,0 +1,17 @@
+﻿
+.ddlPh{
+    font-size:14px; 
+    border-style:solid;
+    height:30px;
+    width: 50px; 
+    padding:8px; 
+    border-radius:8px; 
+    border-width:2px;
+    border-color:#21a499; 
+    color:#878787;
+    font-family:'Century Gothic';
+}
+ 
+.ddlPh:focus { 
+    outline:none
+}

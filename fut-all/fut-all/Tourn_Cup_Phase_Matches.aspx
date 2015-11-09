@@ -4,11 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="Styles/FlagImage.css" rel="stylesheet" />
     <link href="Styles/CircularImage.css" rel="stylesheet" />
     <link href="Styles/General.css" rel="stylesheet" />
     <link href="Styles/navbar.css" rel="stylesheet" />
     <link href="Styles/navbar2.css" rel="stylesheet" />
     <link href="Styles/tables.css" rel="stylesheet" />
+    <link href="Styles/tbxPhases.css" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Tournament Cup Group Matches</title>
 </head>
@@ -47,7 +49,7 @@
         </nav>          
         </div>
         <br />
-        <asp:Table runat="server"  ID="maintbl" BorderStyle="None" BackColor="White" Height="100%" Width="60%" HorizontalAlign="Center" CssClass="roundedChart">
+        <asp:Table runat="server"  ID="maintbl" BorderStyle="None" BackColor="White" Height="100%" Width="40%" HorizontalAlign="Center" CssClass="roundedChart">
             <asp:TableRow runat ="server">
                 <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
                     <asp:Table  runat ="server" ID="tbl" Width="100%"></asp:Table>
