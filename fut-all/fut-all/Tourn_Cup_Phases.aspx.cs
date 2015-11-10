@@ -63,7 +63,7 @@ namespace fut_all
                 System.Web.UI.WebControls.HyperLink h = new HyperLink();
                 h.Text = lblGroup.Text;
                 h.Attributes["class"] = "lblFontName";
-                h.NavigateUrl = "Tourn_Cup_Phase_Matches.aspx?evId=" + Convert.ToString(eventid)+"&phaId="+Convert.ToString(phaseid);
+                h.NavigateUrl = "Tourn_Cup_Phase_Matches.aspx?evId=" + Convert.ToString(eventid)+"&phaId="+Convert.ToString(phaseid) ;
                 tCellGroup.Controls.Add(h);
 
 
@@ -118,7 +118,7 @@ namespace fut_all
                 System.Web.UI.WebControls.HyperLink h2 = new HyperLink();
                 h2.Text = "Stats";
                 h2.Attributes["class"] = "lblFontText";
-                h2.NavigateUrl = "Phase_Stats.aspx";
+                h2.NavigateUrl = "Phase_Stats.aspx?groname=" + Convert.ToString(lblGroup.Text);
                 tCell2.Controls.Add(h2);
             }                
         }
