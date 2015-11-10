@@ -66,6 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin_Updates.aspx" />
+    <Content Include="Images\miniball.png" />
+    <Content Include="Images\miniclock.png" />
+    <Content Include="Images\miniredcard.png" />
+    <Content Include="Images\minishotball.png" />
+    <Content Include="Images\minitrophy.png" />
+    <Content Include="Images\miniyellowcard.png" />
     <Content Include="Phase_Stats.aspx" />
     <Content Include="Styles\CircularImage.css" />
     <Content Include="Home.aspx" />
