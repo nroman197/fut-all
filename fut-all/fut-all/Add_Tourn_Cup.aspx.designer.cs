@@ -121,15 +121,6 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control Label23.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label23;
-        
-        /// <summary>
         /// Control txbEventName.
         /// </summary>
         /// <remarks>
@@ -137,15 +128,6 @@ namespace fut_all {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txbEventName;
-        
-        /// <summary>
-        /// Control fuEventLogo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuEventLogo;
         
         /// <summary>
         /// Control Label3.
@@ -362,6 +344,24 @@ namespace fut_all {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grvParticipants;
+        
+        /// <summary>
+        /// Control Label23.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label23;
+        
+        /// <summary>
+        /// Control fuEventLogo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fuEventLogo;
         
         /// <summary>
         /// Control btnAddEvent.

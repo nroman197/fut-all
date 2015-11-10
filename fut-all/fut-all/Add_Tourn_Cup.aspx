@@ -55,16 +55,10 @@
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
                                   <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label2" Text="Name" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
                               </asp:TableCell>
-                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
-                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label23" Text="Logo" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
-                              </asp:TableCell>
                           </asp:TableRow>
                           <asp:TableRow runat="server">                              
                               <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
                                   &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txbEventName" CssClass="txbClass" Text="" ></asp:TextBox>
-                              </asp:TableCell> 
-                              <asp:TableCell>
-                                  &nbsp&nbsp&nbsp<asp:FileUpload ID="fuEventLogo" runat="server" AllowMultiple="false" accept="image/*"  Width="200px"/>                                  
                               </asp:TableCell>                             
                           </asp:TableRow>
                           <asp:TableRow>
@@ -226,15 +220,25 @@
                   </asp:Panel>                  
               </asp:TableCell>               
             </asp:TableRow>
+            <asp:TableRow >
+                <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                      <br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label23" Text="Logo" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
+                 </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow HorizontalAlign="Left">
+                 <asp:TableCell>
+                    &nbsp&nbsp&nbsp<asp:FileUpload ID="fuEventLogo" runat="server" AllowMultiple="false" accept="image/*"  Width="200px"/>                                  
+                </asp:TableCell> 
+            </asp:TableRow>
             <asp:TableRow HorizontalAlign="Right" >
                 <asp:TableCell>
                     <asp:Button runat="server" ID="btnAddEvent" CssClass="btn" Width="218px" Text="Create Event" OnClick="btnAddEvent_Click"/>&nbsp&nbsp&nbsp&nbsp
                     <br />
                     <br />
                 </asp:TableCell>                
-            </asp:TableRow> 
-                          
-        </asp:Table>
+            </asp:TableRow>  
+                   
+      </asp:Table>  
  
  
     </div>
