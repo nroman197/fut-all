@@ -696,12 +696,72 @@ namespace fut_all
 
         protected void ddlTeamType_TextChanged(object sender, EventArgs e)
         {
+            grvAllPlayers.DataSource = null;
+            grvAllPlayers.DataBind();
+            grvPlayers.DataSource = null;
+            grvPlayers.DataBind();
+            int countryid = ws.Country_Id_Get(ddlTeamCountry.SelectedItem.Text);
+            int teamid = ws.Team_Id_Get(ddlTeamname.SelectedItem.Text);
+            if (ddlTeamCathegory.SelectedIndex == 1 && ddlTeamType.SelectedIndex == 1)
+            {
+                // LoadAllPlayersGrid(teamid,0,0,countryid); //male and national team
+                LoadTeamPlayersGrid(teamid, 0, 1, countryid);
+                LoadAllNotTeamPlayersGrid(teamid, 0, 1, countryid);
+            }
+            else if (ddlTeamCathegory.SelectedIndex == 1 && ddlTeamType.SelectedIndex == 2)
+            {
+                // LoadAllPlayersGrid(teamid, 0, 1, countryid); ////male and Club
+                LoadTeamPlayersGrid(teamid, 0, 0, countryid);
+                LoadAllNotTeamPlayersGrid(teamid, 0, 0, countryid);
 
+            }
+            else if (ddlTeamCathegory.SelectedIndex == 2 && ddlTeamType.SelectedIndex == 1)
+            {
+                // LoadAllPlayersGrid(teamid, 1, 0, countryid); //female and national team
+                LoadTeamPlayersGrid(teamid, 1, 1, countryid);
+                LoadAllNotTeamPlayersGrid(teamid, 1, 1, countryid);
+            }
+            else if (ddlTeamCathegory.SelectedIndex == 2 && ddlTeamType.SelectedIndex == 2)
+            {
+                // LoadAllPlayersGrid(teamid, 1, 1, countryid); //female and club
+                LoadTeamPlayersGrid(teamid, 1, 0, countryid);
+                LoadAllNotTeamPlayersGrid(teamid, 1, 0, countryid);
+            }
         }
 
         protected void ddlTeamCountry_TextChanged(object sender, EventArgs e)
         {
+            grvAllPlayers.DataSource = null;
+            grvAllPlayers.DataBind();
+            grvPlayers.DataSource = null;
+            grvPlayers.DataBind();
+            int countryid = ws.Country_Id_Get(ddlTeamCountry.SelectedItem.Text);
+            int teamid = ws.Team_Id_Get(ddlTeamname.SelectedItem.Text);
+            if (ddlTeamCathegory.SelectedIndex == 1 && ddlTeamType.SelectedIndex == 1)
+            {
+                // LoadAllPlayersGrid(teamid,0,0,countryid); //male and national team
+                LoadTeamPlayersGrid(teamid, 0, 1, countryid);
+                LoadAllNotTeamPlayersGrid(teamid, 0, 1, countryid);
+            }
+            else if (ddlTeamCathegory.SelectedIndex == 1 && ddlTeamType.SelectedIndex == 2)
+            {
+                // LoadAllPlayersGrid(teamid, 0, 1, countryid); ////male and Club
+                LoadTeamPlayersGrid(teamid, 0, 0, countryid);
+                LoadAllNotTeamPlayersGrid(teamid, 0, 0, countryid);
 
+            }
+            else if (ddlTeamCathegory.SelectedIndex == 2 && ddlTeamType.SelectedIndex == 1)
+            {
+                // LoadAllPlayersGrid(teamid, 1, 0, countryid); //female and national team
+                LoadTeamPlayersGrid(teamid, 1, 1, countryid);
+                LoadAllNotTeamPlayersGrid(teamid, 1, 1, countryid);
+            }
+            else if (ddlTeamCathegory.SelectedIndex == 2 && ddlTeamType.SelectedIndex == 2)
+            {
+                // LoadAllPlayersGrid(teamid, 1, 1, countryid); //female and club
+                LoadTeamPlayersGrid(teamid, 1, 0, countryid);
+                LoadAllNotTeamPlayersGrid(teamid, 1, 0, countryid);
+            }
         }
 
         protected void ddlTeamStadium_TextChanged(object sender, EventArgs e)
