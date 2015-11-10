@@ -16,8 +16,6 @@
             <nav class="navbar">                
                 <ul id="menu_wrap">
                     <li ><a href="Default.aspx">Log Out</a></li>
-                    <li ><a href="Qual_Tourn.aspx">Qualification Tournaments</a></li>
-                    <li ><a href="Local_Tourn.aspx">Local Tournaments</a></li>
                     <li ><a href="Tourn_Cups.aspx">Tournament Cups</a></li>
                     <li ><a runat="server" id="refadmin">
                     <asp:Label runat="server" ID="lbladmin" Text="Admin"></asp:Label>    
