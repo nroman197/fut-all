@@ -46,10 +46,230 @@
         </nav>          
         </div>
         <br />
+        <asp:Table runat="server" BorderStyle="None" BackColor="White" Height="100%" Width="60%" HorizontalAlign="Center" CssClass="roundedChart">
+            <asp:TableRow>
+                <asp:TableCell VerticalAlign="Middle" BorderWidth="10px" BorderColor="White">
+                    &nbsp&nbsp<asp:Label runat="server" ID="Label1" Text="General Stats" Font-Size="Larger" CssClass="lblFont3" ></asp:Label><br /><br />                
+                    <asp:Panel runat="server" CssClass="roundedChart2" BackColor="WhiteSmoke" Width="100%">
+                        <asp:Table runat="server">
+                            <asp:TableRow VerticalAlign="Middle">
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label2" Text="Matches Played" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
+                                <br />
+                              </asp:TableCell>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblMatchesPlayed" Text="i/n" Font-Size="Medium" CssClass="lblFont3" ></asp:Label>
+                                    <br />
+                              </asp:TableCell>
+                            </asp:TableRow>
+                        </asp:Table>
+                        <br />
+                    </asp:Panel>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow runat ="server">
+              <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">                  
+                  <asp:Panel runat="server" CssClass="roundedChart2" BackColor="WhiteSmoke" Width="100%">
+                      <asp:Table runat="server">
+                          <asp:TableRow runat="server">                                                            
+                          </asp:TableRow>
+                          <asp:TableRow runat="server">                              
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label4" Text="Goals per Match" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
+                              </asp:TableCell>
+                              <asp:TableCell Width="200px"></asp:TableCell>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label11" Text="Actual Playing Time" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
+                              </asp:TableCell>
+                          </asp:TableRow>
+                          <asp:TableRow runat="server">                              
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                  <asp:Table runat="server">
+                                      <asp:TableRow>                                          
+                                          <asp:TableCell Width="12px"><br /></asp:TableCell>
+                                          <asp:TableCell VerticalAlign="Middle">                                              
+                                                <br />&nbsp&nbsp&nbsp<asp:Image  runat="server" CssClass="circularFlag" src="Images/miniball.png" />
+                                          </asp:TableCell>
+                                          <asp:TableCell VerticalAlign="Middle">
+                                              <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblGoalsxMatch" Text="2.9" Font-Size="Medium" CssClass="lblFont3"></asp:Label>
+                                          </asp:TableCell>
+                                      </asp:TableRow>
+                                  </asp:Table>                                                                   
+                              </asp:TableCell>
+                              <asp:TableCell Width="200px"></asp:TableCell>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                  <asp:Table runat="server">
+                                      <asp:TableRow>                                          
+                                          <asp:TableCell Width="12px"><br /></asp:TableCell>
+                                          <asp:TableCell VerticalAlign="Middle">                                              
+                                                <br />&nbsp&nbsp&nbsp<asp:Image  runat="server" CssClass="circularFlag" src="Images/miniclock.png" />
+                                          </asp:TableCell>
+                                          <asp:TableCell VerticalAlign="Middle">
+                                              <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblActualTime" Text="4.9" Font-Size="Medium" CssClass="lblFont3"></asp:Label>
+                                          </asp:TableCell>
+                                      </asp:TableRow>
+                                  </asp:Table>                                                                   
+                              </asp:TableCell>
+                          </asp:TableRow>
+                          <asp:TableRow runat="server">                              
+                              <asp:TableCell runat="server" HorizontalAlign="Center" VerticalAlign="Bottom">
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label7" Text="Average Cards per Match" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
+                              </asp:TableCell>
+                              <asp:TableCell Width="200px"></asp:TableCell>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label10" Text="Average Shots per Team" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
+                              </asp:TableCell> 
+                          </asp:TableRow>
+                          <asp:TableRow runat="server">                              
+                              <asp:TableCell runat="server" HorizontalAlign="Center" VerticalAlign="Bottom">
+                                  <asp:Table runat="server">
+                                      <asp:TableRow>
+                                          <asp:TableCell VerticalAlign="Middle">
+                                              <br /><asp:Image  runat="server" CssClass="circularFlag" src="Images/miniyellowcard.png" />
+                                          </asp:TableCell>
+                                          <asp:TableCell VerticalAlign="Middle">
+                                              <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblAverageYellow" Text="2.0" Font-Size="Medium" CssClass="lblFont3" ></asp:Label>
+                                          </asp:TableCell>
+                                          <asp:TableCell Width="12px"><br /></asp:TableCell>
+                                          <asp:TableCell VerticalAlign="Middle">
+                                              <br /><asp:Image  runat="server" CssClass="circularFlag" src="Images/miniredcard.png" />
+                                          </asp:TableCell>
+                                          <asp:TableCell VerticalAlign="Middle">
+                                              <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblAverageRed" Text="1.3" Font-Size="Medium" CssClass="lblFont3" ></asp:Label>
+                                          </asp:TableCell>
+                                      </asp:TableRow>
+                                  </asp:Table>
+                              </asp:TableCell>
+                              <asp:TableCell Width="200px"></asp:TableCell>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                  <asp:Table runat="server">
+                                      <asp:TableRow>                                          
+                                          <asp:TableCell Width="12px"><br /></asp:TableCell>
+                                          <asp:TableCell VerticalAlign="Middle">                                              
+                                                <br />&nbsp&nbsp&nbsp<asp:Image  runat="server" CssClass="circularFlag" src="Images/minishotball.png" />
+                                          </asp:TableCell>
+                                          <asp:TableCell VerticalAlign="Middle">
+                                              <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblAverageShots" Text="3.9" Font-Size="Medium" CssClass="lblFont3"></asp:Label>
+                                          </asp:TableCell>
+                                      </asp:TableRow>
+                                  </asp:Table>                                                                   
+                              </asp:TableCell>
+                          </asp:TableRow>
+                          <asp:TableRow runat="server">                              
+                          </asp:TableRow>
+                      </asp:Table>
+                      <br />                    
+                  </asp:Panel>                  
+              </asp:TableCell>               
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell VerticalAlign="Middle" BorderWidth="10px" BorderColor="White">
+                    &nbsp&nbsp<asp:Label runat="server" ID="Label5" Text="General Info" Font-Size="Larger" CssClass="lblFont3" ></asp:Label><br /><br />                
+                    <asp:Panel runat="server" CssClass="roundedChart2" BackColor="WhiteSmoke" Width="100%">
+                        <asp:Table runat="server">
+                            <asp:TableRow VerticalAlign="Middle">
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label6" Text="Host Country(ies)" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
+                                <br />
+                              </asp:TableCell>
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label8" Text="Host Stadiums" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
+                                    <br />
+                              </asp:TableCell>
+                            </asp:TableRow>
+                            <asp:TableRow runat="server">                           
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                   <div style="width: 100%; height:200px; overflow: scroll">
+                                        <asp:GridView ID="grvCountries" RowStyle-HorizontalAlign="Left" runat="server" AllowPaging="false" CssClass="ddl" HorizontalAlign="Center" Width="100%" >
+                                        <Columns>
+                                            <asp:TemplateField >
+                                                <ItemTemplate>
+                                                    <asp:CheckBox runat="server" ID="chkcountry"  AutoPostBack="true"/>
+                                                </ItemTemplate>                                             
+                                            </asp:TemplateField>
+                                        </Columns>
+                                    </asp:GridView>  
+                                  </div> 
+                              </asp:TableCell>
+                                  <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                   <div style="width: 100%; height:200px; overflow: scroll">
+                                        <asp:GridView ID="grvStadiums" RowStyle-HorizontalAlign="Left" runat="server" AllowPaging="false" CssClass="ddl" HorizontalAlign="Center" Width="100%" >
+                                        <Columns>
+                                            <asp:TemplateField >
+                                                <ItemTemplate>
+                                                    <asp:CheckBox runat="server" ID="chkstadiums" />
+                                                </ItemTemplate>                                             
+                                            </asp:TemplateField>
+                                        </Columns>
+                                    </asp:GridView>  
+                                  </div> 
+                              </asp:TableCell>
+                                <asp:TableCell Width="80px"></asp:TableCell>
+                                <asp:TableCell>
+                                    <asp:Table runat="server">
+                                        <asp:TableRow>
+                                            <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                                 <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label9" Text="Champion" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
+                                                 <br />
+                                            </asp:TableCell>
+                                            
+                                            <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                                <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="Label12" Text="Subchampion" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
+                                                <br />
+                                            </asp:TableCell>
+                                        </asp:TableRow>
+                                        <asp:TableRow VerticalAlign="Middle" HorizontalAlign="Right">
+                                            <asp:TableCell VerticalAlign="Middle">
+                                                <asp:Table runat="server">
+                                                    <asp:TableRow VerticalAlign="Middle">
+                                                        <asp:TableCell VerticalAlign="Middle" HorizontalAlign="Right">
+                                                            <br />
+                                                           <asp:Image runat="server" ID="imgChamFlag" CssClass="circularFlag" src="Images/miniball.png"/>
+                                                        </asp:TableCell>
+                                                        <asp:TableCell runat="server" HorizontalAlign="Right" VerticalAlign="Middle">                                  
+                                                              <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblChampion" Text="ITA" Font-Size="Medium" CssClass="lblFont3" ></asp:Label>
+                                                                <br />
+                                                          </asp:TableCell>
+                                                    </asp:TableRow>
+                                                </asp:Table>                                                
+                                            </asp:TableCell>                                              
+                                           <asp:TableCell VerticalAlign="Middle" HorizontalAlign="Right">
+                                                <asp:Table runat="server">
+                                                    <asp:TableRow VerticalAlign="Middle">
+                                                        <asp:TableCell VerticalAlign="Middle" HorizontalAlign="Right">
+                                                            <br />
+                                                           <asp:Image runat="server" ID="Image1" CssClass="circularFlag" src="Images/miniball.png"/>
+                                                        </asp:TableCell>
+                                                        <asp:TableCell runat="server" HorizontalAlign="Right" VerticalAlign="Middle">                                  
+                                                              <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblSubChamFlag" Text="CRC" Font-Size="Medium" CssClass="lblFont3" ></asp:Label>
+                                                                <br />
+                                                          </asp:TableCell>
+                                                    </asp:TableRow>
+                                                </asp:Table>                                                
+                                            </asp:TableCell>
+                                        </asp:TableRow>
+                                    </asp:Table>
+                                </asp:TableCell>
+                              
+                          </asp:TableRow>
+                        </asp:Table>
+                        <br />
+                    </asp:Panel>
+                </asp:TableCell>
+            </asp:TableRow>
+            </asp:Table>
+
+        <br />
         <asp:Table runat="server"  ID="maintbl" BorderStyle="None" BackColor="White" Height="100%" Width="60%" HorizontalAlign="Center" CssClass="roundedChart">
             <asp:TableRow runat ="server">
                 <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
-                    <asp:Table  runat ="server" ID="tbl" Width="100%"></asp:Table>
+                    <asp:Table  runat ="server" ID="tbl" Width="100%">
+                        <asp:TableRow>
+                            <asp:TableCell>
+                                &nbsp&nbsp<asp:Label runat="server" ID="Label3" Text="Phases" Font-Size="Larger" CssClass="lblFont3" ></asp:Label><br /><br />
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
