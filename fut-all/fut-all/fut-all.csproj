@@ -67,9 +67,8 @@
   <ItemGroup>
     <Content Include="Admin_Updates.aspx" />
     <Content Include="Images\background4.png" />
-    <Content Include="Images\bg0.jpg" />
-    <Content Include="Images\bg1.jpg" />
-    <Content Include="Images\bg4.jpg" />
+    <Content Include="Images\bg2.jpg" />
+    <Content Include="Images\bg5.jpg" />
     <Content Include="Images\futicon.ico" />
     <Content Include="Images\miniball.png" />
     <Content Include="Images\miniclock.png" />

@@ -11,7 +11,7 @@
     <link href="Styles/navbar.css" rel="stylesheet" />
     <link href="Styles/navbar2.css" rel="stylesheet" />
 </head>
-<body style="background-image:url('../Images/bg4.jpg')">
+<body style="background-image:url('../Images/bg2.jpg')">
     <form id="form1" runat="server">
     <div>
           <div>

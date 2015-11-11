@@ -13,7 +13,7 @@
     <link href="Styles/CircularImage.css" rel="stylesheet" />
     <link href="Styles/tables.css" rel="stylesheet" />
 </head>
-<body style="background-image:url('../Images/bg0.jpg')">
+<body style="background-image:url('../Images/bg5.jpg')">
     <form id="form1" runat="server">
     <div>
     <div>

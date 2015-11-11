@@ -15,7 +15,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Tournament Cup Groups</title>
 </head>
-<body style="background-image:url('../Images/bg0.jpg')">
+<body style="background-image:url('../Images/bg5.jpg')">
     <form id="form1" runat="server">
         <div>
     <div>

@@ -10,7 +10,7 @@
     <link href="Styles/navbar.css" rel="stylesheet" />
     <link href="Styles/navbar2.css" rel="stylesheet" />
 </head>
-<body style="background-image:url('../Images/background6.jpg')">
+<body style="background-image:url('../Images/bg2.jpg')">
     <form id="form2" runat="server">
         <div>
          <div>

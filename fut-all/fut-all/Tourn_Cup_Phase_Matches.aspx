@@ -15,7 +15,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Tournament Cup Group Matches</title>
 </head>
-<body style="background-image:url('../Images/background6.jpg')">
+<body style="background-image:url('../Images/bg5.jpg')">
     <form id="form1" runat="server">
      <div>
     <div>
@@ -56,7 +56,7 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell Width="100%" HorizontalAlign="Right">
-                    <asp:Button runat="server" ID="btnsave" CssClass="btn" text="Save" OnClick="btnsave_Click"/>&nbsp&nbsp&nbsp
+                    <%--<asp:Button runat="server" ID="btnsave" CssClass="btn" text="Save" OnClick="btnsave_Click"/>&nbsp&nbsp&nbsp--%>
                     <br />
                     <br />
                 </asp:TableCell>
