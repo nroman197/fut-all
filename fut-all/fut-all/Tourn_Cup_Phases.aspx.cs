@@ -18,6 +18,9 @@ namespace fut_all
                 string val = Request.QueryString["evId"].ToString();
                 int eventid = Convert.ToInt32(val);
                 showPhases(eventid);
+                LoadStadiums(eventid);
+                LoadCountries(eventid);
+                LoadGeneralstats(eventid);
             }
         }
 
@@ -121,6 +124,69 @@ namespace fut_all
                 h2.NavigateUrl = "Phase_Stats.aspx?groname=" + Convert.ToString(lblGroup.Text);
                 tCell2.Controls.Add(h2);
             }                
+        }
+
+        private void LoadStadiums(int eventid)
+        {
+
+            List<string> theList = ws.StadiumxEvent_Get(eventid);
+
+            System.Data.DataTable tb = new System.Data.DataTable();
+
+            // manage gridview
+            tb.Columns.Add("Host Stadiums");
+
+            foreach (string g in theList)
+            {
+                tb.Rows.Add(g);
+            }
+
+
+            grvStadiums.DataSource = tb;
+            grvStadiums.DataBind();
+        }
+
+        private void LoadCountries(int eventid)
+        {
+
+            List<string> theList = ws.CountryxEvent_Get(eventid);
+
+            System.Data.DataTable tb = new System.Data.DataTable();
+
+            // manage gridview
+            tb.Columns.Add("Host Countries");
+
+            foreach (string g in theList)
+            {
+                tb.Rows.Add(g);
+            }
+
+            grvCountries.DataSource = tb;
+            grvCountries.DataBind();
+        }
+
+        private void LoadGeneralstats(int eventid)
+        {
+            int played = ws.MatchesPlayed_Get(eventid);
+            int total = ws.TotalMatches_Get(eventid);
+            lblMatchesPlayed.Text = Convert.ToString(played) +"/"+ Convert.ToString(total);
+            lblMatchesPlayed.Font.Size = 30;
+            lblGoalsxMatch.Font.Size = 30;
+            lblAverageYellow.Font.Size = 30;
+            lblAverageRed.Font.Size = 30;
+            lblAverageShots.Font.Size = 30;
+
+            double goalsxmatch = ws.GoalsxMatch_Get(eventid);
+            lblGoalsxMatch.Text = Convert.ToString(goalsxmatch);
+
+            double yellxmatch = ws.CardsxMatch_Get(eventid, 0);
+            lblAverageYellow.Text = Convert.ToString(yellxmatch);
+            double redxmatch = ws.CardsxMatch_Get(eventid, 0);
+            lblAverageRed.Text = Convert.ToString(redxmatch);
+
+            double shotsxteam = ws.ShotsxTeam_Get(eventid);
+            lblAverageShots.Text = Convert.ToString(shotsxteam);
+
         }
     }
 }

@@ -20,7 +20,7 @@ namespace fut_all
 
         private string ConnectionString()
         {
-            return "Data Source=KIM;Initial Catalog=FUTALL;User ID=adm;Password=adm";
+            return "Data Source=LAPTOP-3Q31SCMK;Initial Catalog=FUTALL;User ID=adm;Password=adm";
         }
 
         [WebMethod]
@@ -1928,6 +1928,189 @@ namespace fut_all
             }
 
             return theId;
+        }
+
+        [WebMethod]
+        public List<string> CountryxEvent_Get(int peventid)
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "select * from fnCountryxEvent_Get(" + Convert.ToString(peventid) + ")";
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0]));
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
+        }
+
+        [WebMethod]
+        public List<string> StadiumxEvent_Get(int peventid)
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "select * from fnStadiumxEvent_Get(" + Convert.ToString(peventid) + ")";
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0]));
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
+        }
+
+        [WebMethod]
+        public int MatchesPlayed_Get(int peventid)
+        {
+            int count = 0;
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "exec MatchesPlayed_Get " + Convert.ToString(peventid);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                count = Convert.ToInt32(reader[0]);
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return count;
+        }
+
+        [WebMethod]
+        public int TotalMatches_Get(int peventid)
+        {
+            int count = 0;
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "exec TotalMatches_Get " + Convert.ToString(peventid);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                count = Convert.ToInt32(reader[0]);
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return count;
+        }
+
+        [WebMethod]
+        public double GoalsxMatch_Get(int peventid)
+        {
+            double count = 0;
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "exec GoalsxMatch_Get " + Convert.ToString(peventid);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                count = Convert.ToDouble(reader[0]);
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return count;
+        }
+
+        [WebMethod]
+        public double CardsxMatch_Get(int peventid, int color)
+        {
+            double count = 0;
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "exec CardsxMatch_Get " + Convert.ToString(peventid) + "," + Convert.ToString(color);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                count = Convert.ToDouble(reader[0]);
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return count;
+        }
+
+        [WebMethod]
+        public double ShotsxTeam_Get(int peventid)
+        {
+            double count = 0;
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "exec ShotsxTeam_Get " + Convert.ToString(peventid);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                count = Convert.ToDouble(reader[0]);
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return count;
         }
 
     }
