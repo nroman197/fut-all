@@ -4,13 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link rel="shortcut icon" type ="image/x-icon" href="Images/futicon.ico" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Add Tournament Cup</title>
     <link href="Styles/General.css" rel="stylesheet" />
     <link href="Styles/navbar.css" rel="stylesheet" />
     <link href="Styles/navbar2.css" rel="stylesheet" />
 </head>
-<body style="background-image:url('../Images/background6.jpg')">
+<body style="background-image:url('../Images/bg4.jpg')">
     <form id="form1" runat="server">
     <div>
           <div>

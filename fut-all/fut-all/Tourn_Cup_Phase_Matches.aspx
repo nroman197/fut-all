@@ -10,7 +10,8 @@
     <link href="Styles/navbar.css" rel="stylesheet" />
     <link href="Styles/navbar2.css" rel="stylesheet" />
     <link href="Styles/tables.css" rel="stylesheet" />
-    <link href="Styles/tbxPhases.css" rel="stylesheet" />
+    <link href="Styles/phasesddls.css" rel="stylesheet" />
+    <link rel="shortcut icon" type ="image/x-icon" href="Images/futicon.ico" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Tournament Cup Group Matches</title>
 </head>
@@ -48,9 +49,16 @@
         </div>
         <br />
         <asp:Table runat="server"  ID="maintbl" BorderStyle="None" BackColor="White" Height="100%" Width="40%" HorizontalAlign="Center" CssClass="roundedChart">
-            <asp:TableRow runat ="server">
+            <asp:TableRow runat ="server">                
                 <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
                     <asp:Table  runat ="server" ID="tbl" Width="100%"></asp:Table>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell Width="100%" HorizontalAlign="Right">
+                    <asp:Button runat="server" ID="btnsave" CssClass="btn" text="Save" OnClick="btnsave_Click"/>&nbsp&nbsp&nbsp
+                    <br />
+                    <br />
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

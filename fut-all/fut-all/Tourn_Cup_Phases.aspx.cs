@@ -113,19 +113,24 @@ namespace fut_all
                     theList.RemoveAt(0);
                 }
 
-                if (lblGroup.Text.Equals("Group 1") || lblGroup.Text.Equals("Group 2") || lblGroup.Text.Equals("Group 3")
-                     || lblGroup.Text.Equals("Group 4"))
+                if (theList.Count() > 0)
                 {
-                    TableCell tCell2 = new TableCell();
-                    tr.Cells.Add(tCell2);
-                    tCell2.Width = 100;
-                    tCell2.VerticalAlign = VerticalAlign.Middle;
-                    tCell2.HorizontalAlign = HorizontalAlign.Left;
-                    System.Web.UI.WebControls.HyperLink h2 = new HyperLink();
-                    h2.Text = "Stats";
-                    h2.Attributes["class"] = "lblFontText";
-                    h2.NavigateUrl = "Phase_Stats.aspx?groname=" + Convert.ToString(lblGroup.Text);
-                    tCell2.Controls.Add(h2);
+                    if (lblGroup.Text.Equals("Group 1") || lblGroup.Text.Equals("Group 2") || lblGroup.Text.Equals("Group 3")
+                        || lblGroup.Text.Equals("Group 4") || lblGroup.Text.Equals("Group 5") || lblGroup.Text.Equals("Group 6") ||
+                        lblGroup.Text.Equals("Group 7") || lblGroup.Text.Equals("Group 8"))
+                    {
+                        theList[0].Contains("Group");
+                        TableCell tCell2 = new TableCell();
+                        tr.Cells.Add(tCell2);
+                        tCell2.Width = 100;
+                        tCell2.VerticalAlign = VerticalAlign.Middle;
+                        tCell2.HorizontalAlign = HorizontalAlign.Left;
+                        System.Web.UI.WebControls.HyperLink h2 = new HyperLink();
+                        h2.Text = "Stats";
+                        h2.Attributes["class"] = "lblFontText";
+                        h2.NavigateUrl = "Phase_Stats.aspx?groname=" + Convert.ToString(lblGroup.Text);
+                        tCell2.Controls.Add(h2);
+                    }
                 }
             }                
         }

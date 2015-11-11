@@ -44,7 +44,7 @@ namespace fut_all
             if (loginexists > 0)
             {
                 Session["user_id"] = ws.User_Id_Get(txbEmail.Text, Encrypt.Encriptar(txbPassword.Text));
-                Response.Redirect("Home.aspx");
+                Response.Redirect("Tourn_Cups.aspx");
             }
             else
             {
