@@ -434,7 +434,6 @@ namespace fut_all
             string countryplayer = string.Empty;
 
             System.Data.DataTable tb = new System.Data.DataTable();
-
             // manage gridview
             tb.Columns.Add("Name");
             tb.Columns.Add("Last Name");

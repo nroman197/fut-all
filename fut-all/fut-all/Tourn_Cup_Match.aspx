@@ -15,7 +15,6 @@
 <body style="background-image:url('../Images/background6.jpg')">
     <form id="form1" runat="server">
     <div>
-    <div>
         <nav class="navbar">                
             <ul id="menu_wrap">
                 <li ><a href="Default.aspx">Log Out</a></li>
@@ -44,14 +43,95 @@
             </ul>
         </nav>          
         </div>
+       <div>        
         <br />
-        <asp:Table runat="server"  ID="maintbl" BorderStyle="None" BackColor="White" Height="100%" Width="60%" HorizontalAlign="Center" CssClass="roundedChart">
+        <asp:Table runat="server" BorderStyle="None" BackColor="White" Height="100%" Width="50%" HorizontalAlign="Center" CssClass="roundedChart">
             <asp:TableRow runat ="server">
+              <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
+                  <asp:Panel runat="server" CssClass="roundedChart2" BackColor="WhiteSmoke" Width="100%">
+                      <asp:Table runat="server">
+                          <asp:TableRow runat="server">                                                            
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Top">                                  
+                                  <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="lbldatetime" Text="DateTime" Font-Size="Medium" CssClass="lblFont" ></asp:Label>
+                              </asp:TableCell>
+                          </asp:TableRow>
+                          <asp:TableRow runat="server">                              
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">
+                                  &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txtdatetime" CssClass="txbClass" Text="" TextMode="DateTime" ></asp:TextBox>
+                              </asp:TableCell>                            
+                          </asp:TableRow>
+                      </asp:Table>
+                      <br />                    
+                  </asp:Panel>                  
+              </asp:TableCell>               
+            </asp:TableRow>
+            <asp:TableRow runat="server">
                 <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
-                    <asp:Table  runat ="server" ID="tbl" Width="100%"></asp:Table>
+                    <asp:Panel runat="server" CssClass="roundedChart2" BackColor="WhiteSmoke" Width="100%">
+                        <asp:Table runat="server">
+                            <asp:TableRow runat="server">
+                                <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Middle" Width ="240px">                                  
+                                  <br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<asp:Label runat="server" ID="team1" Text="Team1" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
+                              </asp:TableCell>
+                              <asp:TableCell runat="server" HorizontalAlign="Right" VerticalAlign="Middle" Width ="240px">                                  
+                                  <br />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<asp:Label runat="server" ID="team2" Text="Team2" Font-Size="Medium" CssClass="lblFont" ></asp:Label>                                        
+                              </asp:TableCell>
+                            </asp:TableRow>
+                            <%-- Grid views components --%>
+                            <asp:TableRow runat="server">                              
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">                                  
+                                  <asp:Table runat="server" HorizontalAlign="Center">
+                                      <asp:TableRow>
+                                          <asp:TableCell runat="server" Width="7px"></asp:TableCell>
+                                          <asp:TableCell>
+                                              <div  style="width: 150%; height: 300px; overflow: scroll">
+                                                  <asp:GridView ID="grvTeam1" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddl" HorizontalAlign="Center" Width="100%" >
+                                                   <Columns>
+                                                       <asp:TemplateField >
+                                                           <ItemTemplate>
+                                                               <asp:CheckBox runat="server" ID="chkplayer" />
+                                                               <asp:CheckBox runat="server" ID="chkiscapt" />
+                                                           </ItemTemplate>                                             
+                                                       </asp:TemplateField>
+                                                   </Columns>
+                                               </asp:GridView>  
+                                              </div>                                                                                                                         
+                                          </asp:TableCell>
+                                      </asp:TableRow>
+                                  </asp:Table> 
+                              </asp:TableCell>  
+                              <asp:TableCell runat="server" HorizontalAlign="Right" VerticalAlign="Bottom">                                  
+                                  <asp:Table runat="server" HorizontalAlign="Center">
+                                      <asp:TableRow>
+                                          <asp:TableCell runat="server" Width="7px"></asp:TableCell>
+                                          <asp:TableCell>
+                                              <div  style="width: 150%; height: 300px; overflow: scroll">
+                                                  <asp:GridView ID="grvTeam2" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddl" HorizontalAlign="Center" Width="100%" >
+                                                   <Columns>
+                                                       <asp:TemplateField >
+                                                           <ItemTemplate>
+                                                               <asp:CheckBox runat="server" ID="chkplayer" />
+                                                               <asp:CheckBox runat="server" ID="chkiscapt" />
+                                                           </ItemTemplate>                                             
+                                                       </asp:TemplateField>
+                                                   </Columns>
+                                               </asp:GridView>  
+                                              </div>                                                                                                                         
+                                          </asp:TableCell>
+                                      </asp:TableRow>
+                                  </asp:Table> 
+                              </asp:TableCell>                              
+                          </asp:TableRow>
+                            <asp:TableRow>
+
+                            </asp:TableRow>
+                        </asp:Table>
+                    </asp:Panel>
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
+           <br />  
+    
     </div>
     </form>
 </body>

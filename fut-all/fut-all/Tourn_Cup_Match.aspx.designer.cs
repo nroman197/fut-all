@@ -103,21 +103,57 @@ namespace fut_all {
         protected global::System.Web.UI.WebControls.Label lblsection3;
         
         /// <summary>
-        /// Control maintbl.
+        /// Control lbldatetime.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table maintbl;
+        protected global::System.Web.UI.WebControls.Label lbldatetime;
         
         /// <summary>
-        /// Control tbl.
+        /// Control txtdatetime.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tbl;
+        protected global::System.Web.UI.WebControls.TextBox txtdatetime;
+        
+        /// <summary>
+        /// Control team1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label team1;
+        
+        /// <summary>
+        /// Control team2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label team2;
+        
+        /// <summary>
+        /// Control grvTeam1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grvTeam1;
+        
+        /// <summary>
+        /// Control grvTeam2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grvTeam2;
     }
 }
