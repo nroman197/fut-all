@@ -4,7 +4,9 @@
   border-radius: 8px;
   font-family:'Century Gothic';
   color: #21A499;
-  font-size: 10px;
+  height: 40px;
+  width: 60;
+  font-size: 13px;
   background: #ffffff;
   padding: 8px 16px 8px 16px;
   border: solid #21A499 2px;
@@ -17,11 +19,11 @@
   border-radius: 8px;
   font-family:'Century Gothic';
   color: #878787;
-  font-size: 10px;
+  font-size: 14px;
   background: #ffffff;
   border-width: 2px;
   border-color: #21A499;
-  width: 170px;
+  width: 140px;
   height: 40px;
 }
 
@@ -63,10 +65,10 @@
 }
 
 .txbClassmatch{
-    font-size:9px; 
+    font-size:14px; 
     border-style:solid;
-    height:12px;
-    width: 100px; 
+    height:20px;
+    width: 140px; 
     padding:8px; 
     border-radius:8px; 
     border-width:2px;
