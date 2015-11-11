@@ -28,6 +28,16 @@ namespace fut_all
 
         }
 
+        protected void LoadTeam1(int idteam){
+
+        }
+
+        protected void LoadTeam2(int idteam)
+        {
+            //llenar grid with players.
+        }
+
+
         protected void btnaddreplace_Click(object sender, EventArgs e)
         {
 
@@ -60,6 +70,8 @@ namespace fut_all
 
         protected void btnSaveAllChanges_Click(object sender, EventArgs e)
         {
+            string datetimematch = txtmatchdatetime.Text;
+            string stadiummatch = txtmatchstadium.Text;
 
         }
     }

@@ -11,6 +11,7 @@
     <link href="Styles/navbar.css" rel="stylesheet" />
     <link href="Styles/navbar2.css" rel="stylesheet" />
     <link href="Styles/tables.css" rel="stylesheet" />
+    <link rel="shortcut icon" type ="image/x-icon" href="Images/futicon.ico" />
     
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Tournament Cup Matches</title>
@@ -66,7 +67,7 @@
                                   &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txtmatchdatetime" CssClass="txbClassmatch" Width="200px" Text="" TextMode="DateTime" ></asp:TextBox>
                               </asp:TableCell>    
                               <asp:TableCell runat="server" HorizontalAlign="Center" VerticalAlign="Bottom">
-                                  &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txtmatchstadium" CssClass="txbClassmatch" Width="200px" Text="" TextMode="DateTime" ></asp:TextBox>
+                                  &nbsp&nbsp&nbsp<asp:TextBox runat="server" ID="txtmatchstadium" CssClass="txbClassmatch" Width="200px" Text="" ></asp:TextBox>
                               </asp:TableCell>                        
                           </asp:TableRow>
                       </asp:Table>
