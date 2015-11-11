@@ -2168,5 +2168,33 @@ namespace fut_all
             return theList;
         }
 
+
+        [WebMethod]
+        public List<string> FnTeamPlayers_Get(int idteam)
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "select * from fnTeamPlayers_Get(" + Convert.ToString(idteam) + ")";
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0])); // name
+                theList.Add(Convert.ToString(reader[1])); // lastname
+                theList.Add(Convert.ToString(reader[2])); //position
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
+        }
     }
 }

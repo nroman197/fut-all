@@ -94,8 +94,8 @@
                                       <asp:TableRow>
                                           <asp:TableCell runat="server" Width="7px"></asp:TableCell>
                                           <asp:TableCell>
-                                              <div  style="width: 150%; height: 300px; overflow: scroll">
-                                                  <asp:GridView ID="grvTeam1" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddl" HorizontalAlign="Center" Width="100%" >
+                                              <div  style="width: 100%; height: 300px; overflow: scroll">
+                                                  <asp:GridView ID="grvTeam1" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddlmatch" HorizontalAlign="Left" Width="100%" >
                                                    <Columns>
                                                        <asp:TemplateField >
                                                            <ItemTemplate>
@@ -116,8 +116,8 @@
                                       <asp:TableRow>
                                           <asp:TableCell runat="server" Width="7px"></asp:TableCell>
                                           <asp:TableCell>
-                                              <div  style="width: 150%; height: 300px; overflow: scroll">
-                                                  <asp:GridView ID="grvTeam2" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddl" HorizontalAlign="Center" Width="100%" >
+                                              <div  style="width: 100%; height: 300px; overflow: scroll">
+                                                  <asp:GridView ID="grvTeam2" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddlmatch" HorizontalAlign="Right" Width="100%" >
                                                    <Columns>
                                                        <asp:TemplateField >
                                                            <ItemTemplate>
@@ -253,7 +253,7 @@
                                           <asp:TableCell runat="server" Width="7px"></asp:TableCell>
                                           <asp:TableCell>
                                               <div  style="width: 150%; height: 300px; overflow: scroll">
-                                                  <asp:GridView ID="grvGoalsT1" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddl" HorizontalAlign="Center" Width="100%" >
+                                                  <asp:GridView ID="grvGoalsT1" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddlmatch" HorizontalAlign="Center" Width="100%" >
                                                    <Columns>
                                                        <asp:TemplateField >
                                                            <ItemTemplate>
@@ -272,7 +272,7 @@
                                           <asp:TableCell runat="server" Width="7px"></asp:TableCell>
                                           <asp:TableCell>
                                               <div  style="width: 150%; height: 300px; overflow: scroll">
-                                                  <asp:GridView ID="grvGoalsT2" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddl" HorizontalAlign="Center" Width="100%" >
+                                                  <asp:GridView ID="grvGoalsT2" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddlmatch" HorizontalAlign="Center" Width="100%" >
                                                    <Columns>
                                                        <asp:TemplateField >
                                                            <ItemTemplate>
@@ -350,7 +350,7 @@
                                           <asp:TableCell runat="server" Width="7px"></asp:TableCell>
                                           <asp:TableCell>
                                               <div  style="width: 150%; height: 300px; overflow: scroll">
-                                                  <asp:GridView ID="grvCardsT1" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddl" HorizontalAlign="Center" Width="100%" >
+                                                  <asp:GridView ID="grvCardsT1" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddlmatch" HorizontalAlign="Center" Width="100%" >
                                                    <Columns>
                                                        <asp:TemplateField >
                                                            <ItemTemplate>
@@ -368,8 +368,8 @@
                                       <asp:TableRow>
                                           <asp:TableCell runat="server" Width="7px"></asp:TableCell>
                                           <asp:TableCell>
-                                              <div  style="width: 150%; height: 300px; overflow: scroll">
-                                                  <asp:GridView ID="grvCardsT2" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddl" HorizontalAlign="Center" Width="100%" >
+                                              <div  style="width: 100%; height: 300px; overflow: scroll">
+                                                  <asp:GridView ID="grvCardsT2" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddlmatch" HorizontalAlign="left" Width="80%" >
                                                    <Columns>
                                                        <asp:TemplateField >
                                                            <ItemTemplate>
