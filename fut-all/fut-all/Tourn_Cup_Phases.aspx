@@ -32,7 +32,7 @@
         </nav>          
     </div>
     <div>
-        <nav class="admenu">                
+<%--        <nav class="admenu">                
             <ul id="menu_adm" >
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                 <li ><a runat="server" id="refsection1" href="Insert_Admins.aspx">
@@ -45,7 +45,7 @@
                     <asp:Label runat="server" ID="lblsection3" Text="Update Info" ></asp:Label>
                         </a></li>
             </ul>
-        </nav>          
+        </nav>--%>          
         </div>
         <br />
         <asp:Table runat="server" BorderStyle="None" BackColor="White" Height="100%" Width="60%" HorizontalAlign="Center" CssClass="roundedChart">

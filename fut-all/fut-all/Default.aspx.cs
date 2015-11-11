@@ -14,7 +14,7 @@ namespace fut_all
         {
             if (!IsPostBack)
             {
-                //string val = Request.QueryString["evId"].ToString();
+               
             }
         }
 

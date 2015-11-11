@@ -39,6 +39,9 @@
                     <li ><a runat="server" id="refsection3" href="Admin_Updates.aspx">
                         <asp:Label runat="server" ID="lblsection3" Text="Update Info"></asp:Label>
                          </a></li>
+                   <li ><a runat="server" id="A1" href="Add_Tourn_Cup.aspx">
+                    <asp:Label runat="server" ID="lblSection4" Text="Add New Tournament Cup" ></asp:Label>
+                        </a></li>--%>
                </ul>
             </nav>          
         </div>

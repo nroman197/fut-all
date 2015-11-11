@@ -15,8 +15,20 @@ namespace fut_all
         {
             if (!IsPostBack)
             {
-                showEvents();
+                             
+                int role = ws.User_Role_Get(Convert.ToInt32(Session["user_id"]));
 
+                if (role == 1)
+                {
+                    lbladmin.Text = "Admin";
+                    refadmin.HRef = "Insert_admins.aspx";                  
+
+                }
+                else
+                {
+                    lbladmin.Text = "";
+                }
+                showEvents();
 
             }
         }
