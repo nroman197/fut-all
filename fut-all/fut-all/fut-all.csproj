@@ -87,6 +87,7 @@
     <Content Include="Styles\Default.css" />
     <Content Include="Styles\FlagImage.css" />
     <Content Include="Styles\General.css" />
+    <Content Include="Styles\Matchesstyle.css" />
     <Content Include="Styles\navbar.css" />
     <Content Include="Styles\navbar2.css" />
     <Content Include="Styles\tables.css" />

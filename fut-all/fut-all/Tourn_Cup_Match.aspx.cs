@@ -11,10 +11,54 @@ namespace fut_all
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                lbladdreplace.Font.Size = 12;
+                lbladdreplacet2.Font.Size = 12;
+                lblGoalst1.Font.Size = 12;
+                lblGoalst2.Font.Size = 12;
+                lblCardst1.Font.Size = 12;
+                lblCardst2.Font.Size = 12;
+                btnSaveAllChanges.Font.Size = 13;
+            }
         }
 
         protected void imgLogoHome_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
+
+        protected void btnaddreplace_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnaddreplacet1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnaddreplacet2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnaddgoalt1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAddCardT1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAddCardT2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnSaveAllChanges_Click(object sender, EventArgs e)
         {
 
         }
