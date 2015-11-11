@@ -66,6 +66,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin_Updates.aspx" />
+    <Content Include="Images\background4.png" />
+    <Content Include="Images\bg0.jpg" />
+    <Content Include="Images\bg1.jpg" />
+    <Content Include="Images\bg4.jpg" />
+    <Content Include="Images\futicon.ico" />
     <Content Include="Images\miniball.png" />
     <Content Include="Images\miniclock.png" />
     <Content Include="Images\miniredcard.png" />
@@ -74,11 +79,7 @@
     <Content Include="Images\miniyellowcard.png" />
     <Content Include="Phase_Stats.aspx" />
     <Content Include="Styles\CircularImage.css" />
-    <Content Include="Home.aspx" />
-    <Content Include="Images\background2.png" />
     <Content Include="Images\background3.png" />
-    <Content Include="Images\background4.png" />
-    <Content Include="Images\background5.png" />
     <Content Include="Images\background6.jpg" />
     <Content Include="Images\logo0.png" />
     <Content Include="Images\logo1.png" />
@@ -90,8 +91,8 @@
     <Content Include="Styles\Matchesstyle.css" />
     <Content Include="Styles\navbar.css" />
     <Content Include="Styles\navbar2.css" />
+    <Content Include="Styles\phasesddls.css" />
     <Content Include="Styles\tables.css" />
-    <Content Include="Styles\tbxPhases.css" />
     <Content Include="Styles\verticalmenu.css" />
     <Content Include="Tourn_Cups.aspx" />
     <Content Include="Tourn_Cup_Phases.aspx" />
@@ -118,13 +119,6 @@
     </Compile>
     <Compile Include="Phase_Stats.aspx.designer.cs">
       <DependentUpon>Phase_Stats.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Insert_Admins.aspx.cs">
       <DependentUpon>Insert_Admins.aspx</DependentUpon>

@@ -44,7 +44,7 @@ namespace fut_all
             {
                 int counter = 0;             
                 
-                List<string> theList = ws.GroupTeams_Get(idphase);
+                //List<string> theList = ws.GroupTeams_Get(idphase);
                
                 string logo = string.Empty;
                 string teamname = string.Empty;

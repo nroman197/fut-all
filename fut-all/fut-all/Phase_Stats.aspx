@@ -11,6 +11,7 @@
     <link href="Styles/tbxPhases.css" rel="stylesheet" />
     <link href="Styles/CircularImage.css" rel="stylesheet" />
     <link href="Styles/FlagImage.css" rel="stylesheet" />
+    <link rel="shortcut icon" type ="image/x-icon" href="Images/futicon.ico" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Phase Stats</title>
 </head>

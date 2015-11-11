@@ -1333,6 +1333,35 @@ namespace fut_all
         }
 
         [WebMethod]
+        public int PhaseType_Id_Get(int phaseid)
+        {
+            int theId = 0;
+            string queryString = "select pt.phase_type_id from Phase_Type pt inner join phase p on pt.phase_type_id = p.phase_type_id where phase_id =" + Convert.ToString(phaseid) ;
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
         public int PhaseType_Id_GetxQuant(int pquant)
         {
             int theId = 0;
@@ -2111,6 +2140,32 @@ namespace fut_all
             connection.Close();
 
             return count;
+        }
+
+        [WebMethod]
+        public List<string> TeamsxPhase_Get(int peventid, int phasetypeid)
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "exec teamsxphase_get " + Convert.ToString(peventid) + ", " + Convert.ToString(phasetypeid);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0]));
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
         }
 
     }
