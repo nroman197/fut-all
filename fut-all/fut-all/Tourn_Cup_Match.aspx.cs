@@ -25,6 +25,38 @@ namespace fut_all
                 else
                 {
                     lbladmin.Text = "";
+                    txtmatchdatetime.Enabled = false;
+                    txtmatchstadium.Enabled = false;
+                    txtGoalMinutet2.Enabled = false;
+                    txtGoalMinutet1.Enabled = false;
+                    txtreptimet1.Enabled = false;
+                    txtreptimet2.Enabled = false;
+                    CardMinuteT1.Enabled = false;
+                    CardMinuteT2.Enabled = false;
+                    ddlCardst1.Enabled = false;
+                    ddlCardst2.Enabled = false;
+                    ddlColorT1.Enabled = false;
+                    ddlColorT2.Enabled = false;
+                    ddlGoalPlayert1.Enabled = false;
+                    ddlGoalPlayert2.Enabled = false;
+                    ddlplayernamet1.Enabled = false;
+                    ddlplayernamet2.Enabled = false;
+                    ddlreplacenamet1.Enabled = false;
+                    ddlreplacenamet2.Enabled = false;
+                    grvCardsT1.Enabled = false;
+                    grvCardsT2.Enabled = false;
+                    grvGoalsT1.Enabled = false;
+                    grvGoalsT2.Enabled = false;
+                    grvTeam1.Enabled = false;
+                    grvTeam2.Enabled = false;
+                    btnSaveAllChanges.Visible = false;
+                    btnAddCardT1.Visible = false;
+                    btnAddCardT2.Visible = false;
+                    btnaddgoalt1.Visible = false;
+                    btnaddgoalt2.Visible = false;
+                    btnaddreplacet1.Visible = false;
+                    btnaddreplacet2.Visible = false;
+                   
                 }
                 string val1 = Request.QueryString["team1Id"].ToString();
                 int team1id = Convert.ToInt32(val1);

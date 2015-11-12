@@ -27,7 +27,7 @@
                 <asp:Label runat="server" ID="lbladmin" Text="Admin"></asp:Label>    
                 </a></li>
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <asp:ImageButton runat="server" ID="imgLogoHome" src="Images/logo0.png" OnClick="imgLogoHome_Click"/>
+                <asp:ImageButton runat="server" ID="imgLogoHome" src="Images/logo0.png" />
             </ul>
         </nav>          
     </div>
@@ -56,20 +56,25 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Table runat="server">
-                        <asp:TableRow>
-                            <asp:TableCell Width="100%" HorizontalAlign="Center">
-                            &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddl1" CssClass="ddl" Width="100px"></asp:DropDownList>&nbsp&nbsp&nbsp                                                                       
+                    <asp:Table runat="server" HorizontalAlign="Center">
+                        <asp:TableRow HorizontalAlign="Center">
+                            <asp:TableCell HorizontalAlign="Center">
+                            <asp:DropDownList runat="server" ID="ddl1" CssClass="ddl" Width="100px"></asp:DropDownList>                                                                       
                          </asp:TableCell>
-                            <asp:TableCell HorizontalAlign="Center">
-                                &nbsp&nbsp<asp:Label runat="server" ID="Label1" Text="VS" Font-Size="Larger" CssClass="lblFont" ></asp:Label><br /><br />
+                            <asp:TableCell HorizontalAlign="Center" Width="30px">
+                                <asp:Label runat="server" ID="vs" Text="VS" Font-Size="Larger" CssClass="lblFont" ></asp:Label>
                             </asp:TableCell>
                             <asp:TableCell HorizontalAlign="Center">
-                                &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddl2" CssClass="ddl" Width="100px"></asp:DropDownList>&nbsp&nbsp&nbsp                                      
+                               <asp:DropDownList runat="server" ID="ddl2" CssClass="ddl" Width="100px"></asp:DropDownList>                                      
                             </asp:TableCell>
                             <asp:TableCell HorizontalAlign="Center">
-                                <asp:Button runat="server" ID="btnSaveInfo" CssClass="btn" Text="Add match" OnClick="btnSaveInfo_Click" />&nbsp&nbsp&nbsp
+                                <asp:Button runat="server" ID="btnSaveInfo" CssClass="btn" Text="Add match" OnClick="btnSaveInfo_Click" />
                             </asp:TableCell>
+                        </asp:TableRow>
+                        <asp:TableRow>
+                            <asp:TableCell>
+                            <br />
+                                </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
                 </asp:TableCell>

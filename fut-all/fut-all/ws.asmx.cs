@@ -20,7 +20,7 @@ namespace fut_all
 
         private string ConnectionString()
         {
-            return "Data Source=KIM;Initial Catalog=FUTALL;User ID=adm;Password=adm";
+            return "Data Source=LAPTOP-3Q31SCMK;Initial Catalog=FUTALL;User ID=adm;Password=adm";
         }
 
         [WebMethod]
@@ -1241,8 +1241,8 @@ namespace fut_all
             List<string> theList = new List<string>();
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionString();
-            string queryString = "select [name] from team where isClub = "+ Convert.ToString(ptype) +
-                " and isWomenTeam = " +Convert.ToString(pcat)+ " order by [name] asc";
+            string queryString = "select [name] from team where isClub = " + Convert.ToString(ptype) +
+                " and isWomenTeam = " + Convert.ToString(pcat) + " order by [name] asc";
 
             SqlCommand command = connection.CreateCommand();
             command.CommandTimeout = 3600;
@@ -1265,8 +1265,8 @@ namespace fut_all
         [WebMethod]
         public void Match_Ins(int team1_id, int team2_id, int pphaseid)
         {
-            string queryString = "spMatch_Ins " + Convert.ToString(team1_id) + " , " + Convert.ToString(team2_id) 
-                + ", "+Convert.ToString(pphaseid);
+            string queryString = "spMatch_Ins " + Convert.ToString(team1_id) + " , " + Convert.ToString(team2_id)
+                + ", " + Convert.ToString(pphaseid);
 
             string connection1 = ConnectionString();
 
@@ -1286,7 +1286,7 @@ namespace fut_all
         [WebMethod]
         public void Phase_Ins(string pha_name, int pha_id, int pevent_id)
         {
-            string queryString = "spPhase_Ins '" + pha_name + "' , " + Convert.ToString(pha_id) + ","+Convert.ToString(pevent_id);
+            string queryString = "spPhase_Ins '" + pha_name + "' , " + Convert.ToString(pha_id) + "," + Convert.ToString(pevent_id);
 
             string connection1 = ConnectionString();
 
@@ -1336,7 +1336,7 @@ namespace fut_all
         public int PhaseType_Id_Get(int phaseid)
         {
             int theId = 0;
-            string queryString = "select pt.phase_type_id from Phase_Type pt inner join phase p on pt.phase_type_id = p.phase_type_id where phase_id =" + Convert.ToString(phaseid) ;
+            string queryString = "select pt.phase_type_id from Phase_Type pt inner join phase p on pt.phase_type_id = p.phase_type_id where phase_id =" + Convert.ToString(phaseid);
 
             string connection1 = ConnectionString();
 
@@ -1365,7 +1365,7 @@ namespace fut_all
         public int PhaseType_Id_GetxQuant(int pquant)
         {
             int theId = 0;
-            string queryString = "select phase_type_id from phase_type where matches_quant = " + pquant ;
+            string queryString = "select phase_type_id from phase_type where matches_quant = " + pquant;
 
             string connection1 = ConnectionString();
 
@@ -1422,7 +1422,7 @@ namespace fut_all
         [WebMethod]
         public void NoTeam_Match_Ins(int pphase)
         {
-            string queryString = "spNoTeam_Match_Ins " + Convert.ToString(pphase) ;
+            string queryString = "spNoTeam_Match_Ins " + Convert.ToString(pphase);
 
             string connection1 = ConnectionString();
 
@@ -1469,12 +1469,12 @@ namespace fut_all
         }
 
         [WebMethod]
-        public void Event_Ins(string pname,int pteam_type, int pisWomen, int team_quant,
+        public void Event_Ins(string pname, int pteam_type, int pisWomen, int team_quant,
             int pevent_type_id, string pstart_date, string pend_date, string logo)
         {
             string queryString = "spEvent_Ins '" + pname + "', " + Convert.ToString(pteam_type) + ","
                 + Convert.ToString(pisWomen) + "," + Convert.ToString(team_quant) + ","
-                + Convert.ToString(pevent_type_id) + ",'" + pstart_date + "', '" + pend_date + "', '"+logo+"'";
+                + Convert.ToString(pevent_type_id) + ",'" + pstart_date + "', '" + pend_date + "', '" + logo + "'";
 
             string connection1 = ConnectionString();
 
@@ -1524,7 +1524,7 @@ namespace fut_all
         public int EventType_Id_Get(string pname)
         {
             int theId = 0;
-            string queryString = "select event_type_id from Event_Type where [name] = '" +pname+ "'";
+            string queryString = "select event_type_id from Event_Type where [name] = '" + pname + "'";
 
             string connection1 = ConnectionString();
 
@@ -1584,7 +1584,7 @@ namespace fut_all
             List<string> theList = new List<string>();
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionString();
-            string queryString = "Events_Get" ;
+            string queryString = "Events_Get";
 
             SqlCommand command = connection.CreateCommand();
             command.CommandTimeout = 3600;
@@ -1614,7 +1614,7 @@ namespace fut_all
         public int Event_Id_Get(string name)
         {
             int theId = 0;
-            string queryString = "select event_id from [event] where [name] = '"+ name +"'";
+            string queryString = "select event_id from [event] where [name] = '" + name + "'";
 
             string connection1 = ConnectionString();
 
@@ -1699,7 +1699,7 @@ namespace fut_all
         public int Phases_Count(int eventid)
         {
             int theId = 0;
-            string queryString = "select count(1) from phase where event_id = " +Convert.ToString(eventid);
+            string queryString = "select count(1) from phase where event_id = " + Convert.ToString(eventid);
 
             string connection1 = ConnectionString();
 
@@ -1784,7 +1784,7 @@ namespace fut_all
         public int Phase_Id_Get(int eventid, string name)
         {
             int theId = 0;
-            string queryString = "select phase_id from phase where event_id = "+Convert.ToString(eventid)+" and [name] = '" + name +"'";
+            string queryString = "select phase_id from phase where event_id = " + Convert.ToString(eventid) + " and [name] = '" + name + "'";
 
             string connection1 = ConnectionString();
 
@@ -1929,12 +1929,12 @@ namespace fut_all
 
             return theList;
         }
-    
+
         [WebMethod]
         public int PhaseId_Get(string name)
         {
             int theId = 0;
-            string queryString = "select phase_id from phase where [name] = '"+ name +"'";
+            string queryString = "select phase_id from phase where [name] = '" + name + "'";
 
             string connection1 = ConnectionString();
 
@@ -2036,6 +2036,33 @@ namespace fut_all
                 theList.Add(Convert.ToString(reader[5]));
                 theList.Add(Convert.ToString(reader[6]));
                 theList.Add(Convert.ToString(reader[7]));
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
+        }
+
+        [WebMethod]
+        public List<string> Winners_Get(int eventid)
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "exec spWinner_Get " + Convert.ToString(eventid);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0]));
+                theList.Add(Convert.ToString(reader[1]));
             }
 
             reader.Close();
@@ -2234,7 +2261,7 @@ namespace fut_all
         public int TournMatch_Id_Get(int teamid1, int teamid2)
         {
             int theId = 0;
-            string queryString = "select m.match_id from Match m where m.team1_id = " + Convert.ToString(teamid1) + " and m.team2_id = " +  Convert.ToString(teamid2);
+            string queryString = "select m.match_id from Match m where m.team1_id = " + Convert.ToString(teamid1) + " and m.team2_id = " + Convert.ToString(teamid2);
 
             string connection1 = ConnectionString();
 
@@ -2342,7 +2369,7 @@ namespace fut_all
         [WebMethod]
         public void TournMatch_Upd(int match_id, string datetime, int id_stadium)
         {
-            string queryString = "Match_Upd  " + Convert.ToString(match_id) + ",'" +  datetime + "'," + Convert.ToString(id_stadium);
+            string queryString = "Match_Upd  " + Convert.ToString(match_id) + ",'" + datetime + "'," + Convert.ToString(id_stadium);
 
 
             string connection1 = ConnectionString();
@@ -2362,9 +2389,9 @@ namespace fut_all
         }
 
         [WebMethod]
-        public void Aligment_Ins(int player_id, int id_match, int isCaptain, int id_replace,int replace_time)
+        public void Aligment_Ins(int player_id, int id_match, int isCaptain, int id_replace, int replace_time)
         {
-            string queryString = "spAlignment_Ins  " + Convert.ToString(player_id) + ", " +  Convert.ToString(id_match) +  "," + Convert.ToString(isCaptain) + ", " + Convert.ToString(id_replace) + "," + Convert.ToString(replace_time);
+            string queryString = "spAlignment_Ins  " + Convert.ToString(player_id) + ", " + Convert.ToString(id_match) + "," + Convert.ToString(isCaptain) + ", " + Convert.ToString(id_replace) + "," + Convert.ToString(replace_time);
 
 
             string connection1 = ConnectionString();

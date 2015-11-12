@@ -23,7 +23,7 @@
                     <asp:Label runat="server" ID="lbladmin" Text="Admin"></asp:Label>    
                     </a></li>
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <asp:ImageButton runat="server" ID="imgLogoHome" src="Images/logo0.png" OnClick="imgLogoHome_Click"/>
+                    <asp:ImageButton runat="server" ID="imgLogoHome" src="Images/logo0.png" />
                </ul>
             </nav>          
         </div>
@@ -48,10 +48,12 @@
         </div>
         <br />
         <asp:Table runat="server" BorderStyle="None" BackColor="White" Height="100%" Width="50%" HorizontalAlign="Center" CssClass="roundedChart">
-            <asp:TableRow runat ="server">
-                                                 <asp:TableCell>
+            <asp:TableRow>
+                                                                 <asp:TableCell>
                     &nbsp&nbsp<asp:Label runat="server" ID="Label17" Text="New Event!" Font-Size="XX-Large" CssClass="lblFont" ></asp:Label><br /><br />
                 </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow runat ="server">
               <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
                   &nbsp&nbsp<asp:Label runat="server" ID="Label1" Text="Basic Info" Font-Size="Larger" CssClass="lblFont3" ></asp:Label><br /><br />
                   <asp:Panel runat="server" CssClass="roundedChart2" BackColor="WhiteSmoke" Width="100%">
