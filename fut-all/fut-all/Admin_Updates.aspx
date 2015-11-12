@@ -49,6 +49,9 @@
         <br />
         <asp:Table runat="server" BorderStyle="None" BackColor="White" Height="100%" Width="50%" HorizontalAlign="Center" CssClass="roundedChart">
             <asp:TableRow runat ="server">
+                                                 <asp:TableCell>
+                    &nbsp&nbsp<asp:Label runat="server" ID="Label24" Text="Update any info!" Font-Size="XX-Large" CssClass="lblFont" ></asp:Label><br /><br />
+                </asp:TableCell>
               <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
                   &nbsp&nbsp<asp:Label runat="server" ID="Label1" Text="Geography" Font-Size="Larger" CssClass="lblFont3" ></asp:Label><br /><br />
                   <asp:Panel runat="server" CssClass="roundedChart2" BackColor="WhiteSmoke" Width="100%">

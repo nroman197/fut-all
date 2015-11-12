@@ -51,41 +51,39 @@
         <asp:Table runat="server"  ID="maintbl" BorderStyle="None" BackColor="White" Height="100%" Width="70%" HorizontalAlign="Center" CssClass="roundedChart">
             <asp:TableRow runat ="server">
                 <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
+                                    <asp:TableCell>
+                    &nbsp&nbsp<asp:Label runat="server" ID="Label3" Text="Group Stats!" Font-Size="XX-Large" CssClass="lblFont" ></asp:Label><br /><br />
+                </asp:TableCell>
                     &nbsp&nbsp<asp:Label runat="server" ID="Label1" Text="" Font-Size="Larger" CssClass="lblFont3" ></asp:Label><br /><br />
                     <asp:Table runat="server">
+
                         <asp:TableRow>
-                            <asp:TableCell Width="120">
+                            <asp:TableCell Width="100" HorizontalAlign="Center">
                                 &nbsp&nbsp<asp:Label runat="server" ID="Label13" Text="" Font-Size="Medium" CssClass="lblFont3" Width="120" ></asp:Label><br /><br /> 
                             </asp:TableCell>
-                            <asp:TableCell>
+                            <asp:TableCell HorizontalAlign="Center">
                                 &nbsp&nbsp<asp:Label runat="server" ID="Label2" Text="Team Name" Font-Size="Medium" CssClass="lblFont3" Width="130" ></asp:Label><br /><br />
                             </asp:TableCell>
-                            <asp:TableCell>
+                            <asp:TableCell HorizontalAlign="Center">
                                  &nbsp&nbsp<asp:Label runat="server" ID="Label12" Text="MP" Font-Size="Medium" CssClass="lblFont3" Width="80"></asp:Label><br /><br />
                             </asp:TableCell>
-                             <asp:TableCell>
+                             <asp:TableCell HorizontalAlign="Center">
                                  &nbsp&nbsp<asp:Label runat="server" ID="Label4" Text="W" Font-Size="Medium" CssClass="lblFont3" Width="80" ></asp:Label><br /><br />
                             </asp:TableCell>
-                             <asp:TableCell>
+                             <asp:TableCell HorizontalAlign="Center">
                                  &nbsp&nbsp<asp:Label runat="server" ID="Label5" Text="D" Font-Size="Medium" CssClass="lblFont3" Width="80"></asp:Label><br /><br />
                             </asp:TableCell>
-                             <asp:TableCell>
+                             <asp:TableCell HorizontalAlign="Center">
                                  &nbsp&nbsp<asp:Label runat="server" ID="Label6" Text="L" Font-Size="Medium" CssClass="lblFont3" Width="80"></asp:Label><br /><br />
                             </asp:TableCell>
-                             <asp:TableCell>
+                             <asp:TableCell HorizontalAlign="Center">
                                  &nbsp&nbsp<asp:Label runat="server" ID="Label7" Text="GF" Font-Size="Medium" CssClass="lblFont3" Width="80" ></asp:Label><br /><br />
                             </asp:TableCell>
-                             <asp:TableCell>
+                             <asp:TableCell HorizontalAlign="Center">
                                  &nbsp&nbsp<asp:Label runat="server" ID="Label8" Text="GA" Font-Size="Medium" CssClass="lblFont3" Width="80" ></asp:Label><br /><br />
                             </asp:TableCell>
-                             <asp:TableCell>
+                             <asp:TableCell HorizontalAlign="Center">
                                  &nbsp&nbsp<asp:Label runat="server" ID="Label9" Text="+/-" Font-Size="Medium" CssClass="lblFont3" Width="80"></asp:Label><br /><br />
-                            </asp:TableCell>
-                             <asp:TableCell>
-                                 &nbsp&nbsp<asp:Label runat="server" ID="Label10" Text="FPP" Font-Size="Medium" CssClass="lblFont3" Width="90" ></asp:Label><br /><br />
-                            </asp:TableCell>
-                             <asp:TableCell>
-                                 &nbsp&nbsp<asp:Label runat="server" ID="Label11" Text="Pts" Font-Size="Medium" CssClass="lblFont3" Width="100"></asp:Label><br /><br />
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table> 

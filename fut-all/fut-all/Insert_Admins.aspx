@@ -52,7 +52,7 @@
             <asp:Table runat ="server" BorderStyle="None" BackColor="White" Height="40%" Width="50%" HorizontalAlign="Center" CssClass="roundedChart" >
                 <asp:TableRow runat="server" VerticalAlign="Middle">
                     <asp:TableCell VerticalAlign="Top" BorderWidth="10px" BorderColor="White"> <br />
-                         &nbsp&nbsp<asp:Label runat="server" ID="Label1" Text="Insert a new admin" Font-Size="Larger" CssClass="lblFont3" ></asp:Label><br /><br />
+                         &nbsp&nbsp<asp:Label runat="server" ID="Label1" Text="Insert a new admin!" Font-Size="Larger" CssClass="lblFont3" ></asp:Label><br /><br />
                             <asp:Panel runat="server" CssClass="roundedChart2" BackColor="WhiteSmoke" Width="100%">
                                 <br />
                                 <asp:Table runat ="server">

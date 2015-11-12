@@ -2029,6 +2029,13 @@ namespace fut_all
             while (reader.Read())
             {
                 theList.Add(Convert.ToString(reader[0]));
+                theList.Add(Convert.ToString(reader[1]));
+                theList.Add(Convert.ToString(reader[2]));
+                theList.Add(Convert.ToString(reader[3]));
+                theList.Add(Convert.ToString(reader[4]));
+                theList.Add(Convert.ToString(reader[5]));
+                theList.Add(Convert.ToString(reader[6]));
+                theList.Add(Convert.ToString(reader[7]));
             }
 
             reader.Close();
