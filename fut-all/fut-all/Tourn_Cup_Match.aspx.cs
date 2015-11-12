@@ -474,8 +474,9 @@ namespace fut_all
             if(txtmatchdatetime.Text.Length > 0 && txtmatchstadium.Text.Length > 0)
             {
                 int stadium_id = ws.Stadium_Id_Get(txtmatchstadium.Text);
-                string datetime = txtmatchdatetime.Text;
-                ws.TournMatch_Upd(Convert.ToInt32(Session["match_id"]), datetime, stadium_id);
+                DateTime datetime = Convert.ToDateTime(txtmatchdatetime.Text);
+                string date = datetime.ToString("MM/dd/yyyy");
+                ws.TournMatch_Upd(Convert.ToInt32(Session["match_id"]), date, stadium_id);
 
                 foreach (GridViewRow row in grvTeam1.Rows)
                 {
@@ -485,69 +486,224 @@ namespace fut_all
                         CheckBox Iscaptain = (row.Cells[1].FindControl("chkiscaptt1") as CheckBox);
                         TextBox repPlayer = (row.Cells[2].FindControl("txtrepltimet1") as TextBox);
                         //if the checkbox is checked means that the player will be insert in the team
-                        if (AlignPlayer.Checked && Iscaptain.Checked)
-                        {
-                            //1 is captain 
-                            string[] replacedplayer = row.Cells[3].Text.Split(' ');
+                        if (AlignPlayer.Checked && Iscaptain.Checked && !(repPlayer.Text.Equals(""))) //captain , is in the aligment and exist a replace
+                        { 
+                            string[] replacedplayer = row.Cells[4].Text.Split(' ');
                             string realplayername = replacedplayer[0];
                             string realplayerlastname = replacedplayer[1];
                             string nameplayergrid = row.Cells[1].Text;
                             string lastnamegrid = row.Cells[2].Text;
-                            int replacedtime = Convert.ToInt32(repPlayer);
+                            string replacedtime = repPlayer.Text;
                             int playerid = ws.Player_Id_Get(nameplayergrid, lastnamegrid);
                             int replaplayerid = ws.Player_Id_Get(realplayername, realplayerlastname);
-                            ws.Aligment_Ins(playerid, Convert.ToInt32(Session["match_id"]), 1, replaplayerid, replacedtime);
+                            ws.Aligment_Ins(playerid, Convert.ToInt32(Session["match_id"]), 1,replaplayerid,Convert.ToInt32(replacedtime));
+                        }   
+                            else if(AlignPlayer.Checked && Iscaptain.Checked && repPlayer.Text.Equals("")){
+
+                            //string[] replacedplayer = row.Cells[4].Text.Split(' ');
+                           // string realplayername = replacedplayer[0];
+                           // string realplayerlastname = replacedplayer[1];
+                            string nameplayergrid = row.Cells[1].Text;
+                            string lastnamegrid = row.Cells[2].Text;
+                            //string replacedtime = repPlayer.Text;
+                            int playerid = ws.Player_Id_Get(nameplayergrid, lastnamegrid);
+                           // int replaplayerid = ws.Player_Id_Get(realplayername, realplayerlastname);
+                            ws.Aligment_Ins(playerid, Convert.ToInt32(Session["match_id"]), 1, 0, Convert.ToInt32(0));
+                            }
+                        else if(AlignPlayer.Checked  && Iscaptain.Checked != true && repPlayer.Text.Equals(""))
+                        {
+                             //string[] replacedplayer = row.Cells[4].Text.Split(' ');
+                           // string realplayername = replacedplayer[0];
+                           // string realplayerlastname = replacedplayer[1];
+                            string nameplayergrid = row.Cells[1].Text;
+                            string lastnamegrid = row.Cells[2].Text;
+                            //string replacedtime = repPlayer.Text;
+                            int playerid = ws.Player_Id_Get(nameplayergrid, lastnamegrid);
+                           // int replaplayerid = ws.Player_Id_Get(realplayername, realplayerlastname);
+                            ws.Aligment_Ins(playerid, Convert.ToInt32(Session["match_id"]), 0, 0, Convert.ToInt32(0));
+                        }
+                        else if (AlignPlayer.Checked && Iscaptain.Checked != true && !(repPlayer.Text.Equals("")))
+                        {
+                            string[] replacedplayer = row.Cells[4].Text.Split(' ');
+                            string realplayername = replacedplayer[0];
+                            string realplayerlastname = replacedplayer[1];
+                            string nameplayergrid = row.Cells[1].Text;
+                            string lastnamegrid = row.Cells[2].Text;
+                            string replacedtime = repPlayer.Text;
+                            int playerid = ws.Player_Id_Get(nameplayergrid, lastnamegrid);
+                            int replaplayerid = ws.Player_Id_Get(realplayername, realplayerlastname);
+                            ws.Aligment_Ins(playerid, Convert.ToInt32(Session["match_id"]), 0, replaplayerid, Convert.ToInt32(replacedtime));
+                        }
+                       
+                           
                         }
                     }
                 }
-                 foreach (GridViewRow row in grvTeam1.Rows)
+
+            foreach (GridViewRow row in grvTeam2.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
                 {
-                    if (row.RowType == DataControlRowType.DataRow)
+                    CheckBox AlignPlayer = (row.Cells[0].FindControl("chkplayert2") as CheckBox);//the check cell of the gridview
+                    CheckBox Iscaptain = (row.Cells[1].FindControl("chkiscaptt2") as CheckBox);
+                    TextBox repPlayer = (row.Cells[2].FindControl("txtrepltimet2") as TextBox);
+                    //if the checkbox is checked means that the player will be insert in the team
+                    if (AlignPlayer.Checked && Iscaptain.Checked && !(repPlayer.Text.Equals(""))) //captain , is in the aligment and exist a replace
                     {
-                        CheckBox AlignPlayer = (row.Cells[0].FindControl("chkplayert1") as CheckBox);//the check cell of the gridview
-                        CheckBox Iscaptain = (row.Cells[1].FindControl("chkiscaptt1") as CheckBox);
-                        TextBox repPlayer = (row.Cells[2].FindControl("txtrepltimet1") as TextBox);
-                        //if the checkbox is checked means that the player will be insert in the team
-                        if (AlignPlayer.Checked && Iscaptain.Checked)
-                        {
-                            //1 is captain 
-                            string[] replacedplayer = row.Cells[3].Text.Split(' ');
-                            string realplayername = replacedplayer[0];
-                            string realplayerlastname = replacedplayer[1];
-                            string nameplayergrid = row.Cells[1].Text;
-                            string lastnamegrid = row.Cells[2].Text;
-                            int replacedtime = Convert.ToInt32(repPlayer);
-                            int playerid = ws.Player_Id_Get(nameplayergrid, lastnamegrid);
-                            int replaplayerid = ws.Player_Id_Get(realplayername, realplayerlastname);
-                            ws.Aligment_Ins(playerid, Convert.ToInt32(Session["match_id"]), 1, replaplayerid, replacedtime);
-                        }
+                        string[] replacedplayer = row.Cells[4].Text.Split(' ');
+                        string realplayername = replacedplayer[0];
+                        string realplayerlastname = replacedplayer[1];
+                        string nameplayergrid = row.Cells[1].Text;
+                        string lastnamegrid = row.Cells[2].Text;
+                        string replacedtime = repPlayer.Text;
+                        int playerid = ws.Player_Id_Get(nameplayergrid, lastnamegrid);
+                        int replaplayerid = ws.Player_Id_Get(realplayername, realplayerlastname);
+                        ws.Aligment_Ins(playerid, Convert.ToInt32(Session["match_id"]), 1, replaplayerid, Convert.ToInt32(replacedtime));
+                    }
+                    else if (AlignPlayer.Checked && Iscaptain.Checked && repPlayer.Text.Equals(""))
+                    {
+
+                        //string[] replacedplayer = row.Cells[4].Text.Split(' ');
+                        // string realplayername = replacedplayer[0];
+                        // string realplayerlastname = replacedplayer[1];
+                        string nameplayergrid = row.Cells[1].Text;
+                        string lastnamegrid = row.Cells[2].Text;
+                        //string replacedtime = repPlayer.Text;
+                        int playerid = ws.Player_Id_Get(nameplayergrid, lastnamegrid);
+                        // int replaplayerid = ws.Player_Id_Get(realplayername, realplayerlastname);
+                        ws.Aligment_Ins(playerid, Convert.ToInt32(Session["match_id"]), 1, 0, Convert.ToInt32(0));
+                    }
+                    else if (AlignPlayer.Checked && Iscaptain.Checked != true && repPlayer.Text.Equals(""))
+                    {
+                        //string[] replacedplayer = row.Cells[4].Text.Split(' ');
+                        // string realplayername = replacedplayer[0];
+                        // string realplayerlastname = replacedplayer[1];
+                        string nameplayergrid = row.Cells[1].Text;
+                        string lastnamegrid = row.Cells[2].Text;
+                        //string replacedtime = repPlayer.Text;
+                        int playerid = ws.Player_Id_Get(nameplayergrid, lastnamegrid);
+                        // int replaplayerid = ws.Player_Id_Get(realplayername, realplayerlastname);
+                        ws.Aligment_Ins(playerid, Convert.ToInt32(Session["match_id"]), 0, 0, Convert.ToInt32(0));
+                    }
+                    else if (AlignPlayer.Checked && Iscaptain.Checked != true && !(repPlayer.Text.Equals("")))
+                    {
+                        string[] replacedplayer = row.Cells[4].Text.Split(' ');
+                        string realplayername = replacedplayer[0];
+                        string realplayerlastname = replacedplayer[1];
+                        string nameplayergrid = row.Cells[1].Text;
+                        string lastnamegrid = row.Cells[2].Text;
+                        string replacedtime = repPlayer.Text;
+                        int playerid = ws.Player_Id_Get(nameplayergrid, lastnamegrid);
+                        int replaplayerid = ws.Player_Id_Get(realplayername, realplayerlastname);
+                        ws.Aligment_Ins(playerid, Convert.ToInt32(Session["match_id"]), 0, replaplayerid, Convert.ToInt32(replacedtime));
+                    }
+
+
+                }
+            }
+
+            foreach (GridViewRow row in grvGoalsT1.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    TextBox goalmin = (row.Cells[0].FindControl("txtGoalt1") as TextBox);
+                    //if the checkbox is checked means that the player will be insert in the team
+                   if(!goalmin.Text.Equals(""))
+                   {
+
+                       string[] nameplayergrid = row.Cells[1].Text.Split(' ');
+                       string realname = nameplayergrid[0];
+                       string lastname = nameplayergrid[1];
+                       int playerid = ws.Player_Id_Get(realname, lastname);
+                       string min = goalmin.Text;
+                       int matchid = Convert.ToInt32(Session["match_id"]);
+                       ws.Goal_Ins(Convert.ToInt32(min), playerid, Convert.ToInt32(matchid));
+                   }
+                }
+            }
+            foreach (GridViewRow row in grvGoalsT2.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    TextBox goalmin = (row.Cells[0].FindControl("txtGoalt2") as TextBox);
+                    //if the checkbox is checked means that the player will be insert in the team
+                    if (!goalmin.Text.Equals(""))
+                    {
+                        string[] nameplayergrid = row.Cells[1].Text.Split(' ');
+                        string realname = nameplayergrid[0];
+                        string lastname = nameplayergrid[1];
+                        int playerid = ws.Player_Id_Get(realname, lastname);
+                        string min = goalmin.Text;
+                        int matchid = Convert.ToInt32(Session["match_id"]);
+                        ws.Goal_Ins(Convert.ToInt32(min), playerid, Convert.ToInt32(matchid));
                     }
                 }
-                 foreach (GridViewRow row in grvTeam2.Rows)
-                 {
-                     if (row.RowType == DataControlRowType.DataRow)
-                     {
-                         CheckBox AlignPlayer = (row.Cells[0].FindControl("chkplayert2") as CheckBox);//the check cell of the gridview
-                         CheckBox Iscaptain = (row.Cells[1].FindControl("chkiscaptt2") as CheckBox);
-                         TextBox repPlayer = (row.Cells[2].FindControl("txtrepltimet2") as TextBox);
-                         //if the checkbox is checked means that the player will be insert in the team
-                         if (AlignPlayer.Checked && Iscaptain.Checked)
-                         {
-                             //1 is captain 
-                             string[] replacedplayer = row.Cells[3].Text.Split(' ');
-                             string realplayername = replacedplayer[0];
-                             string realplayerlastname = replacedplayer[1];
-                             string nameplayergrid = row.Cells[1].Text;
-                             string lastnamegrid = row.Cells[2].Text;
-                             int replacedtime = Convert.ToInt32(repPlayer);
-                             int playerid = ws.Player_Id_Get(nameplayergrid, lastnamegrid);
-                             int replaplayerid = ws.Player_Id_Get(realplayername, realplayerlastname);
-                             ws.Aligment_Ins(playerid, Convert.ToInt32(Session["match_id"]), 1, replaplayerid, replacedtime);
-                         }
-                     }
-                 }
             }
-        }
+            foreach (GridViewRow row in grvCardsT1.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    TextBox color = (row.Cells[0].FindControl("txtCardcolort1") as TextBox);
+                    TextBox min = (row.Cells[0].FindControl("txtCardminutet1") as TextBox);
+                    //if the checkbox is checked means that the player will be insert in the team
+                    if (!color.Text.Equals("") && !(min.Text.Equals("")))
+                    {
+                        string[] nameplayergrid = row.Cells[1].Text.Split(' ');
+                        string realname = nameplayergrid[0];
+                        string lastname = nameplayergrid[1];
+                        string cardcolor = color.Text;
+                        string minute = min.Text;
+                        int playerid = ws.Player_Id_Get(realname, lastname);
+                        int matchid = Convert.ToInt32(Session["match_id"]);
+                        int colorbit = 0;
+                        if (cardcolor.Equals("Yellow"))
+                        {
+                            colorbit = 0;
+                        }
+                        else if (cardcolor.Equals("Red"))
+                        {
+                            colorbit = 1;
+                        }
+                        ws.Card_Ins(Convert.ToInt32(matchid), colorbit, Convert.ToInt32(minute), playerid);
+                    }
+                }
+            }
+             foreach (GridViewRow row in grvCardsT2.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    TextBox color = (row.Cells[0].FindControl("txtCardcolort2") as TextBox);
+                    TextBox min = (row.Cells[0].FindControl("txtCardminutet2") as TextBox);
+                    //if the checkbox is checked means that the player will be insert in the team
+                    if (!color.Text.Equals("") && !(min.Text.Equals("")))
+                    {
+                        string[] nameplayergrid = row.Cells[1].Text.Split(' ');
+                        string realname = nameplayergrid[0];
+                        string lastname = nameplayergrid[1];
+                        string cardcolor = color.Text;
+                        string minute = min.Text;
+                        int playerid = ws.Player_Id_Get(realname, lastname);
+                        int matchid = Convert.ToInt32(Session["match_id"]);
+                        int colorbit = 0;
+                        if (cardcolor.Equals("Yellow"))
+                        {
+                            colorbit = 0;
+                        }
+                        else if(cardcolor.Equals("Red"))
+                        {
+                            colorbit = 1;
+                        }
+                        ws.Card_Ins(Convert.ToInt32(matchid),colorbit,Convert.ToInt32(minute),playerid);
+                    }
+                }
+            }
+             ddlCardst1.SelectedIndex = 0;
+             ddlCardst2.SelectedIndex = 0;
+             ddlColorT1.SelectedIndex = 0;
+             ddlColorT2.SelectedIndex = 0;
+             
+            }
+        
 
         protected void btnaddgoalt2_Click(object sender, EventArgs e)
         {
