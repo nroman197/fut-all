@@ -14,7 +14,18 @@ namespace fut_all
         {
             if(!IsPostBack)
             {
-               
+                int role = ws.User_Role_Get(Convert.ToInt32(Session["user_id"]));
+
+                if (role == 1)
+                {
+                    lbladmin.Text = "Admin";
+                    refadmin.HRef = "Insert_admins.aspx";
+
+                }
+                else
+                {
+                    lbladmin.Text = "";
+                }
                 string val1 = Request.QueryString["team1Id"].ToString();
                 int team1id = Convert.ToInt32(val1);
                 string val2 = Request.QueryString["team2Id"].ToString();
