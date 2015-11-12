@@ -27,7 +27,7 @@
                 <asp:Label runat="server" ID="lbladmin" Text="Admin"></asp:Label>    
                 </a></li>
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <asp:ImageButton runat="server" ID="imgLogoHome" src="Images/logo0.png" OnClick="imgLogoHome_Click"/>
+                <asp:ImageButton runat="server" ID="imgLogoHome" src="Images/logo0.png"/>
             </ul>
         </nav>          
     </div>
@@ -194,7 +194,7 @@
                                                            <asp:Image runat="server" ID="imgChamFlag" CssClass="circularFlag" src="Images/minitrophy.png"/>
                                                         </asp:TableCell>
                                                         <asp:TableCell runat="server" HorizontalAlign="Right" VerticalAlign="Middle">                                  
-                                                              <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblChampion" Text="ITA" Font-Size="Medium" CssClass="lblFont3" ></asp:Label>
+                                                              <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblChampion" Text="" Font-Size="Medium" CssClass="lblFont3" ></asp:Label>
                                                                 <br />
                                                           </asp:TableCell>
                                                     </asp:TableRow>
@@ -205,10 +205,10 @@
                                                     <asp:TableRow VerticalAlign="Middle">
                                                         <asp:TableCell VerticalAlign="Middle" HorizontalAlign="Right">
                                                             <br />
-                                                           <asp:Image runat="server" ID="Image1" CssClass="circularFlag" src="Images/minitrophy.png"/>
+                                                           <asp:Image runat="server" ID="imgSubChamFlag" CssClass="circularFlag" src="Images/minitrophy.png"/>
                                                         </asp:TableCell>
                                                         <asp:TableCell runat="server" HorizontalAlign="Right" VerticalAlign="Middle">                                  
-                                                              <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblSubChamFlag" Text="CRC" Font-Size="Medium" CssClass="lblFont3" ></asp:Label>
+                                                              <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblSubCham" Text="" Font-Size="Medium" CssClass="lblFont3" ></asp:Label>
                                                                 <br />
                                                           </asp:TableCell>
                                                     </asp:TableRow>
