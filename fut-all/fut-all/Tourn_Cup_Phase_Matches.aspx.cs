@@ -20,12 +20,16 @@ namespace fut_all
 
             if (!IsPostBack)
             {
+                ddl1.Visible = false;
+                ddl2.Visible = false;
+                btnSaveInfo.Visible = false;
                 val0 = Request.QueryString["evId"].ToString();
                 eventid = Convert.ToInt32(val0);
                 val1 = Request.QueryString["phaId"].ToString();
-                phaseid = Convert.ToInt32(val1);                            
+                phaseid = Convert.ToInt32(val1);
+                showMatches(phaseid, eventid);
             }
-            showMatches(phaseid, eventid);
+            
         }
 
         protected void imgLogoHome_Click(object sender, ImageClickEventArgs e)
@@ -50,13 +54,14 @@ namespace fut_all
             tcell0.Controls.Add(lblph);
 
             List<string> qualTeams = ws.TeamsxPhase_Get(eventid, phatypeid);
-            int count = phatypeid;
-            while (qualTeams.Count == 0)
-            {
-                qualTeams = ws.TeamsxPhase_Get(eventid, count - 1);
-                count--;
+         
+            //int count = phatypeid;
+            //while (qualTeams.Count == 0)
+            //{
+                qualTeams = ws.TeamsxPhase_Get(eventid, 1);
+                //count--;
 
-            }
+            //}
             
 
             for (int i = 0; i < rowCnt; i++)
@@ -106,21 +111,17 @@ namespace fut_all
 
                 if (theList[0].Equals(""))
                 {
-                    DropDownList ddl1 = new DropDownList();
-                    ddl1.Attributes["class"] = "ddlPh";
-                    tCell.Controls.Add(ddl1);
-                    // fill teams of the last phase
                     ddl1.Items.Clear();
                     ddl1.Items.Add("---");
-                    ddl1.SelectedIndex = 0;
-
-                    
+                    ddl1.SelectedIndex = 0;                    
 
                     foreach (string g in qualTeams)
                     {
                         ddl1.Items.Add(g);
                     }
 
+                    ddl1.Visible = true;
+                    btnSaveInfo.Visible = true;
                 }
                 else
                 {
@@ -172,10 +173,7 @@ namespace fut_all
 
                 if (theList[1].Equals(""))
                 {
-                    DropDownList ddl2 = new DropDownList();
-                    ddl2.Attributes["class"] = "ddlPh";
-                    tCell1.Controls.Add(ddl2);
-                    // fill teams of the last phase
+
                     ddl2.Items.Clear();
                     ddl2.Items.Add("---");
                     ddl2.SelectedIndex = 0;
@@ -184,6 +182,8 @@ namespace fut_all
                     {
                         ddl2.Items.Add(g);
                     }
+
+                    ddl2.Visible = true;
                 }
                 else
                 {
@@ -193,10 +193,6 @@ namespace fut_all
                     tCell1.Controls.Add(lbl);
 
                 }
-                
-                //save button
-                //Button btnsave = new Button();
-
 
                 // hlink
                 TableCell tCell2 = new TableCell();
@@ -222,10 +218,29 @@ namespace fut_all
             }
         }
 
-
-        protected void btnsave_Click(object sender, EventArgs e)
+        protected void btnSaveInfo_Click(object sender, EventArgs e)
         {
-           
+            int t1 = ws.Team_Id_Get(ddl1.Text);
+            int t2 = ws.Team_Id_Get(ddl2.Text);
+            List<string> tlist = new List<string>();
+
+
+            string val0 = Request.QueryString["evId"].ToString();
+            int eventid = Convert.ToInt32(val0);
+
+            string val1 = Request.QueryString["phaId"].ToString();
+            int phaseid = Convert.ToInt32(val1);
+            tlist = ws.match_idsxPhase_Get(phaseid);
+
+            if(tlist.Count() > 0){
+                int matchid = Convert.ToInt32(tlist[0]);
+                ws.spMatchQualifs_Upd(matchid, t1, t2);
+            }
+            Response.Redirect("Tourn_Cup_Phase_Matches.aspx?evId=" + Convert.ToString(eventid)+"&phaId="+Convert.ToString(phaseid));
+
+            //showMatches(phaseid, eventid);                        
+
+
         }
 
     }

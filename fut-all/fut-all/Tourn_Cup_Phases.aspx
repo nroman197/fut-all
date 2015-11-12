@@ -48,7 +48,7 @@
         </nav>--%>          
         </div>
         <br />
-        <asp:Table runat="server" BorderStyle="None" BackColor="White" Height="100%" Width="60%" HorizontalAlign="Center" CssClass="roundedChart">
+        <asp:Table runat="server" BorderStyle="None" BackColor="White" Height="100%" Width="70%" HorizontalAlign="Center" CssClass="roundedChart">
             <asp:TableRow>
                 <asp:TableCell VerticalAlign="Middle" BorderWidth="10px" BorderColor="White">
                     &nbsp&nbsp<asp:Label runat="server" ID="Label1" Text="General Stats" Font-Size="Larger" CssClass="lblFont3" ></asp:Label><br /><br />                
@@ -191,7 +191,7 @@
                                                     <asp:TableRow VerticalAlign="Middle">
                                                         <asp:TableCell VerticalAlign="Middle" HorizontalAlign="Right">
                                                             <br />
-                                                           <asp:Image runat="server" ID="imgChamFlag" CssClass="circularFlag" src="Images/miniball.png"/>
+                                                           <asp:Image runat="server" ID="imgChamFlag" CssClass="circularFlag" src="Images/minitrophy.png"/>
                                                         </asp:TableCell>
                                                         <asp:TableCell runat="server" HorizontalAlign="Right" VerticalAlign="Middle">                                  
                                                               <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblChampion" Text="ITA" Font-Size="Medium" CssClass="lblFont3" ></asp:Label>
@@ -205,7 +205,7 @@
                                                     <asp:TableRow VerticalAlign="Middle">
                                                         <asp:TableCell VerticalAlign="Middle" HorizontalAlign="Right">
                                                             <br />
-                                                           <asp:Image runat="server" ID="Image1" CssClass="circularFlag" src="Images/miniball.png"/>
+                                                           <asp:Image runat="server" ID="Image1" CssClass="circularFlag" src="Images/minitrophy.png"/>
                                                         </asp:TableCell>
                                                         <asp:TableCell runat="server" HorizontalAlign="Right" VerticalAlign="Middle">                                  
                                                               <br />&nbsp&nbsp&nbsp<asp:Label runat="server" ID="lblSubChamFlag" Text="CRC" Font-Size="Medium" CssClass="lblFont3" ></asp:Label>
@@ -227,7 +227,7 @@
             </asp:Table>
 
         <br />
-        <asp:Table runat="server"  ID="maintbl" BorderStyle="None" BackColor="White" Height="100%" Width="60%" HorizontalAlign="Center" CssClass="roundedChart">
+        <asp:Table runat="server"  ID="maintbl" BorderStyle="None" BackColor="White" Height="100%" Width="70%" HorizontalAlign="Center" CssClass="roundedChart">
             <asp:TableRow runat ="server">
                 <asp:TableCell VerticalAlign="Bottom" BorderWidth="10px" BorderColor="White">
                     <asp:Table  runat ="server" ID="tbl" Width="100%">

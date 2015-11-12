@@ -20,7 +20,7 @@ namespace fut_all
 
         private string ConnectionString()
         {
-            return "Data Source=KIM;Initial Catalog=FUTALL;User ID=adm;Password=adm";
+            return "Data Source=LAPTOP-3Q31SCMK;Initial Catalog=FUTALL;User ID=adm;Password=adm";
         }
 
         [WebMethod]
@@ -2012,6 +2012,32 @@ namespace fut_all
         }
 
         [WebMethod]
+        public List<string> StatsxGroup_Get(int phaseid)
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "exec StatsxGroup " + Convert.ToString(phaseid);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0]));
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
+        }
+
+        [WebMethod]
         public int MatchesPlayed_Get(int peventid)
         {
             int count = 0;
@@ -2349,5 +2375,51 @@ namespace fut_all
             }
 
         }
+
+        [WebMethod]
+        public List<string> match_idsxPhase_Get(int idphase)
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "select m.match_id from match m inner join Phase p on m.phase_id = p.phase_id where p.phase_id =" + Convert.ToString(idphase) + "and m.team1_id is null ";
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0])); //
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
+        }
+
+        [WebMethod]
+        public void spMatchQualifs_Upd(int pid, int team1, int team2)
+        {
+            string queryString = "exec spMatchQualifs_Upd " + Convert.ToString(pid) + " , " + Convert.ToString(team1) + " , " + Convert.ToString(team2);
+            string connection1 = ConnectionString();
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                reader1.Close();
+                connection2.Close();
+            }
+        }
+
+
     }
 }

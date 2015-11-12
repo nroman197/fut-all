@@ -55,11 +55,25 @@
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell Width="100%" HorizontalAlign="Right">
-                    <%--<asp:Button runat="server" ID="btnsave" CssClass="btn" text="Save" OnClick="btnsave_Click"/>&nbsp&nbsp&nbsp--%>
-                    <br />
-                    <br />
+                <asp:TableCell>
+                    <asp:Table runat="server">
+                        <asp:TableRow>
+                            <asp:TableCell Width="100%" HorizontalAlign="Center">
+                            &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddl1" CssClass="ddl" Width="100px"></asp:DropDownList>&nbsp&nbsp&nbsp                                                                       
+                         </asp:TableCell>
+                            <asp:TableCell HorizontalAlign="Center">
+                                &nbsp&nbsp<asp:Label runat="server" ID="Label1" Text="VS" Font-Size="Larger" CssClass="lblFont" ></asp:Label><br /><br />
+                            </asp:TableCell>
+                            <asp:TableCell HorizontalAlign="Center">
+                                &nbsp&nbsp&nbsp<asp:DropDownList runat="server" ID="ddl2" CssClass="ddl" Width="100px"></asp:DropDownList>&nbsp&nbsp&nbsp                                      
+                            </asp:TableCell>
+                            <asp:TableCell HorizontalAlign="Center">
+                                <asp:Button runat="server" ID="btnSaveInfo" CssClass="btn" Text="Add match" OnClick="btnSaveInfo_Click" />&nbsp&nbsp&nbsp
+                            </asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
                 </asp:TableCell>
+                                
             </asp:TableRow>
         </asp:Table>
     </div>

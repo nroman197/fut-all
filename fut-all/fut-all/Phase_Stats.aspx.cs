@@ -31,21 +31,22 @@ namespace fut_all
         private void LoadGroupGrid(int idphase)
         {
 
-            //poner en labels los otros campos
 
             // Total number of rows.
             int rowCnt;
             rowCnt = 4;
 
             int cur = 0;
-            int total = 11;
+            int total = 9;
+
+            
 
             for (int i = 0; i < rowCnt; i++)
             {
                 int counter = 0;             
                 
                 //List<string> theList = ws.GroupTeams_Get(idphase);
-               
+                List<string> groupstats = ws.StatsxGroup_Get(idphase);
                 string logo = string.Empty;
                 string teamname = string.Empty;
 
@@ -68,7 +69,7 @@ namespace fut_all
 
                 for (int k = cur; k < total; k++)
                 {
-                    if (counter % 11 == 0)
+                    if (counter % 9 == 0)
                     {
                         //string flag = ws.Team_Flag_Get(theList[i]);
                         //logo = flag;
@@ -85,66 +86,31 @@ namespace fut_all
                         //tCell.HorizontalAlign = HorizontalAlign.Center;
 
                         //imglogo.Attributes["class"] = "circular";
-                        //tr.Cells.Add(tCell);
+                                              
+                        TableCell tCell = new TableCell();
+                        tCell.Width = 80;
+                        tCell.VerticalAlign = VerticalAlign.Middle;
+                        tCell.HorizontalAlign = HorizontalAlign.Center;
 
-                        //tCell.Controls.Add(imglogo);
-                        
+                        Label lbl = new Label();
+                        lbl.Text = groupstats[k];
+                        tr.Cells.Add(tCell);
+
                     }
-                    else if (counter % 11 == 1)
+                    else if (counter % 9 == 1)
+                    {                                               
+
+                    }
+                    else if (counter % 9 == 2)
                     {
-                                               
-                        //teamname= theList[k];
-                        //TableCell tCell4 = new TableCell();
-                        //tCell4.Width = 100;
-                        //tCell4.VerticalAlign = VerticalAlign.Middle;
-                        //tCell4.HorizontalAlign = HorizontalAlign.Center;
-                        //tr.Cells.Add(tCell4);
-                        //Label lbl = new Label();
-                        //lbl.Attributes["class"] = "lblFontText";
-                        //lbl.Text = teamname;
-                        //tCell4.Controls.Add(lbl);
 
                     }
-                    else if (counter % 11 == 2)
+
+                    else if (counter % 9 == 3)
                     {
-                        //startdate = theList[k];
-                        //TableCell tCell = new TableCell();
-                        //tCell.Width = 100;
-                        //tCell.VerticalAlign = VerticalAlign.Middle;
-                        //tCell.HorizontalAlign = HorizontalAlign.Center;
-                        //tr.Cells.Add(tCell);
-                        //Label lbl = new Label();
-                        //lbl.Attributes["class"] = "lblFontText";
-                        //string[] realsdate = startdate.Split(' ');
-                        //lbl.Text = realsdate[0];
-                        //tCell.Controls.Add(lbl);
+                       
                     }
-
-                    else if (counter % 11 == 3)
-                    {
-                        //TableCell tCell0 = new TableCell();
-                        //tCell0.Width = 20;
-                        //tCell0.VerticalAlign = VerticalAlign.Middle;
-                        //tCell0.HorizontalAlign = HorizontalAlign.Center;
-                        //Label lbl0 = new Label();
-                        //lbl0.Attributes["class"] = "lblFontText";
-                        //lbl0.Text = "-";
-                        //tr.Cells.Add(tCell0);
-                        //tCell0.Controls.Add(lbl0);
-
-                        //enddate = theList[k];
-                        //TableCell tCell = new TableCell();
-                        //tCell.Width = 100;
-                        //tCell.VerticalAlign = VerticalAlign.Middle;
-                        //tCell.HorizontalAlign = HorizontalAlign.Center;
-                        //tr.Cells.Add(tCell);
-                        //Label lbl = new Label();
-                        //lbl.Attributes["class"] = "lblFontText";
-                        //string[] realedate = enddate.Split(' ');
-                        //lbl.Text = realedate[0];
-                        //tCell.Controls.Add(lbl);
-                    }
-                    else if (counter % 11 == 4)
+                    else if (counter % 9 == 4)
                     {
                     //    if (Convert.ToBoolean(theList[k]) == false)
                     //    {
@@ -175,45 +141,37 @@ namespace fut_all
                     //    {
                     //        teamcat = "Women's";
                     //    }
-                    //    TableCell tCell = new TableCell();
-                    //    tCell.Width = 80;
-                    //    tCell.VerticalAlign = VerticalAlign.Middle;
-                    //    tCell.HorizontalAlign = HorizontalAlign.Center;
-                    //    tr.Cells.Add(tCell);
-                    //    Label lbl = new Label();
-                    //    lbl.Attributes["class"] = "lblFontText";
-                    //    lbl.Text = teamcat;
-                    //    tCell.Controls.Add(lbl);
-                    //    cur = cur + 6;
+
                     }
-                    else if (counter % 11 == 5)
+                    else if (counter % 9 == 5)
                     {
 
                     }
-                    else if (counter % 11 == 6)
+                    else if (counter % 9 == 6)
                     {
 
                     }
-                    else if (counter % 11 == 7)
+                    else if (counter % 9 == 7)
                     {
 
                     }
-                    else if (counter % 11 == 8)
+                    else if (counter % 9 == 8)
                     {
-
-                    }
-                    else if (counter % 11 == 9)
-                    {
-
-                    }
-                    else if (counter % 11 == 10)
-                    {
-
+                        TableCell tCell = new TableCell();
+                        tCell.Width = 80;
+                        tCell.VerticalAlign = VerticalAlign.Middle;
+                        tCell.HorizontalAlign = HorizontalAlign.Center;
+                        tr.Cells.Add(tCell);
+                        Label lbl = new Label();
+                        lbl.Attributes["class"] = "lblFontText";
+                        //lbl.Text = teamcat;
+                        tCell.Controls.Add(lbl);
+                        cur = cur + 9;
                     }
 
                     counter++;
                 }
-                total = total + 11;
+                total = total + 9;
 
 
             }
