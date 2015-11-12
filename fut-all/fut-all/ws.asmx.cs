@@ -2427,6 +2427,48 @@ namespace fut_all
             }
         }
 
+        [WebMethod]
+        public void Goal_Ins(int min, int id_player, int id_match)
+        {
+            string queryString = "spGoal_Ins  " + Convert.ToString(min) + ", " + Convert.ToString(id_player) + "," + Convert.ToString(id_match);
 
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                reader1.Close();
+                connection2.Close();
+            }
+
+        }
+
+        [WebMethod]
+        public void Card_Ins(int id_match, int pcolor, int minute, int id_player)
+        {
+            string queryString = "spCard_Ins  " + Convert.ToString(id_match) + ", " + Convert.ToString(pcolor) + "," + Convert.ToString(minute) + "," + Convert.ToString(id_player);
+
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                reader1.Close();
+                connection2.Close();
+            }
+
+        }
     }
 }

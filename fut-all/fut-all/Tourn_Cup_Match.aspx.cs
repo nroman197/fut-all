@@ -701,6 +701,20 @@ namespace fut_all
              ddlCardst2.SelectedIndex = 0;
              ddlColorT1.SelectedIndex = 0;
              ddlColorT2.SelectedIndex = 0;
+             ddlGoalPlayert1.SelectedIndex = 0;
+             ddlGoalPlayert2.SelectedIndex = 0;
+             ddlplayernamet1.SelectedIndex = 0;
+             ddlplayernamet2.SelectedIndex = 0;
+             ddlreplacenamet1.SelectedIndex = 0;
+             ddlreplacenamet2.SelectedIndex = 0;
+             CardMinuteT1.Text = "";
+             CardMinuteT2.Text = "";
+             txtGoalMinutet2.Text = "";
+             txtGoalMinutet1.Text = "";
+             txtreptimet2.Text = "";
+             txtreptimet1.Text = "";
+            
+
              
             }
         
