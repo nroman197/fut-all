@@ -101,7 +101,7 @@
                                                            <ItemTemplate>
                                                                <asp:CheckBox runat="server" ID="chkplayert1" />
                                                                <asp:CheckBox runat="server" ID="chkiscaptt1" />
-                                                               <asp:TextBox runat="server" ID="txtrepltimet1"></asp:TextBox>
+                                                               <asp:TextBox runat="server" ID="txtrepltimet1" Width="23px"></asp:TextBox>
                                                            </ItemTemplate>                                             
                                                        </asp:TemplateField>
                                                    </Columns>
@@ -123,7 +123,7 @@
                                                            <ItemTemplate>
                                                                <asp:CheckBox runat="server" ID="chkplayert2" />
                                                                <asp:CheckBox runat="server" ID="chkiscaptt2" />
-                                                                 <asp:TextBox runat="server" ID="txtrepltimet2"></asp:TextBox>
+                                                                 <asp:TextBox runat="server" ID="txtrepltimet2" Width="23px"></asp:TextBox>
                                                            </ItemTemplate>                                             
                                                        </asp:TemplateField>
                                                    </Columns>
@@ -239,7 +239,7 @@
                                                      <asp:TextBox runat="server" ID="txtGoalMinutet2" CssClass="txbClassmatch" TextMode="Number"></asp:TextBox>
                                                  </asp:TableCell>
                                                  <asp:TableCell runat="server" HorizontalAlign="Right" VerticalAlign="Bottom">
-                                                     <asp:Button runat="server" ID="btnaddgoalt2" CssClass="btnmatch"  Width="45px" Text="+"  OnClick="btnaddreplacet2_Click"/>
+                                                     <asp:Button runat="server" ID="btnaddgoalt2" CssClass="btnmatch"  Width="45px" Text="+"  OnClick="btnaddgoalt2_Click"/>
                                                  </asp:TableCell>
                                              </asp:TableRow>
                                          </asp:Table>     
@@ -252,11 +252,12 @@
                                       <asp:TableRow>
                                           <asp:TableCell runat="server" Width="7px"></asp:TableCell>
                                           <asp:TableCell>
-                                              <div  style="width: 150%; height: 300px; overflow: scroll">
+                                              <div  style="width: 100%; height: 300px; overflow: scroll">
                                                   <asp:GridView ID="grvGoalsT1" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddlmatch" HorizontalAlign="Center" Width="100%" >
                                                    <Columns>
                                                        <asp:TemplateField >
                                                            <ItemTemplate>
+                                                                 <asp:TextBox runat="server" ID="txtGoalt1" Width="23px"></asp:TextBox>
                                                            </ItemTemplate>                                             
                                                        </asp:TemplateField>
                                                    </Columns>
@@ -266,16 +267,17 @@
                                       </asp:TableRow>
                                   </asp:Table> 
                               </asp:TableCell>  
-                              <asp:TableCell runat="server" HorizontalAlign="Right" VerticalAlign="Bottom">                                  
+                              <asp:TableCell runat="server" HorizontalAlign="Left" VerticalAlign="Bottom">                                  
                                   <asp:Table runat="server" HorizontalAlign="Center">
                                       <asp:TableRow>
                                           <asp:TableCell runat="server" Width="7px"></asp:TableCell>
                                           <asp:TableCell>
-                                              <div  style="width: 150%; height: 300px; overflow: scroll">
-                                                  <asp:GridView ID="grvGoalsT2" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddlmatch" HorizontalAlign="Center" Width="100%" >
+                                              <div  style="width: 100%; height: 300px; overflow: scroll">
+                                                  <asp:GridView ID="grvGoalsT2" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddlmatch" HorizontalAlign="Left" Width="100%" >
                                                    <Columns>
                                                        <asp:TemplateField >
                                                            <ItemTemplate>
+                                                                <asp:TextBox runat="server" ID="txtGoalt2" Width="23px"></asp:TextBox>
                                                            </ItemTemplate>                                             
                                                        </asp:TemplateField>
                                                    </Columns>
@@ -349,11 +351,13 @@
                                       <asp:TableRow>
                                           <asp:TableCell runat="server" Width="7px"></asp:TableCell>
                                           <asp:TableCell>
-                                              <div  style="width: 150%; height: 300px; overflow: scroll">
+                                              <div  style="width: 110%; height: 300px; overflow: scroll">
                                                   <asp:GridView ID="grvCardsT1" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddlmatch" HorizontalAlign="Center" Width="100%" >
                                                    <Columns>
                                                        <asp:TemplateField >
                                                            <ItemTemplate>
+                                                                 <asp:TextBox runat="server" ID="txtCardcolort1" Width="40px"></asp:TextBox>
+                                                                 <asp:TextBox runat="server" ID="txtCardminutet1" Width="40px"></asp:TextBox>
                                                            </ItemTemplate>                                             
                                                        </asp:TemplateField>
                                                    </Columns>
@@ -368,11 +372,13 @@
                                       <asp:TableRow>
                                           <asp:TableCell runat="server" Width="7px"></asp:TableCell>
                                           <asp:TableCell>
-                                              <div  style="width: 100%; height: 300px; overflow: scroll">
+                                              <div  style="width: 110%; height: 300px; overflow: scroll">
                                                   <asp:GridView ID="grvCardsT2" RowStyle-HorizontalAlign="Center" runat="server" AllowPaging="false" CssClass="ddlmatch" HorizontalAlign="left" Width="80%" >
                                                    <Columns>
                                                        <asp:TemplateField >
                                                            <ItemTemplate>
+                                                                <asp:TextBox runat="server" ID="txtCardcolort2" Width="40px"></asp:TextBox>
+                                                                 <asp:TextBox runat="server" ID="txtCardminutet2" Width="40px"></asp:TextBox>
                                                            </ItemTemplate>                                             
                                                        </asp:TemplateField>
                                                    </Columns>

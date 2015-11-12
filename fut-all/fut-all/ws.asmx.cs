@@ -20,7 +20,7 @@ namespace fut_all
 
         private string ConnectionString()
         {
-            return "Data Source=LAPTOP-3Q31SCMK;Initial Catalog=FUTALL;User ID=adm;Password=adm";
+            return "Data Source=KIM;Initial Catalog=FUTALL;User ID=adm;Password=adm";
         }
 
         [WebMethod]
@@ -2195,6 +2195,159 @@ namespace fut_all
             connection.Close();
 
             return theList;
+        }
+
+        [WebMethod]
+        public int TournMatch_Id_Get(int teamid1, int teamid2)
+        {
+            int theId = 0;
+            string queryString = "select m.match_id from Match m where m.team1_id = " + Convert.ToString(teamid1) + " and m.team2_id = " +  Convert.ToString(teamid2);
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
+        public string MatchDateTime_Get(int matchid)
+        {
+            string date = "";
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "select m.[date_time] from Match m where m.match_id =" + Convert.ToString(matchid);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                date = Convert.ToString(reader[0]);
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return date;
+        }
+
+        [WebMethod]
+        public string MatchStadium_Get(int matchid)
+        {
+            string date = "";
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "select m.stadium_id from Match m where m.match_id = " + Convert.ToString(matchid);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                date = Convert.ToString(reader[0]);
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return date;
+        }
+
+        [WebMethod]
+        public List<string> fnTournTeamPlayers_Get(int idteam)
+        {
+            List<string> theList = new List<string>();
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "select * from fnTournTeamPlayers_Get(" + Convert.ToString(idteam) + ")";
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                theList.Add(Convert.ToString(reader[0])); // full name
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return theList;
+        }
+
+        [WebMethod]
+        public void TournMatch_Upd(int match_id, string datetime, int id_stadium)
+        {
+            string queryString = "Match_Upd  " + Convert.ToString(match_id) + ",'" +  datetime + "'," + Convert.ToString(id_stadium);
+
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                reader1.Close();
+                connection2.Close();
+            }
+
+        }
+
+        [WebMethod]
+        public void Aligment_Ins(int player_id, int id_match, int isCaptain, int id_replace,int replace_time)
+        {
+            string queryString = "spAlignment_Ins  " + Convert.ToString(player_id) + ", " +  Convert.ToString(id_match) +  "," + Convert.ToString(isCaptain) + ", " + Convert.ToString(id_replace) + "," + Convert.ToString(replace_time);
+
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+                reader1.Close();
+                connection2.Close();
+            }
+
         }
     }
 }
