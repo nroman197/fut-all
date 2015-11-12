@@ -20,8 +20,22 @@ namespace fut_all
 
             if (!IsPostBack)
             {
+                int role = ws.User_Role_Get(Convert.ToInt32(Session["user_id"]));
+
+                if (role == 1)
+                {
+                    lbladmin.Text = "Admin";
+                    refadmin.HRef = "Insert_admins.aspx";
+
+                }
+                else
+                {
+                    lbladmin.Text = "";
+                }
+
                 ddl1.Visible = false;
                 ddl2.Visible = false;
+                vs.Visible = false;
                 btnSaveInfo.Visible = false;
                 val0 = Request.QueryString["evId"].ToString();
                 eventid = Convert.ToInt32(val0);
@@ -121,6 +135,7 @@ namespace fut_all
                     }
 
                     ddl1.Visible = true;
+                    vs.Visible = true;
                     btnSaveInfo.Visible = true;
                 }
                 else
