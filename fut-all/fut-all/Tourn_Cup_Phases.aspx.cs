@@ -22,10 +22,13 @@ namespace fut_all
                 LoadCountries(eventid);
                 LoadGeneralstats(eventid);
                 List<string> winners = ws.Winners_Get(eventid);
-                lblChampion.Text = winners[0];
-                lblSubCham.Text = winners[1];
-                string flagcham = ws.Team_Flag_Get(lblChampion.Text);
-                string flagsub = ws.Team_Flag_Get(lblSubCham.Text);
+                if (winners.Count() > 0)
+                {
+                    lblChampion.Text = winners[0];
+                    lblSubCham.Text = winners[1];
+                    string flagcham = ws.Team_Flag_Get(lblChampion.Text);
+                    string flagsub = ws.Team_Flag_Get(lblSubCham.Text);
+                }
                 
             }
         }
