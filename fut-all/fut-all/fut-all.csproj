@@ -72,7 +72,9 @@
     <Content Include="Images\futicon.ico" />
     <Content Include="Images\miniball.png" />
     <Content Include="Images\miniclock.png" />
+    <Content Include="Images\minicorner.png" />
     <Content Include="Images\miniredcard.png" />
+    <Content Include="Images\minisaver.png" />
     <Content Include="Images\minishotball.png" />
     <Content Include="Images\minitrophy.png" />
     <Content Include="Images\miniyellowcard.png" />
@@ -84,6 +86,7 @@
     <Content Include="Images\logo1.png" />
     <Content Include="Images\logo2.png" />
     <Content Include="Insert_Admins.aspx" />
+    <Content Include="Styles\ddls.css" />
     <Content Include="Styles\Default.css" />
     <Content Include="Styles\FlagImage.css" />
     <Content Include="Styles\General.css" />

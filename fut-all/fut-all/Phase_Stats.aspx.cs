@@ -15,9 +15,26 @@ namespace fut_all
         {
             if (!IsPostBack)
             {
-                string val = Request.QueryString["groname"].ToString();
-                string phasename = Convert.ToString(val);
-                int idphase = ws.PhaseId_Get(phasename);
+                string val = Request.QueryString["evId"].ToString();
+                int eventid = Convert.ToInt32(val);
+
+                int role = ws.User_Role_Get(Convert.ToInt32(Session["user_id"]));
+
+                if (role == 1)
+                {
+                    lbladmin.Text = "Admin";
+                    refadmin.HRef = "Insert_admins.aspx";
+
+                }
+                else
+                {
+                    lbladmin.Text = "";
+                }
+
+                string val1 = Request.QueryString["groname"].ToString();
+
+                string phasename = Convert.ToString(val1);
+                int idphase = ws.Phase_Id_Get(eventid, phasename);
                 Label1.Text = phasename;
                 LoadGroupGrid(idphase);
             }
@@ -36,7 +53,7 @@ namespace fut_all
             rowCnt = 4;
 
             int cur = 0;
-            int total = 8;
+            int total = 9;
             
 
             for (int i = 0; i < rowCnt; i++)
@@ -63,7 +80,7 @@ namespace fut_all
        
                 for (int k = cur; k < total; k++)
                 {
-                    if (counter % 8 == 0)
+                    if (counter % 9 == 0)
                     {
 
                         teamname = groupstats[k];
@@ -95,7 +112,7 @@ namespace fut_all
                         tr.Cells.Add(tCell);
                         tCell.Controls.Add(lbl);
                     }
-                    else if (counter % 8 == 1)
+                    else if (counter % 9 == 1)
                     {
                         TableCell tCell = new TableCell();
                         tCell.Width = 90;                       
@@ -107,7 +124,7 @@ namespace fut_all
                         tr.Cells.Add(tCell);
                         tCell.Controls.Add(lbl);
                     }
-                    else if (counter % 8 == 2)
+                    else if (counter % 9 == 2)
                     {
                         TableCell tCell = new TableCell();
                         tCell.Width = 90;
@@ -120,7 +137,7 @@ namespace fut_all
                         tCell.Controls.Add(lbl);
                     }
 
-                    else if (counter % 8 == 3)
+                    else if (counter % 9 == 3)
                     {
                         TableCell tCell = new TableCell();
                         tCell.Width = 90;
@@ -132,19 +149,7 @@ namespace fut_all
                         tr.Cells.Add(tCell);
                         tCell.Controls.Add(lbl);
                     }
-                    else if (counter % 8 == 4)
-                    {
-                        TableCell tCell = new TableCell();
-                        tCell.Width = 90;
-                        tCell.VerticalAlign = VerticalAlign.Middle;
-                        tCell.HorizontalAlign = HorizontalAlign.Center;
-                        Label lbl = new Label();
-                        lbl.Attributes["class"] = "lblFontText";
-                        lbl.Text = groupstats[9];
-                        tr.Cells.Add(tCell);
-                        tCell.Controls.Add(lbl);
-                    }
-                    else if (counter % 8 == 5)
+                    else if (counter % 9 == 4)
                     {
                         TableCell tCell = new TableCell();
                         tCell.Width = 90;
@@ -156,7 +161,7 @@ namespace fut_all
                         tr.Cells.Add(tCell);
                         tCell.Controls.Add(lbl);
                     }
-                    else if (counter % 8 == 6)
+                    else if (counter % 9 == 5)
                     {
                         TableCell tCell = new TableCell();
                         tCell.Width = 90;
@@ -168,7 +173,7 @@ namespace fut_all
                         tr.Cells.Add(tCell);
                         tCell.Controls.Add(lbl);
                     }
-                    else if (counter % 8 == 7)
+                    else if (counter % 9 == 6)
                     {
                         TableCell tCell = new TableCell();
                         tCell.Width = 90;
@@ -179,12 +184,36 @@ namespace fut_all
                         lbl.Text = groupstats[k];
                         tr.Cells.Add(tCell);
                         tCell.Controls.Add(lbl);
-                        cur = cur + 8;
                     }
-                    
+                    else if (counter % 9 == 7)
+                    {
+                        TableCell tCell = new TableCell();
+                        tCell.Width = 90;
+                        tCell.VerticalAlign = VerticalAlign.Middle;
+                        tCell.HorizontalAlign = HorizontalAlign.Center;
+                        Label lbl = new Label();
+                        lbl.Attributes["class"] = "lblFontText";
+                        lbl.Text = groupstats[k];
+                        tr.Cells.Add(tCell);
+                        tCell.Controls.Add(lbl);
+                        
+                    }
+                    else if (counter % 9 == 8)
+                    {
+                        TableCell tCell = new TableCell();
+                        tCell.Width = 90;
+                        tCell.VerticalAlign = VerticalAlign.Middle;
+                        tCell.HorizontalAlign = HorizontalAlign.Center;
+                        Label lbl = new Label();
+                        lbl.Attributes["class"] = "lblFontText";
+                        lbl.Text = groupstats[k];
+                        tr.Cells.Add(tCell);
+                        tCell.Controls.Add(lbl);
+                        cur = cur + 9;
+                    }
                     counter++;
                 }
-                total = total + 8;
+                total = total + 9;
 
 
             }

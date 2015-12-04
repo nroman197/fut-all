@@ -222,7 +222,7 @@ namespace fut_all
                 h.Text = lbl2.Text;
                 h.Attributes["class"] = "lblFontName";
                 h.NavigateUrl = "Tourn_Cup_Match.aspx?phaId=" + Convert.ToString(phaseid) + "&team1Id=" + Convert.ToString(ws.Team_Id_Get(theList[0]))
-                    + "&team2Id=" + Convert.ToString(ws.Team_Id_Get(theList[1]));
+                    + "&team2Id=" + Convert.ToString(ws.Team_Id_Get(theList[1]) + "&evId="+ Convert.ToString(eventid));
                 tCell2.Controls.Add(h);
 
 

@@ -183,6 +183,209 @@ namespace fut_all
         }
 
         [WebMethod]
+        public int goalsxteam1_Get(int idmatch, int idteam)
+        {
+            int theId = 0;
+            string queryString = "exec goalxteam1_Get " + Convert.ToInt32(idmatch) + "," + Convert.ToString(idteam);
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
+        public int goalsxteam2_Get(int idmatch, int idteam)
+        {
+            int theId = 0;
+            string queryString = "exec goalxteam2_Get " + Convert.ToInt32(idmatch) + "," + Convert.ToString(idteam);
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
+        public int cardsxteam_Get(int idmatch, int idteam, int color)
+        {
+            int theId = 0;
+            string queryString = "exec cardxteam_Get " + Convert.ToInt32(idmatch) + "," + Convert.ToString(idteam) + "," + Convert.ToString(color);
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
+        public int cornersxteam1_Get(int idmatch, int idteam)
+        {
+            int theId = 0;
+            string queryString = "select isnull(corner_t1, 0) from match where match_id = " + Convert.ToInt32(idmatch) + " and team1_id = " + Convert.ToString(idteam);
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
+        public int cornersxteam2_Get(int idmatch, int idteam)
+        {
+            int theId = 0;
+            string queryString = "select isnull(corner_t2, 0) from match where match_id = " + Convert.ToInt32(idmatch) + " and team2_id = " + Convert.ToString(idteam);
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
+        public int saversxteam2_Get(int idmatch, int idteam)
+        {
+            int theId = 0;
+            string queryString = "select isnull(saver_t2, 0) from match where match_id = " + Convert.ToInt32(idmatch) + " and team2_id = " + Convert.ToString(idteam);
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
+        public int saversxteam1_Get(int idmatch, int idteam)
+        {
+            int theId = 0;
+            string queryString = "select isnull(saver_t1, 0) from match where match_id = " + Convert.ToInt32(idmatch) + " and team1_id = " + Convert.ToString(idteam);
+
+            string connection1 = ConnectionString();
+
+            using (SqlConnection connection2 = new SqlConnection(connection1))
+            {
+                SqlCommand command1 = connection2.CreateCommand();
+                command1.CommandTimeout = 3600;
+                command1.Connection = connection2;
+                command1.CommandText = queryString;
+                connection2.Open();
+                SqlDataReader reader1 = command1.ExecuteReader();
+
+                while (reader1.Read())
+                {
+                    theId = Convert.ToInt32(reader1[0]);
+                }
+
+                reader1.Close();
+                connection2.Close();
+            }
+
+            return theId;
+        }
+
+        [WebMethod]
         public void Confederation_Ins(string pname, int pid)
         {
             string queryString = "spConfederation_Ins '" + pname + "' , " + Convert.ToString(pid);
@@ -250,6 +453,32 @@ namespace fut_all
             connection.Close();
 
             return theList;
+        }
+
+        [WebMethod]
+        public string Team_Name_Get(int id)
+        {
+            string name = "";
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConnectionString();
+            string queryString = "select name from team where team_id = " + Convert.ToString(id);
+
+            SqlCommand command = connection.CreateCommand();
+            command.CommandTimeout = 3600;
+            command.Connection = connection;
+            command.CommandText = queryString;
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                name = Convert.ToString(reader[0]);
+            }
+
+            reader.Close();
+            connection.Close();
+
+            return name;
         }
 
         [WebMethod]
@@ -2036,6 +2265,7 @@ namespace fut_all
                 theList.Add(Convert.ToString(reader[5]));
                 theList.Add(Convert.ToString(reader[6]));
                 theList.Add(Convert.ToString(reader[7]));
+                theList.Add(Convert.ToString(reader[8]));
             }
 
             reader.Close();
@@ -2319,7 +2549,7 @@ namespace fut_all
             string date = "";
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConnectionString();
-            string queryString = "select m.stadium_id from Match m where m.match_id = " + Convert.ToString(matchid);
+            string queryString = "select s.[name] from Match m inner join stadium s on m.stadium_id = s.stadium_id where m.match_id = " + Convert.ToString(matchid);
 
             SqlCommand command = connection.CreateCommand();
             command.CommandTimeout = 3600;
@@ -2367,9 +2597,10 @@ namespace fut_all
         }
 
         [WebMethod]
-        public void TournMatch_Upd(int match_id, string datetime, int id_stadium)
+        public void TournMatch_Upd(int match_id, string datetime, int id_stadium, int cor1, int cor2, int sav1, int sav2)
         {
-            string queryString = "Match_Upd  " + Convert.ToString(match_id) + ",'" + datetime + "'," + Convert.ToString(id_stadium);
+            string queryString = "Match_Upd  " + Convert.ToString(match_id) + ",'" + datetime + "'," + Convert.ToString(id_stadium)
+                + "," + Convert.ToString(cor1) + "," + Convert.ToString(cor2) + "," + Convert.ToString(sav1) + "," + Convert.ToString(sav2);
 
 
             string connection1 = ConnectionString();
@@ -2459,7 +2690,6 @@ namespace fut_all
         {
             string queryString = "spGoal_Ins  " + Convert.ToString(min) + ", " + Convert.ToString(id_player) + "," + Convert.ToString(id_match);
 
-
             string connection1 = ConnectionString();
 
             using (SqlConnection connection2 = new SqlConnection(connection1))
@@ -2473,14 +2703,12 @@ namespace fut_all
                 reader1.Close();
                 connection2.Close();
             }
-
         }
 
         [WebMethod]
         public void Card_Ins(int id_match, int pcolor, int minute, int id_player)
         {
             string queryString = "spCard_Ins  " + Convert.ToString(id_match) + ", " + Convert.ToString(pcolor) + "," + Convert.ToString(minute) + "," + Convert.ToString(id_player);
-
 
             string connection1 = ConnectionString();
 

@@ -15,6 +15,20 @@ namespace fut_all
         {
             if(!IsPostBack)
             {
+
+                int role = ws.User_Role_Get(Convert.ToInt32(Session["user_id"]));
+
+                if (role == 1)
+                {
+                    lbladmin.Text = "Admin";
+                    refadmin.HRef = "Insert_admins.aspx";
+
+                }
+                else
+                {
+                    lbladmin.Text = "";
+                }
+
                 string val = Request.QueryString["evId"].ToString();
                 int eventid = Convert.ToInt32(val);
                 showPhases(eventid);
@@ -137,7 +151,7 @@ namespace fut_all
                         System.Web.UI.WebControls.HyperLink h2 = new HyperLink();
                         h2.Text = "Stats";
                         h2.Attributes["class"] = "lblFontText";
-                        h2.NavigateUrl = "Phase_Stats.aspx?groname=" + Convert.ToString(lblGroup.Text);
+                        h2.NavigateUrl = "Phase_Stats.aspx?groname=" + Convert.ToString(lblGroup.Text) +"&evId=" +Convert.ToString(eventid);
                         tCell2.Controls.Add(h2);
                     }
                 }

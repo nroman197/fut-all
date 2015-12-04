@@ -27,7 +27,7 @@
                 <asp:Label runat="server" ID="lbladmin" Text="Admin"></asp:Label>    
                 </a></li>
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <asp:ImageButton runat="server" ID="imgLogoHome" src="Images/logo0.png" />
+                <asp:Image  runat="server" src="Images/logo0.png"/>
             </ul>
         </nav>          
     </div>
@@ -87,6 +87,9 @@
                             </asp:TableCell>
                              <asp:TableCell HorizontalAlign="Center">
                                  &nbsp&nbsp<asp:Label runat="server" ID="Label9" Text="+/-" Font-Size="Medium" CssClass="lblFont3" Width="80"></asp:Label><br /><br />
+                            </asp:TableCell>
+                            <asp:TableCell HorizontalAlign="Center">
+                                 &nbsp&nbsp<asp:Label runat="server" ID="Label10" Text="pts" Font-Size="Medium" CssClass="lblFont3" Width="80"></asp:Label><br /><br />
                             </asp:TableCell>
                         </asp:TableRow>
                     </asp:Table> 

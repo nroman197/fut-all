@@ -23,11 +23,6 @@ namespace fut_all
             }
         }
 
-        protected void imgLogoHome_Click(object sender, ImageClickEventArgs e)
-        {
-
-        }
-
         protected void ddlTeamType_TextChanged(object sender, EventArgs e)
         {
             if (ddlTeamCathegory.SelectedIndex != 0 && ddlTeamType.SelectedIndex != 0)

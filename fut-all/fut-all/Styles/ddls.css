@@ -1,0 +1,12 @@
+﻿.txbClassMatch{
+    font-size:30px; 
+    border-style:solid;
+    height:20px;
+    width: 200px; 
+    padding:8px; 
+    border-radius:8px; 
+    border-width:2px;
+    border-color:#21a499; 
+    color:#878787;
+    font-family:'Century Gothic';
+}

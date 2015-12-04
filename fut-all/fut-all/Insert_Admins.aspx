@@ -22,7 +22,7 @@
                     <asp:Label runat="server" ID="lbladmin" Text="Admin"></asp:Label>    
                     </a></li>
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <asp:ImageButton runat="server" ID="imgLogoHome" src="Images/logo0.png" />
+                    <asp:Image  runat="server" src="Images/logo0.png"/>
                </ul>
             </nav>          
         </div>
@@ -41,7 +41,7 @@
                          </a></li>
                    <li ><a runat="server" id="A1" href="Add_Tourn_Cup.aspx">
                     <asp:Label runat="server" ID="lblSection4" Text="Add New Tournament Cup" ></asp:Label>
-                        </a></li>--%>
+                        </a></li>
                </ul>
             </nav>          
         </div>
